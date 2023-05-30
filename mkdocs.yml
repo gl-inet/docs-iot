@@ -1,0 +1,102 @@
+# Repository
+repo_name: gl-inet/docs-iot
+repo_url: https://github.com/gl-inet/docs-iot
+edit_uri: ""
+
+site_name: GL.iNet IoT Docs
+site_description: Documentation for GL.iNet IoT Productions
+site_author: GL.iNet
+site_url: https://docs.gl-inet.com/iot/en/
+site_dir: /home/ubuntu/docs-build/iot/en/
+copyright: Copyright &copy; 2023 GL Technologies & Microuter Technologies
+
+theme: 
+  name: material
+  logo: images/logo_white.svg
+  custom_dir: overrides
+  features:
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.top
+    - toc.integrate
+  favicon: images/favicon.png
+
+# Plugins
+plugins:
+  - search
+
+# Customization
+extra:
+  analytics:
+    provider: google
+    property: G-CB08JFHVHT
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://www.gl-inet.com
+    - icon: fontawesome/brands/github
+      link: https://github.com/gl-inet/
+    - icon: fontawesome/brands/facebook
+      link: https://www.facebook.com/gl.inet.wifi/
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/GLiNetWiFi
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/gl-inet.com/
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/channel/UCBfNEzurltlIeFFCbUgHQyg
+    - icon: fontawesome/brands/pinterest
+      link: https://www.pinterest.com/glinetWiFi/
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css
+  - https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css
+  # we can use the cdn or files
+  # - stylesheets/photoswipe.min.css
+  # - stylesheets/default-skin.min.css
+  - stylesheets/extra.css
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js
+  # we can use the cdn or files
+  # - javascripts/photoswipe.min.js
+  # - javascripts/photoswipe-ui-default.min.js
+  - javascripts/extra.js
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.tabbed
+  - toc:
+      permalink: true
+  - pymdownx.details
+
+nav:
+  - Home: index.md
+  - User Guide:
+    - Overview: user_guide/index.md
+    - GL-S200:
+      - Hardware Info: user_guide/gl-s200/hardware_info.md
+      - First Time Setup: user_guide/gl-s200/first_time_setup.md
+      - Internet: user_guide/gl-s200/internet.md
+      - Wireless: user_guide/gl-s200/wireless.md
+      - Clients: user_guide/gl-s200/clients.md
+      - Thread Mesh: user_guide/gl-s200/thread_mesh.md
+      - GL Dev Board: user_guide/gl-s200/gl_dev_board.md
+      - Bluetooth: user_guide/gl-s200/bluetooth.md
+      - VPN: user_guide/gl-s200/vpn.md
+      - Applications: user_guide/gl-s200/applications.md
+      - Network: user_guide/gl-s200/network.md
+      - System: user_guide/gl-s200/system.md
+    - GL-S10:
+      - Hardware Info: user_guide/gl-s10/hardware_info.md
+      - First Time Setup: user_guide/gl-s10/first_time_setup.md
+      - User Manual: user_guide/gl-s10/user_manual.md
+      - Firmware Compilation Guide: user_guide/gl-s10/firmware_compilation_guide.md
+    - Thread Dev Board:
+      - First Time Setup: user_guide/thread_dev_board/first_time_setup.md
+    - GL-M2:
+      - First Time Setup: user_guide/gl-m2/first_time_setup.md
+  - Tutorials:
+    - Overview: tutorials/index.md
+    - Thread Board Router:
+      - GL.iNet OpenThread Border Router Codelabs: tutorials/openthread_border_router_codelabs.md
+    - MQTT & VPN:
+      - MQTT & VPN Demo: tutorials/mqtt_and_vpn_demo.md
