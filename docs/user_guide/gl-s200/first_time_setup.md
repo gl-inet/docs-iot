@@ -1,6 +1,6 @@
 # First time setup
 
-All of GL.iNet's devices have a simple and almost identical setup process, [click here to learn about the first time setup](../../../tutorials/first_time_setup/).
+All of GL.iNet's devices have a simple and almost identical setup process, [click here to learn about the first time setup](https://docs.gl-inet.com/router/en/4/tutorials/first_time_setup/).
 
 Please note that the adapter within the package depends on your shipping country.
 
@@ -17,4 +17,4 @@ Package Contents:
 - 1 x Warranty card
 - 1 x Power adapter (Selected plug type)
 
-Check out GL-S200's [unboxing video](../../../video_library/#gl-s200-thread-development-board-unboxing).
+Check out GL-S200's [unboxing video](https://docs.gl-inet.com/router/en/4/video_library/#gl-s200-thread-development-board-unboxing).

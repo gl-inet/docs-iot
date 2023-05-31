@@ -4,18 +4,18 @@ GL.iNet routers are pre-installed with OpenVPN and WireGuard® supporting 30+ VP
 
 ## VPN Dashboard
 
-- [**VPN Dashboard**](../../../tutorials/vpn_dashboard/)
+- [**VPN Dashboard**](https://docs.gl-inet.com/router/en/4/tutorials/vpn_dashboard/)
 
 ## OpenVPN
 
 Please refer to the following links for a step to step setup guide:
 
-- [**Setup OpenVPN Client**](../../../tutorials/openvpn_client/)
-- [**Setup OpenVPN Server**](../../../tutorials/openvpn_server/)
+- [**Setup OpenVPN Client**](https://docs.gl-inet.com/router/en/4/tutorials/openvpn_client/)
+- [**Setup OpenVPN Server**](https://docs.gl-inet.com/router/en/4/tutorials/openvpn_server/)
 
 ## WireGuard
 
 Please refer to the following links for a step to step setup guide:
 
-- [**Setup WireGuard Client**](../../../tutorials/wireguard_client/)
-- [**Setup WireGuard Server**](../../../tutorials/wireguard_server/)
+- [**Setup WireGuard Client**](https://docs.gl-inet.com/router/en/4/tutorials/wireguard_client/)
+- [**Setup WireGuard Server**](https://docs.gl-inet.com/router/en/4/tutorials/wireguard_server/)
