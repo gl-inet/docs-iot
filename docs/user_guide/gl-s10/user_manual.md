@@ -6,11 +6,13 @@
 
 ## General Product Introduction
 ### Product introduction
+
 The GL-S10 is an IoT gateway device that supports BLE and Wi-Fi, providing a cost-effective solution for transmitting BLE broadcast data to the cloud. BLE supports GAP and GATT certification and can be used as either Master or Slave to connect and communicate with other BLE devices. GL-S10 can use Wi-Fi as a Station to connect to a parent route or can connect to the Internet through a WAN port. It has a built-in standard MQTT Client that can connect to any standard MQTT Servers to forward incoming BLE messages to the cloud server. 
 
 The GL-S10 is ideally deployed in warehouses, shopping malls, airports, exhibition halls, tourist attractions and other scenarios for personnel management, asset management, environmental monitoring, indoor navigation, etc. 
 
-### Product feature 
+### Product feature
+
 - Runs on Dual-core Xtensa® 32-bit LX6 microprocessor, supports BLE, Wi-Fi, and Ethernet 
 
 - BLE supports BLE 4.2 Certification 
@@ -27,7 +29,8 @@ The GL-S10 is ideally deployed in warehouses, shopping malls, airports, exhibiti
 
 - Supports 802.3at/af standard POE input power 
 
-### Technical specification 
+### Technical specification
+
 |  Project   | Description  |
 |  ----  | ----  |
 |  CPU   | ESP32-DOWD <br> Dual-core Xtensa ® 32-bit LX6 microprocessor  |
@@ -49,6 +52,7 @@ The GL-S10 is ideally deployed in warehouses, shopping malls, airports, exhibiti
 |  Storage humidity    | 5% ~ 95%, no condensation   |
 
 ### Package list 
+
 |  Project   | Quantity   |
 |  ----  | ----  |
 |  GL-S10 Gateway    | 1   |
@@ -59,6 +63,7 @@ The GL-S10 is ideally deployed in warehouses, shopping malls, airports, exhibiti
 
 ## Device and APP Installation 
 ### Device installation
+
 Take out the product from its package and attach the external antenna as shown below. 
 <center><img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic1.png"></center>
 <center>Figure 1</center>
@@ -71,11 +76,13 @@ Take out the product from its package and attach the external antenna as shown b
 
 
 ### Button function list
+
 |  Pairing mode    | Reset to factory setting    | OTA upgrade  |
 |  ----  | ----  | ----  |
 | When it is not connected to any power supply, press, and hold the "Reset" button while plugging in the power cord.   | While pressing the "Reset" button, turn on the power, press and hold the "Reset" button for 5 seconds and release.    | While pressing the "Reset" button, turn on the power, press and hold the "Reset" button for 10 seconds and release. |
 
 ### LED description 
+
 |  LED Light    |  Status    |  Reset to factory setting    |  Enter OTA mode    | OTA upgrade process    |
 |  ----  | ----  | ----  | ----  | ----  |
 |  Power <br> (Green light)   | Light on: Device is on <br> Light off: Device is off  | Blinks slowly  | Blinks fast   | Blinks alternatively  |
@@ -83,6 +90,7 @@ Take out the product from its package and attach the external antenna as shown b
 |  Network <br> (White light)   | Light blinks: Wi-Fi connected <br> Light on: Ethernet connected <br> Light off: Not connected   | Blinks slowly  | Blinks fast   | Blinks alternatively  |
 
 ### BLE beacon
+
 BLE Beacon is an optional accessory. User can purchase gateway kit with beacon for a quick Demo. The beacon can also be used for indoor positioning, asset management and other scenarios. The rotating base makes the device easy to disassemble; and the base has 3M adhesive which makes it easy to fix in place. 
 
 After turning on the BLE switch at the bottom of the beacon, the beacon will broadcast BLE signals at an interval of 300ms. Select the filter function of GL-S10 and identify the devices by the BLE MAC address printed at the bottom of the beacon. 
@@ -102,8 +110,11 @@ Download and install GL-S10 Tool App on your phone, turn on the Bluetooth functi
 
 ## App Configuration 
 ### Set configuration mode 
+
 Before using the app for configuration, set GL-S10 into its paring mode by pressing the Reset button of GL-S10 when the power is off, then turn on the power. Release the button when you see the BLE indicator in the middle flashes, and your GL-S10 will enter its pairing mode. 
+
 ### App language
+
 Start the app and select the app language, you can choose between English and Simplified Chinese.
 
 <div class="flex-container s10-user-manual">
@@ -122,6 +133,7 @@ Start the app and select the app language, you can choose between English and Si
 </div>
 
 ### Connecting your GL-S10 
+
 Click the "scan" button in the upper right corner. The scanning result automatically filters out non-GL-S10 devices. If more than one GL-S10 are scanned, select the devices you want to connect according to the BLE MAC address on the label at the bottom of your GL-S10 shell (as shown below). 
 
 **Note:** WAN MAC address is BLE MAC address minus 1, WiFi MAC address is BLE MAC address minus 2
@@ -142,11 +154,13 @@ Click the "scan" button in the upper right corner. The scanning result automatic
 </div>
 
 ### Home page
+
 Select a GL-S10 device and enter the "Manage Device" interface as shown below 
 <center><img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic8.png", width = 300></center>
 <center>Figure 8</center>
 
 ### Device Info
+
 You can click to view the details of the device as shown below
 
 <div class="flex-container s10-user-manual">
@@ -184,6 +198,7 @@ To setup uplink connection using a Protocal on the WAN port, click "Manage Devic
 </div>
 
 ### Wi-Fi configuration 
+
 To connect to a primary gateway, click "Manage Device" > "WiFi" > "Connect WiFi" > "Scan WiFi", and select your WiFi SSID. You can also select "None", "WPA2" or "WPA2 Enterprise" mode. Click "Done" on the upper right corner to confirm the setting as shown below. If you want to upgrade your WPA2 ENTERPRISE certificate, click “Upgrade certificate”. 
 <div class="flex-container s10-user-manual">
   <div>
@@ -204,6 +219,7 @@ To connect to a primary gateway, click "Manage Device" > "WiFi" > "Connect WiFi"
 <center>Figure 15</center>
 
 ### MQTT Configuration
+
 To configure MQTT, click "Manage Device" > "MQTT Server". Enter the address of your MQTT broker in the "Host" field, fill in the port number, username, and password. The "TLS" selection switches between TSL/SSL link and the TCP link. Enter a SUBSCRIBE message in the "Command" field and a SUBACK acknowledgement message in the "Respond Topic" field. You can also click "Update Certificate" below to update the MQTT encryption certificate. Click "Done" on the upper right corner to save the settings.
 
 <div class="flex-container s10-user-manual">
@@ -222,6 +238,7 @@ To configure MQTT, click "Manage Device" > "MQTT Server". Enter the address of y
 </div>
 
 ### Report Configuration
+
 Click "Report Configuration" in the interface of "Manage Device" to enter the interface of "Report Configuration". 
 
 Click "Report interval", "Topic", "Bluetooth RSSI threshold filtering" to enter the relevant information configuration interface, fill in the configuration information and click the upper left corner to return to the previous page to save your settings.  
@@ -271,6 +288,7 @@ Click "Add New Rule" or "Remove" to edit the filter settings and click "Done" on
 </div>
 
 ### Data & Time configuration
+
 Click "Manage Device" > "Date & Time". Select your time zone, fill in the SNTP service address and click the upper left corner to return to the previous page to save your settings, as shown below. 
 
 <div class="flex-container s10-user-manual">
@@ -289,6 +307,7 @@ Click "Manage Device" > "Date & Time". Select your time zone, fill in the SNTP s
 </div>
 
 ### Auto Reboot configuration
+
 Click "Manage Device" > "Auto Reboot". You can schedule a time to reboot GL-S10 on a daily-basis. Click the upper left corner to return to the previous page to save your settings, as shown below. 
 
 <div class="flex-container s10-user-manual">
@@ -307,9 +326,11 @@ Click "Manage Device" > "Auto Reboot". You can schedule a time to reboot GL-S10 
 </div>
 
 ### OTA upgrade
+
 Click "Manage Device" > "Upgrade OTA". Under "OTA URL", enter the http server address and click "Save" on the upper right corner. Click "Upgrade OTA" to save the URL path and initiate the upgrade. Click "Update Certificate" to update the OTA encryption certificate as shown below. 
 
 Please keep your GL-S10 connected to the internet and do NOT turn off the power during the OTA upgrade. After the OTA upgrade is completed, your GL-S10 will automatically enter Scanning mode, and your app will not be able to search for GL-S10.  
+
 <div class="flex-container s10-user-manual">
   <div>
     <figure>
@@ -341,16 +362,21 @@ Please keep your GL-S10 connected to the internet and do NOT turn off the power 
 </div>
 
 ### Reboot device
+
 Click "Manage Device" > "Reboot", and a pop-up window will ask for a reboot confirmation. The device will reboot after clicking "Sure". After rebooting, the device will automatically enter Scanning mode, and your app will not be able to search for GL-S10.
+
 <center><img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic30.png", width = 300></center>
 <center>Figure 30</center>
 
 ### Reset device 
+
 Click "Manage Device" > "Reset". A pop-up window will ask for a reset confirmation. When you click "Sure", all device configurations will be restored to the factory default settings. After resetting the device, it will automatically enter Scanning mode, and your app will be able to search for GL-S10.
+
 <center><img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic31.png", width = 300></center>
 <center>Figure 31</center>
 
 ## MQTT Configuration
+
 When the GL-S10 is connected to the MQTT server, you can also use the MQTT API to configure the GL-S10. 
 
 You can configure MQTT using a third-party tool - MQTT X, downloadable from https://mqttx.app/. 
@@ -358,9 +384,11 @@ You can configure MQTT using a third-party tool - MQTT X, downloadable from http
 The default MQTT setting is configured to connect with the beta cloud platform. Enter the configuration for GL-S10 and MQTT X client to activate the connection. The beta cloud platform is for testing only and not for other usage. 
 
 ### Network Configuration
+
 GL-S10 supports wired transmission and Wi-Fi for connecting to the router or gateway. The setting procedure can be found in section 3.6 Cable configuration and 3.7 Wi-Fi configuration. 
 
 ### MQTT X client configuration
+
 Before doing the MQTT X client configuration, we need to configure the configuration of the MQTT server on S10 first. Find MQTT Server session in the S10 Tool APP.
 
 Here we are using the test MQTT server: iot-s10-test.gl-inet.cn. And the Port is: 1884, so we need to set the Host in the following figure: iot-s10-test.gl-inet.cn. And set Port: 1884.
@@ -381,6 +409,7 @@ Here we are using the test MQTT server: iot-s10-test.gl-inet.cn. And the Port is
 </div>
 
 On the windows version of the MQTT X client, start the MQTT X software and add a new connection. To configure the beta cloud platform, enter the URL address iot-s10-test.gl-inet.cn and port 1884. Click the upper right corner of the page to connect. A successful connection is shown below in Figure 33. 
+
 <center><img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic34.png", width = 800></center>
 <center>Figure 34</center>
 <br>
@@ -388,6 +417,7 @@ On the windows version of the MQTT X client, start the MQTT X software and add a
 <center>Figure 35</center>
 
 ### MQTT Message Editing and Communicating with S10
+
 The default command topic for this firmware is GL-IoT/comTopic/{dev_MAC}, and the command reply topic is GL-IoT/rspTopic/{dev_MAC}. 
 
 The BLE MAC address of the GL-S10 device we use in this example is: E8DB841E2B1E (The BLE MAC address is printed on the bottom of the device or in the app). 
@@ -475,6 +505,7 @@ Get data successfully:
 <center>Figure 40</center>
 
 ## BLE Data Uploading
+
 After successfully establishing connection, GL-S10 automatically enters Scanning mode and scans for BLE signal during startup. If the MQTT server is connected, the BLE scan data will be packaged and uploaded to "GL-IoT/dataTopic/{dev_MAC}" topic in JSON format. ({dev_MAC} is the local BLE MAC address, in this example, the BLE MAC address of the GL-S10 device used is: E8DB841E2B1E). 
 
 As shown above, the JSON fields have the following definitions
@@ -493,8 +524,10 @@ If you purchased a gateway kit with a BLE Beacon and adds filtering rules for th
 <center>Figure 42</center>
 
 ## GL-S10 Config API
+
 This chapter define the commands to configure the GL-S10 device using the MQTT method.
 Command summary sheet
+
 ### Command summary sheet
 | Command Code    | Command    |  Whether parameters are required    | Description   |
 |  ----  | ----  | ----  | ----  |
@@ -539,6 +572,7 @@ Command summary sheet
 
 ### Command detail
 #### SET_WiFi_CONFIG
+
 API function: 
 Configure the WiFi’s SSID and password, or WiFi WPA2’s SSID, username and password, then connect to the router. 
 
@@ -595,6 +629,7 @@ Each paragraph of data is separated by the '\n' character, as shown above, pleas
 - Result：0x00 represents execution success; 0x01 represents execution failure.
 
 #### GET_WiFi_CONFIG
+
 API Function: 
 
 Get Wi-Fi SSID and PWD, or Wi-Fi WPA2 SSID, user name, user password 
@@ -655,6 +690,7 @@ Data segment at response:
 - USERPASSWORD: user password, length 1-64 characters.
 
 #### SET_NETWORK_CONFIG
+
 API function: 
 
 Set static IP or dynamic IP. 
@@ -701,6 +737,7 @@ Data segment at response:
 - Result: 0x00 represents execution success; 0x01 represents execution failure. 
 
 #### GET_NETWORK_CONFIG
+
 API Function: 
 
 Get the network configuration of static IP or dynamic IP. 
@@ -757,6 +794,7 @@ Data segment at response:
 - Gw: fixed length, xxx is a number from 0-255, format XXX.XXX.XXX.XXX. 
 
 #### GET_NETWORK_STATE
+
 API Function: 
 
 Get the current network state: State, Mode, isDhcp , IP, SSID. 
@@ -801,6 +839,7 @@ Data segment at response:
 - SSID: SSID of the connected router, length 1-32 characters. 
 
 #### WiFi_CPNNECT_OR_DISCONNECT
+
 API function: 
 
 Trigger Wi-Fi connection or disconnects. 
@@ -841,6 +880,7 @@ Data segment at response:
 - Result: 0x00 represents execution success; 0x01 represents execution failure. 
 
 #### SET_MQTT_URL
+
 API function: 
 
 Set MQTT_URL. 
@@ -882,6 +922,7 @@ Data segment at response:
 - Result: 0x00 Execution success; 0x01 Execution failure. 
 
 #### GET_MQTT_URL 
+
 API Function: 
 
 Get MQTT_URL. 
@@ -926,6 +967,7 @@ MQTT_URL field:
 - port ：Host port, range 0-65535, length 1-5 characters
 
 #### MQTT_CONNECT_OR_DISCONNECT
+
 API function: 
 
 Activate trigger to connect to the MQTT server. 
@@ -966,6 +1008,7 @@ Data segment at response:
 - Result: 0x00 represents execution success; 0x01 represents execution failure. 
 
 #### SET_MQTT_TOPIC
+
 API function: 
 
 Configure comTopic, dataTopic and rspTopic topics. 
@@ -1003,6 +1046,7 @@ Data segment at response:
 - Result: 0x00 represents execution success; 0x01 represents execution failure.
 
 #### GET_MQTT_TOPIC
+
 API Function: 
 
 Get comTopic, dataTopic and rspTopic topics. 
@@ -1043,6 +1087,7 @@ Data segment at response:
 - rspTopic: Unsuback a topic, does not support Chinese, maximum length of 1-128 characters
 
 #### SET_MQTT_TI
+
 API Function: 
 
 Set the MQTT data upload time interval. 
@@ -1076,6 +1121,7 @@ Data segment at response:
 - Result: 0x00 represents execution success; 0x01 represents execution failure. 
 
 #### GET_MQTT_TI
+
 API Function: 
 
 Get the MQTT data upload interval. 
@@ -1112,6 +1158,7 @@ Data segment at response:
 - IntervalTime: MQTT data reporting time interval, 100ms - 4294967294ms, length 3-10. 
  
 #### SET_SNTP_TZ
+
 API function: 
 
 Set the device time zone. 
@@ -1145,6 +1192,7 @@ Data segment at response:
 - Result: 0x00 represents execution success; 0x01 represents execution failure. 
 
 #### GET_SNTP_TZ
+
 API Function: 
 
 Get the device time zone. 
@@ -1181,6 +1229,7 @@ Data segment at response:
 - Timezone: Time zone format, UTC+X or UTC-X (X range 0-12), default Timezone = UTC-8.
 
 #### SET_SNTP_SERVER
+
 API function: 
 
 Set the SNTP server address. 
@@ -1214,6 +1263,7 @@ Data segment at response:
 - Result: 0x00 represents execution success; 0x01 represents execution failure. 
 
 #### GET_SNTP_SERVER
+
 API Function: 
 
 Get the SNTP server address. 
@@ -1250,6 +1300,7 @@ Data segment at response:
 - ServerURL: SNTP server URL setting, maximum length of 1-128 characters.
 
 #### SET_AUTO_REBOOT
+
 API Function: 
 
 Set the auto restart time and switch status. 
@@ -1285,6 +1336,7 @@ Data segment at response:
 - Result: 0x00 represents execution success; 0x01 represents execution failure.
 
 #### GET_AUTO_REBOOT
+
 API Function: 
 
 Get the auto restart time and switch status. 
@@ -1323,6 +1375,7 @@ Data segment at response:
 - RstTime: daily restart time, format XX:XX 24 hours, range 00:00 - 23:59, occupies five bytes.
 
 ####  SET_MAC_FILTER
+
 API Function: 
 
 Add or remove MAC filter table entries. 
@@ -1358,6 +1411,7 @@ Data segment at response:
 - Result：0x00 represents execution success; 0x01 represents execution failure. 
 
 #### GET_MAC_FILTER
+
 API Function: 
 
 Get MAC filter table entries. 
@@ -1394,6 +1448,7 @@ Data segment at response:
 - AddMAC: AddMAC0, AddMAC1 are single MAC, it will send all the data in the MAC filter table in a batch according to the format shown above, single format XX:XX:XX:XX:XX:XX, XX range [0-9a-fA-F].
 
 #### SET_CLN_FILTER
+
 API Function: 
 
 Adds or removes a BLE device name filter table entry. 
@@ -1429,6 +1484,7 @@ Data segment at response:
 - Result：0x00 represents execution success; 0x01 represents execution failure. 
 
 #### GET_CLN_FILTER
+
 API Function: 
 
 Get the BLE device name filter table entry. 
@@ -1467,6 +1523,7 @@ Data segment at response:
 - CLN: BLE Complete Local Name.
 
 #### SET_MSD_FILTER
+
 API Function: 
 
 Add or remove BLE vendor custom data filter table entries. 
@@ -1502,6 +1559,7 @@ Data segment at response:
 - Result：0x00 represents execution success; 0x01 represents execution failure.
 
 #### GET_MSD_FILTER
+
 API Function: 
 
 Get BLE vendor custom data filter table entries. 
@@ -1578,6 +1636,7 @@ Data segment at response:
 - Result: 0x00 represents execution success; 0x01 represents execution failure.
 
 #### UPDATE_WPA2_CERT
+
 API function: 
 
 Update Wi-Fi WPA2 encryption certificate. 
@@ -1615,6 +1674,7 @@ Data segment at response:
 - Result: 0x00 represents execution success; 0x01 represents execution failure.
 
 #### UPDATE_HTTPS_CERT
+
 API functions: 
 
 Update HTTPS encryption certificate. 
@@ -1652,6 +1712,7 @@ Data segment at response:
 - Result: 0x00 represents execution success; 0x01 represents execution failure. 
 
 #### SET_OTA_URL
+
 API function: 
 
 Set the OTA URL. 
@@ -1689,6 +1750,7 @@ Data segment at response:
 - Result: 0x00 represents execution success; 0x01 represents execution failure.
 
 #### GET_OTA_URL
+
 API Function: 
 
 Get the OTA URL. 
@@ -1725,6 +1787,7 @@ Data segment at response:
 - OtaURL: the server link of OTA upgrade, length 1-512 characters.
 
 #### OTA_STATUS
+
 API function: 
 
 Reply result after OTA completion, initiated by the device after OTA completion. 
@@ -1745,6 +1808,7 @@ Data segment at response:
 - Result：0x00 represents execution success; 0x01 represents execution failure.
 
 #### GET_DEV_STATUS
+
 API Function: 
 
 Get device Wi-Fi RSSI, networking status, server connection status. 
@@ -1787,6 +1851,7 @@ Data segment at response:
 - WiFi_MODE: Wi-Fi connection mode [0x00 -> no password] [0x01 -> wpa2 personal encryption] [0x02 -> wpa2 enterprise encryption]
 
 #### GET_DEV_MESSAGE 
+
 API Function: 
 
 Get device Wi-Fi MAC, BLE MAC, SN, Device ID, firmware version number. 
@@ -1831,6 +1896,7 @@ Data segment at response:
 - FirmwareVersion: firmware version number, length 0-32 characters.
 
 #### RESTART_DEV
+
 API function: 
 
 Reboot the device. 
@@ -1864,6 +1930,7 @@ Data segment at response:
 - Result: 0x00 represents execution success; 0x01 represents execution failure.
 
 #### RESET_DEV
+
 API function: 
 
 Reset the device.
@@ -1897,6 +1964,7 @@ Data segment at response:
 - Result: 0x00 represents execution success; 0x01 represents execution failure.
 
 #### SET_BLE_RSSI_FILTER
+
 API function: 
 
 Set the BLE_RSSI filter threshold. 
@@ -1930,6 +1998,7 @@ Data segment at response:
 - Result: 0x00 represents execution success; 0x01 represents execution failure.
 
 #### GET_BLE_RSSI_FILTER
+
 API Function: 
 
 Get the BLE_RSSI filter threshold. 
@@ -1966,6 +2035,7 @@ Data segment at response:
 - BLERssiFilter: char type Range -100 ~ 0.
 
 #### GET_WiFi_AP_LIST 
+
 API Function: 
 
 Get the list of surrounding Wi-Fi AP information. 
