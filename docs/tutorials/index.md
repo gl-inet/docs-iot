@@ -12,6 +12,7 @@ Learn how to use our devices and add-on features with our step to step guides an
 
 * [GL-S10](../user_guide/gl-s10/user_manual/)
 * [GL-S20](../user_guide/gl-s20/user_manual/)
+* [Bluetooth](bluetooth)
 
 ## Thread Border Router
 

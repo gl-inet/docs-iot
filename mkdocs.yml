@@ -100,6 +100,8 @@ nav:
       - First Time Setup: user_guide/gl-m2/first_time_setup.md
   - Tutorials:
     - Overview: tutorials/index.md
+    - BLE Proxy:
+      - Bluetooth: tutorials/bluetooth.md
     - Thread Board Router:
       - GL.iNet OpenThread Border Router Codelabs: tutorials/openthread_border_router_codelabs.md
     - MQTT & VPN:
