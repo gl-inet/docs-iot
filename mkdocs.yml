@@ -103,6 +103,7 @@ nav:
     - BLE Proxy:
       - Bluetooth: tutorials/bluetooth.md
     - Thread Board Router:
+      - Thread Mesh: tutorials/thread_mesh.md
       - GL.iNet OpenThread Border Router Codelabs: tutorials/openthread_border_router_codelabs.md
     - MQTT & VPN:
       - MQTT & VPN Demo: tutorials/mqtt_and_vpn_demo.md

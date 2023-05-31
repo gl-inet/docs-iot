@@ -16,6 +16,7 @@ Learn how to use our devices and add-on features with our step to step guides an
 
 ## Thread Border Router
 
+* [Thread Mesh](thread_mesh)
 * [GL-S200](../user_guide/gl-s200/user_manual/)
 * [GL.iNet OpenThread Border Router Codelabs](openthread_border_router_codelabs)
 
