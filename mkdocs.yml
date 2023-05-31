@@ -95,7 +95,7 @@ nav:
       - User Manual: user_guide/gl-s10/user_manual.md
       - Firmware Compilation Guide: user_guide/gl-s10/firmware_compilation_guide.md
     - Thread Dev Board:
-      - First Time Setup: user_guide/thread_dev_board/first_time_setup.md
+      - First Time Setup: user_guide/thread_dev_board/index.md
     - GL-M2:
       - First Time Setup: user_guide/gl-m2/first_time_setup.md
   - Tutorials:
