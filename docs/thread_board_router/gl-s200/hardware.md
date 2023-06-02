@@ -1,4 +1,4 @@
-# Hardware info
+# Hardware
 
 GL-S200 is a miniaturized Thread gateway supporting BLE protocol that runs on a highly customizable OpenWrt operating system and supports cloud device management. It has a versatile design for connecting to various smart home devices, or mass device connectivity for smart buildings.
 
