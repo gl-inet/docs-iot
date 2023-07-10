@@ -523,7 +523,7 @@ After completing the above steps, you can use Matter Switch BTN1 to control the 
 
 Test environment
 
-   - Raspberrypi 4B，Debian GNU/Linux 11 (bullseye)
+   - Raspberrypi 4B, Debian GNU/Linux 11 (bullseye)
    - GL-S200
 
 Refer to the documentation [https://www.home-assistant.io/installation/raspberrypi](https://www.home-assistant.io/installation/raspberrypi) to install Home Assistant on Raspberrypi.
