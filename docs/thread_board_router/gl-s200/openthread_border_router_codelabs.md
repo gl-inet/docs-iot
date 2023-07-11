@@ -1,32 +1,37 @@
 # GL.iNet OpenThread Border Router Codelabs
 
-## **Application Scenario**
+## Application Scenario
+
+There are two applocation scenarioes, Direct Connection and Indirect Connection.
+
+   - Scenario 1, Direct Connection, PC/mobile phone connects OTBR directly.
+   - Scenario 2, Indirect Connection, PC/mobile phone and OTBR connect to the same upstream WiFi AP.
 
 GL.iNet OTBR is factory-configured with Scenario 1 by default. Users need to configure the upstream interface for the backbone router according to their own application scenarios on the web Admin Panel -> THREAD MESH -> Advanced -> Backbone Routers.
 
-### Direct Connection.
+### Scenario 1, Direct Connection
 
-Scenario 1:  PC/mobile phone connects OTBR directly.
+PC/mobile phone connects OTBR directly.
 
 ![direct connection](https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/direct_connection.png){class="glboxshadow"}
 
-### Indirect Connection
+### Scenario 2, Indirect Connection
 
-Scenario 2: PC/mobile phone and OTBR connect to the same upstream WiFi AP.
+PC/mobile phone and OTBR connect to the same upstream WiFi AP.
 
 ![indirect connection](https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/indirect_connection.png){class="glboxshadow"}
 
-## **Bi-directional IPv6 connectivity and DNS-based service discovery.**
+## Bi-directional IPv6 connectivity and DNS-based service discovery
 
 This experiment uses the following topology diagram
 
 - Ubuntu 20.04.4
-- NRF52840 USB dongle（[ot-nrf52840 - 2023-02-15-d88076e](https://github.com/openthread/ot-nrf528xx/commit/c00d1812d3494c6a2f4f074685341e6e30195e9d)）
+- NRF52840 USB dongle（[ot-nrf52840 - 2023-02-15-d88076e](https://github.com/openthread/ot-nrf528xx/commit/c00d1812d3494c6a2f4f074685341e6e30195e9d){target="_blank"}）
 - ot-br-posix - 2022-11-08-d910392
 
 ![direct connection](https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/direct_connection.png){class="glboxshadow"}
 
-### Step 1: Create a Thread network.
+### Step 1: Create a Thread network
 
 ```
 root@GL-S200:~# uci set otbr.otbr.enable=1
@@ -92,7 +97,7 @@ PING fd15:5b2d:647f:1:4e73:fe27:fcad:9eb4(fd15:5b2d:647f:1:4e73:fe27:fcad:9eb4) 
 rtt min/avg/max/mdev = 0.996/0.996/0.996/0.000 ms
 ```
 
-### Step 2: Configure the SRP client terminal device.
+### Step 2: Configure the SRP client terminal device
 
 To be executed on NRF52840.
 
@@ -136,7 +141,7 @@ PING fd15:5b2d:647f:1:75cd:be97:fd26:f3b9(fd15:5b2d:647f:1:75cd:be97:fd26:f3b9) 
 rtt min/avg/max/mdev = 41.148/41.148/41.148/0.000 ms
 ```
 
-### Step 3: Publish SRP service on the terminal device.
+### Step 3: Publish SRP service on the terminal device
 
 ```
 > srp client autostart enable
@@ -152,7 +157,7 @@ instance:"ot-service", name:"_ipps._tcp", state:Registered, port:12345, priority
 Done
 ```
 
-### Step 4: Discover services on OTBR.
+### Step 4: Discover services on OTBR
 
 ```
 root@GL-S200:~# ot-ctl srp server service
@@ -200,7 +205,7 @@ PING fd15:5b2d:647f:1:75cd:be97:fd26:f3b9 (fd15:5b2d:647f:1:75cd:be97:fd26:f3b9)
 round-trip min/avg/max = 33.375/33.375/33.375 ms
 ```
 
-### Step 5: Discover services on PC.
+### Step 5: Discover services on PC
 
 Use **`dns-sd`**on macOS system.
 
@@ -243,7 +248,7 @@ $ avahi-browse -rt _ipps._tcp
    txt = []
 ```
 
-### Step 6: Ping the terminal device's local domain name on PC.
+### Step 6: Ping the terminal device's local domain name on PC
 
 ```
 $ ping -6 -c1 ot-host.local
@@ -261,7 +266,7 @@ If the ping command returns `Name or service not known` , modify `/etc/nsswitch.
 hosts:          files mdns4_minimal mdns6_minimal dns
 ```
 
-## Providing Internet access via NAT64.
+## Providing Internet access via NAT64
 
 Nat64 is enabled by default. After creating a Thread network and joining Thread devices to the network according to the instructions for the experiment on bi-directional IPv6 connectivity and DNS-based service discovery,
 
@@ -447,77 +452,77 @@ rtt min/avg/max/mdev = 69.331/69.331/69.331/0.000 ms
 
 1. Toggle the Light
 
-Command Format : `chip-tool onoff toggle ${NODE_ID} 1`
+      Command Format : `chip-tool onoff toggle ${NODE_ID} 1`
 
-Example：
+      Example：
 
-```
-sudo ./out/chip-tool/chip-tool onoff toggle 1001 1
-```
+      ```
+      sudo ./out/chip-tool/chip-tool onoff toggle 1001 1
+      ```
 
 2. Turn On the Light
 
-Command Format : `chip-tool onoff on ${NODE_ID} 1`
+      Command Format : `chip-tool onoff on ${NODE_ID} 1`
 
-Example：
+      Example：
 
-```
-sudo ./out/chip-tool/chip-tool onoff on 1001 1
-```
+      ```
+      sudo ./out/chip-tool/chip-tool onoff on 1001 1
+      ```
 
 3. Turn Off the Light
 
-Command Format : `chip-tool onoff off ${NODE_ID} 1`
+      Command Format : `chip-tool onoff off ${NODE_ID} 1`
 
-Example：
+      Example：
 
-```
-sudo ./out/chip-tool/chip-tool onoff off 1001 1
-```
+      ```
+      sudo ./out/chip-tool/chip-tool onoff off 1001 1
+      ```
 
 4. Read the State of the Light
 
-Command Format : `chip-tool onoff read on-off ${NODE_ID} 1`
+      Command Format : `chip-tool onoff read on-off ${NODE_ID} 1`
 
-Example：
+      Example：
 
-```
-sudo ./out/chip-tool/chip-tool onoff read on-off 1001 1
-```
+      ```
+      sudo ./out/chip-tool/chip-tool onoff read on-off 1001 1
+      ```
 
 ### Step 4: Use the Matter Switch to Control the Light
 
 1. Set the ACL of the Light to Allow the Switch to Control It
 
-For ACL parameter explanation, please refer to **Matter Core Specification - 9.10.5.3. ACL Attribute**
+      For ACL parameter explanation, please refer to **Matter Core Specification - 9.10.5.3. ACL Attribute**
 
-Command Format :
+      Command Format :
 
-```
-sudo ./out/chip-tool/chip-tool accesscontrol write acl '[{"fabricIndex":1, "privilege":5, "authMode":2, "subjects":[112233, ${switch_node_id}], "targets":null}]' ${lighting_node_id} 0
-```
+      ```
+      sudo ./out/chip-tool/chip-tool accesscontrol write acl '[{"fabricIndex":1, "privilege":5, "authMode":2, "subjects":[112233, ${switch_node_id}], "targets":null}]' ${lighting_node_id} 0
+      ```
 
-Example：
+      Example：
 
-```
-sudo ./out/chip-tool/chip-tool accesscontrol write acl '[{"fabricIndex":1, "privilege":5, "authMode":2, "subjects":[112233, 1002], "targets":null}]' 1001 0
-```
+      ```
+      sudo ./out/chip-tool/chip-tool accesscontrol write acl '[{"fabricIndex":1, "privilege":5, "authMode":2, "subjects":[112233, 1002], "targets":null}]' 1001 0
+      ```
 
 2. Bind the Switch to the Light
 
-Command Format :
+      Command Format :
 
-```
-sudo ./out/chip-tool/chip-tool binding write binding '[{"fabricIndex":1, "node":${lighting_node_id}, "endpoint":1, "cluster":6}]' ${switch_node_id} 1
-```
+      ```
+      sudo ./out/chip-tool/chip-tool binding write binding '[{"fabricIndex":1, "node":${lighting_node_id}, "endpoint":1, "cluster":6}]' ${switch_node_id} 1
+      ```
 
-Example：
+      Example：
 
-```
-sudo ./out/chip-tool/chip-tool binding write binding '[{"fabricIndex":1, "node":1001, "endpoint":1, "cluster":6}]' 1002 1
-```
+      ```
+      sudo ./out/chip-tool/chip-tool binding write binding '[{"fabricIndex":1, "node":1001, "endpoint":1, "cluster":6}]' 1002 1
+      ```
 
-After completing the above steps, you can use Matter Switch BTN1 to control the on/off state of Matter Light.
+      After completing the above steps, you can use Matter Switch BTN1 to control the on/off state of Matter Light.
 
 ## Connect to Home Assistant
 
@@ -526,17 +531,17 @@ Test environment
    - Raspberrypi 4B, Debian GNU/Linux 11 (bullseye)
    - GL-S200
 
-Refer to the documentation [https://www.home-assistant.io/installation/raspberrypi](https://www.home-assistant.io/installation/raspberrypi) to install Home Assistant on Raspberrypi.
+Refer to the documentation [https://www.home-assistant.io/installation/raspberrypi](https://www.home-assistant.io/installation/raspberrypi){target="_blank"} to install Home Assistant on Raspberrypi.
 
-The GL-S200 needs to upgrade [snapshot firmware](https://dl.gl-inet.com/?model=s200&type=snapshot).
+The GL-S200 needs to upgrade [snapshot firmware](https://dl.gl-inet.com/?model=s200&type=snapshot){target="_blank"}.
 
-***WARNING**: Due to Thread certification reasons, we will not release this feature in stable firmware in the short term.*
+***Noted**: Due to Thread certification reasons, we will not release this feature in stable firmware in the short term.*
 
 Open the Home Assistant admin panel, Settings -> Devices&Services -> Thread -> CONFIGURE -> ADD AN OPENTHREAD BORDER ROUTER, input the URL `http://<ip>:8081` and submit. As shown in the following figure,  `192.168.90.182` is the IP assigned by the superior router. If your Home Assistant is connected directly to GL OTBR via WiFi/Ethernet, you can use `192.168.8.1`.
 
 <img src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/homeassistant-add-an-openthread-border-router.png" width=512><img src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/homeassistant-add-an-openthread-border-router-2.png" width=512>
 
-Now, The GL OTBR is successfully added to the Preferred network.
+Now, The GL.iNet OTBR is successfully added to the Preferred network.
 
 <img src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/homeassistant-add-an-openthread-border-router-3.png" width=512><img src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/homeassistant-add-an-openthread-border-router-4.png" width=512>
 
