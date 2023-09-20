@@ -1388,13 +1388,13 @@ Data segment on reception.
   </tr>
   <tr>
     <td rowspan="3">0x14</td>
-    <td> MODE\nAddMAC\n </td>
+    <td> MODE\nMAC\n </td>
   </tr>
 </table>
 
-- MODE : 0x00 is Add mode, which adds the AddMAC field to the MAC table of the device; 0x01 is Delete mode, which removes the AddMAC field from the MAC table. 
+- MODE : 0x00 is Add mode, which adds the MAC field to the MAC table of the device; 0x01 is Delete mode, which removes the MAC field from the MAC table. 
 
-- AddMAC: Format XX:XX:XX:XX:XX:XX, XX range [0-9a-fA-F].
+- MAC: Format XX:XX:XX:XX:XX:XX, XX range [0-9a-fA-F].
 
 Data segment at response: 
 <table style="width:100%">
