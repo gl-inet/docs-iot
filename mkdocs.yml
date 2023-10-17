@@ -7,7 +7,7 @@ site_name: GL.iNet IoT Docs
 site_description: Documentation for GL.iNet IoT Productions
 site_author: GL.iNet
 site_url: https://docs.gl-inet.com/iot/en/
-site_dir: /home/ubuntu/docs-build/iot/en/
+site_dir: /root/docs-build/iot/en/
 copyright: Copyright &copy; 2023 GL Technologies & Microuter Technologies
 
 theme: 
