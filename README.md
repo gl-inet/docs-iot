@@ -32,7 +32,7 @@ If the size of image is too big, please use the PhotoSwipe, check out [here](#ab
 
 Use `gl-50-desktop`, `gl-60-desktop`, `gl-70-desktop`,`gl-80-desktop`, `gl-90-desktop` to set the percentage of the image width on desktop browser.
 
-`![gl.inet enable vpn cascading](https://static.gl-inet.com/docs/en/4/tutorials/vpn_cascading/enable_vpn_cascading.png){class="gl-50-desktop"}`
+`![gl.inet enable vpn cascading](https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/enable_vpn_cascading.png){class="gl-50-desktop"}`
 
 ### Image captions
 
@@ -58,8 +58,8 @@ Suggest to use PhotoSwipe when the width of image is large than 1021px.
 ```
 <div class="gl-lightbox" itemscope itemtype="http://schema.org/ImageGallery">
   <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <a href="https://static.gl-inet.com/docs/en/3/setup/gl-b2200/hardware/hardware_1.jpg" itemprop="contentUrl" data-size="3167x2480">
-      <img src="https://static.gl-inet.com/docs/en/3/setup/gl-b2200/hardware/hardware_1.jpg" itemprop="thumbnail" alt="gl-b2200 pcb pinout" />
+    <a href="https://static.gl-inet.com/docs/router/en/3/setup/gl-b2200/hardware/hardware_1.jpg" itemprop="contentUrl" data-size="3167x2480">
+      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-b2200/hardware/hardware_1.jpg" itemprop="thumbnail" alt="gl-b2200 pcb pinout" />
     </a>
   </figure>
 </div>
