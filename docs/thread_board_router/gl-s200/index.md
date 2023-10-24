@@ -1,14 +1,14 @@
 # GL-S200
 
-GL-S200 is a THREAD Border Router designed for users to host and manage low power and reliable IoT mesh networks. The device supports both THREAD and BLE protocols, and it comes with an optional pre-configured [THREAD development board](../../iot_dev_board/) for a simplified integration process to IoT devices.
+GL-S200 is a THREAD Border Router designed for users to host and manage low power and reliable IoT mesh networks. The device supports both THREAD and BLE protocols, and it comes with an optional pre-configured [THREAD development board](../../iot_dev_board/index.md) for a simplified integration process to IoT devices.
 
 GL-S200 is a firmware based on routers. It has many functions similar to our other routers, but also includes targeted IoT features, such as:
 
-* [Bluetooth](bluetooth)
+* [Bluetooth](bluetooth.md)
 
-* [GL Dev Board](../../iot_dev_board/)
+* [GL Dev Board](../../iot_dev_board/index.md)
 
-* [Thread Mesh](thread_mesh)
+* [Thread Mesh](thread_mesh.md)
 
 For other functions that are the same as routers, please refer to the router documentation.
 
