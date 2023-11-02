@@ -86,13 +86,14 @@ nav:
       - Software: ble_proxy/gl-s10/software.md
       - Tools: ble_proxy/gl-s10/tools.md
       - Examples: ble_proxy/gl-s10/examples.md
-    - GL-S20:
-      - Overview: ble_proxy/gl-s20/index.md
-      - Hardware: ble_proxy/gl-s20/hardware.md
-      - Software: ble_proxy/gl-s20/software.md
-      - Tools: ble_proxy/gl-s20/tools.md
-      - Examples: ble_proxy/gl-s20/examples.md
   - Thread Board Router:
+    - GL-S20:
+      - Overview: thread_board_router/gl-s20/index.md
+      - Hardware: thread_board_router/gl-s20/hardware.md
+      - User Manual: thread_board_router/gl-s20/user_manual.md
+      - Software: thread_board_router/gl-s20/software.md
+      - Tools: thread_board_router/gl-s20/tools.md
+      - Examples: thread_board_router/gl-s20/examples.md
     - GL-S200:
       - Overview: thread_board_router/gl-s200/index.md
       - Hardware: thread_board_router/gl-s200/hardware.md
