@@ -2,7 +2,7 @@
 
 |Version|Date|Commit|
 |:----:|:----:|:----:|
-|V2.0.0|2021-10-25|-|
+|V2.0.3|2021-12-17|-|
 
 ## General Product Introduction
 ### Product introduction
@@ -525,21 +525,19 @@ If you purchased a gateway kit with a BLE Beacon and adds filtering rules for th
 
 ## GL-S10 Config API
 
-This chapter define the commands to configure the GL-S10 device using the MQTT method.
+This chapter define the commands to configure the GL-S10 device using the MQTT method. Based on JSON_RPC 2.0 standard development, please follow the format. 
 Command summary sheet
 
 ### Command summary sheet
 | Command Code    | Command    |  Whether parameters are required    | Description   |
 |  ----  | ----  | ----  | ----  |
-|  0x01     | SET_WiFi_CONFIG    | Y   | Set up Wi-Fi configuration   |
-|  0x02     | GET_WiFi_CONFIG   | N   | Get Wi-Fi configuration   |
-|  0x03     | SET_NETWORK_CONFIG     | Y   | Set static IP or dynamic IP    |
-|  0x04     | GET_NETWORK_CONFIG    | N   | Get static IP or dynamic IP    |
-|  0x05     | GET_NETWORK_STATE     | N   | Get the current network status    |
-|  0x06     | WiFi_CONNECT_OR_DISCONNECT     | Y   | Wi-Fi connected or disconnected    |
-|  0x07     | SET_MQTT_URL     | Y   | Set MQTT URL    |
-|  0x08    | GET_MQTT_URL      | N   | Get MQTT URL     |
-|  0x09     | MQTT_CONNECT_OR_DISCONNECT      | Y   | MQTT connected or disconnected     |
+|  0x01     | SET_WIFI_CONFIG | Y   | Set up Wi-Fi configuration   |
+|  0x02     | GET_WIFI_CONFIG | N   | Get Wi-Fi configuration   |
+|  0x03     | SET_NETWORK_CONFIG | Y   | Set static IP or dynamic IP    |
+|  0x04     | GET_NETWORK_CONFIG | N   | Get static IP or dynamic IP    |
+|  0x05     | GET_NETWORK_STATE | N   | Get the current network status    |
+|  0x07     | SET_MQTT_PARAMS | Y   | Set MQTT URL    |
+|  0x08    | GET_MQTT_PARAMS | N   | Get MQTT URL     |
 |  0x0A     | SET_MQTT_TOPIC      | Y   | Set MQTT topic name     |
 |  0x0B     | GET_MQTT_TOPIC      | N   | Get MQTT topic name     |
 |  0x0C     | SET_MQTT_TI      | Y   | Set the MQTT data reporting time interval     |
@@ -549,7 +547,7 @@ Command summary sheet
 |  0x10     | SET_SNTP_SERVER      | Y    | Set the SNTP server     |
 |  0x11     | GET_SNTP_SERVER      | N   | Get the SNTP server    |
 |  0x12     | SET_AUTO_REBOOT      | Y   | Set auto reboot time    |
-|  0x13     | GET_AUTO_REBOO     | N   | Get auto reboot timeL    |
+|  0x13     | GET_AUTO_REBOO     | N   | Get auto reboot time    |
 |  0x14     | SET_MAC_FILTER     | Y   | Add and remove MAC filter table entries     |
 |  0x15     | GET_MAC_FILTER      | Y   | Get MAC filter table entries    |
 |  0x16     | SET_CLN_FILTER      | Y   | Add and remove BLE Complete Local Name filter table entries    |
@@ -569,64 +567,85 @@ Command summary sheet
 |  0x24     | SET_BLE_RSSI_FILTER      | Y   | Set RSSI filter thresholds     |
 |  0x25     | GET_BLE_RSSI_FILTER    | N   | Get RSSI filter thresholds    |
 |  0x26     | GET_WiFi_AP_LIST      | N   | Get a list of surrounding Wi-Fi AP information   |
+| 0x27 | SET_MQTT_CLIENT_ID | Y | Set mqtt client id |
+| 0x28 | GET_MQTT_CLIENT_ID | N | Get mqtt client id |
+| 0x29 | SET_BLE_SCAN_PARAMS | Y | Set ble scan param |
+| 0x2A | GET_BLE_SCAN_PARAMS | N | Get ble scan param |
 
 ### Command detail
-#### SET_WiFi_CONFIG
+#### SET_WIFI_CONFIG
 
 API function: 
 Configure the WiFi’s SSID and password, or WiFi WPA2’s SSID, username and password, then connect to the router. 
 
 Data segment at reception: 
 
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "SET_WIFI_CONFIG",
+    "params": {
+        "type": x,
+        ......
+    },
+    "id": 1
+}
+```
+
 <table style="width:100%">
   <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
+    <th>ID</th>
+    <th colspan="2">params</th>
   </tr>
   <tr>
     <td rowspan="3">0x01</td>
   </tr>
   <tr>
-    <td>0x00\n</td>
-    <td>SSID\nPWD\n</td>
+    <td>"params":{"type":0,"ssid":"x","pwd":"x"}</td>
   </tr>
   <tr>
-    <td>0x01\n</td>
-    <td>SSID\nUSERNAME\nUSERPASSWORD\n</td>
+    <td>"params":{"type":1,"ssid":"x","username":"x","userpwd":"x"}</td>
   </tr>
 </table>
 
 **Note:** 
-Each paragraph of data is separated by the '\n' character, as shown above, please follow the format. 
 
-- When data[0] is equal to 0x00, SSID and PASSWORD are configurable. 
+- When "type" filed is equal to 0x00, "ssid" and "pwd" fileds are configurable. 
+- When "type" filed is equal to 0x01, "ssid", "username", "userpwd" fileds are configurable. 
+- ssid: router’s name, maximum length of 1-32 characters. 
+- pwd: router’s password, maximum length of 8-64 characters. 
+- username: username, maximum length of 1-32 characters. 
+- userpwd: user password, maximum length 1-64 characters.
 
-- When data[0] is equal to 0x01, SSID, USERNAME, USERPASSWORD are configurable. 
 
-- SSID: router’s name, maximum length of 1-32 characters. 
-
-- PWD: router’s password, maximum length of 8-64 characters. 
-
-- USERNAME: username, maximum length of 1-32 characters. 
-
-- USERPASSWORD: user password, maximum length 1-64 characters.
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th>Data</th>
-  </tr>
-  <tr>
-    <td rowspan="2">0x01</td>
-    <td>Result\n</td>
-  </tr>
-</table>
+
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": 0,
+    "id": 1
+}
+
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 1
+}
+```
 
 **Note:** 
-Each paragraph of data is separated by the '\n' character, as shown above, please follow the format. 
 
-- Result：0x00 represents execution success; 0x01 represents execution failure.
+- result: 0x00 represent execution success; 0x01 represent execution fail.
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### GET_WiFi_CONFIG
 
@@ -635,59 +654,77 @@ API Function:
 Get Wi-Fi SSID and PWD, or Wi-Fi WPA2 SSID, user name, user password 
 
 Data segment at reception: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="3">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x02</td>
-  </tr>
-  <tr>
-    <td>0x00\n</td>
-  </tr>   
-  <tr>
-    <td>0x01\n</td>
-  </tr>
-</table>
 
-- When data[0] is equal to 0x00, get SSID, PASSWORD. 
-- When data[0] is equal to 0x01, get SSID, USERNAME, USERPASSWORD.
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "GET_WIFI_CONFIG",
+    "params": {
+        "type": x
+    },
+    "id": 2
+}
+```
+
+**Note:**
+
+
+- When "type" filed is equal to 0x00, get SSID, PASSWORD. 
+- When "type" filed is equal to 0x01, get SSID, USERNAME, USERPASSWORD.
+
+
 
 Data segment at response: 
+
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "type": x,
+        ......
+    },
+    "id": 2
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 2
+}
+```
+
 <table style="width:100%">
   <tr>
-    <th>CmdID</th>
-    <th colspan="3">Data</th>
+    <th>ID</th>
+    <th colspan="2">result</th>
   </tr>
   <tr>
     <td rowspan="3">0x02</td>
-    <td rowspan="3">Result\n</td>
-  </tr>
- 
-  <tr>
-    <td>0x00\n</td>
-    <td>SSID\nPWD\n</td>
   </tr>
   <tr>
-    <td>0x01\n</td>
-    <td>SSID\nUSERNAME\nUSERPASSWORD\n</td>
+    <td>"result":{"type":0,"ssid":"x","pwd":"x"}</td>
+  </tr>
   <tr>
+    <td>"result":{"type":1,"ssid":"x","username":"x","userpwd":"x"}</td>
+  </tr>
 </table>
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure. 
+**Note:**
 
-- When data[1] is equal to 0x00, get SSID, PASSWORD. 
+- When "type" filed is equal to 0x00, get SSID, PASSWORD. 
+- When "type" filed is equal to 0x01, get SSID, USERNAME, USERPASSWORD. 
+- ssid: router’s name, maximum length of 1-32 characters. 
+- pwd: router’s password, maximum length of 8-64 characters. 
+- username: username, length 1-32 characters. 
+- userpwd: user password, length 1-64 characters.
+- error: It is an object that will contain error codes and messages.
 
-- When data[1] is equal to 0x01, get SSID, USERNAME, USERPASSWORD. 
 
-- SSID: router’s name, maximum length of 1-32 characters. 
-
-- PWD: router’s password, maximum length of 8-64 characters. 
-
-- USERNAME: username, length 1-32 characters. 
-
-- USERPASSWORD: user password, length 1-64 characters.
 
 #### SET_NETWORK_CONFIG
 
@@ -696,45 +733,73 @@ API function:
 Set static IP or dynamic IP. 
 
 Data segment at reception:
+
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "SET_NETWORK_CONFIG",
+    "params": {
+        "isdhcp": "x",
+        ......
+    },
+    "id": 3
+}
+```
+
 <table style="width:100%">
   <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
+    <th>ID</th>
+    <th colspan="2">params</th>
   </tr>
   <tr>
     <td rowspan="3">0x03</td>
   </tr>
   <tr>
-     <td>0x00\n</td>
+    <td>"params":{"isdhcp":1}</td>
   </tr>
   <tr>
-    <td>0x01\n</td>
+    <td>"params":{"isdhcp":0,"ip":"x","netmask":"x","gw":"x"}</td>
   </tr>
 </table>
 
-- When data[0] is equal to 0x00, the device is set to DHCP auto-get IP mode.  
+**Note:**
 
-- When data[0] is equal to 0x01, the device is set to static IP mode, and IP, Netmask, Gw can be set. 
 
-- IP: fixed length, xxx is a number between 0-255, format XXX.XXX.XXX.XXX. 
+- When "isdhcp" filed is equal to 0x00, the device is set to DHCP auto-get IP mode.  
+- When "isdhcp" filed is equal to 0x01, the device is set to static IP mode, and IP, Netmask, Gw can be set. 
+- ip: fixed length, xxx is a number between 0-255, format XXX.XXX.XXX.XXX. 
+- netmask: fixed length, xxx is a number between 0-255, format XXX.XXX.XXX.XXX. 
+- gw: fixed length, xxx is a number between 0-255, format XXX.XXX.XXX.XXX. 
 
-- Netmask: fixed length, xxx is a number between 0-255, format XXX.XXX.XXX.XXX. 
 
-- Gw: fixed length, xxx is a number between 0-255, format XXX.XXX.XXX.XXX. 
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th>Data</th>
-  </tr>
-  <tr>
-    <td rowspan="2">0x03</td>
-    <td>Result\n</td>
-  </tr>
-</table>
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure. 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": 0,
+    "id": 3
+}
+
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 3
+}
+```
+
+**Note:** 
+
+- result: 0x00 represent execution success; 0x01 represent execution fail.
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### GET_NETWORK_CONFIG
 
@@ -743,55 +808,54 @@ API Function:
 Get the network configuration of static IP or dynamic IP. 
 
 Data segment at reception: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x04</td>
-  </tr>
-  <tr>
-    <td>0x00\n</td>
-  </tr>
-  <tr>
-    <td>0x01\n</td>
-  </tr>
-</table>
 
-- When mode is equal to 0x00, it indicates that the device is in DHCP auto-allocation state without any data. When mode equals to 0x01, it indicates that the device is in static IP allocation state, and available to receive IP, Netmask and Gw. 
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "GET_NETWORK_CONFIG",
+    "id": 4
+}
+```
+
+
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="3">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x04</td>
-    <td rowspan="3">Result\n</td>
-  </tr>
-  <tr>
-    <td>0x00\n</td>
-    <td> / </td>
-  </tr>
-  <tr>
-    <td>0x01\n</td>
-    <td>IP\nNetmask\nGw\n</td>
-  <tr>
-</table>
 
-- Result: 0x00 represent execution success; 0x01 represents execution failure. 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "isdhcp": x,
+        "ip": "x",
+        "netmask": "x",
+        "gw": "x"
+    },
+    "id": 4
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 4
+}
+```
 
-- When data[1] is equal to 0x00, it indicates that the device is in DHCP auto-assignment state, and the data behind is empty. 
+**Note:**
 
-- When data[1] is equal to 0x01, it indicates that the device is in static IP allocation state, and available to receive IP, Netmask, and Gw. 
 
-- IP: fixed length, xxx is a number from 0-255, format XXX.XXX.XXX. 
+- When "isdhcp" filed is equal to 0x00, it indicates that the device is in DHCP auto-assignment state, and the data behind is empty. 
+- When "isdhcp" filed is equal to 0x01, it indicates that the device is in static IP allocation state, and available to receive IP, Netmask, and Gw. 
+- ip: fixed length, xxx is a number from 0-255, format XXX.XXX.XXX. 
+- netmask: fixed length, xxx is a number from 0-255, format XXX.XXX.XXX.XXX. 
+- gw: fixed length, xxx is a number from 0-255, format XXX.XXX.XXX.XXX. 
+- error: It is an object that will contain error codes and messages.
 
-- Netmask: fixed length, xxx is a number from 0-255, format XXX.XXX.XXX.XXX. 
 
-- Gw: fixed length, xxx is a number from 0-255, format XXX.XXX.XXX.XXX. 
 
 #### GET_NETWORK_STATE
 
@@ -800,212 +864,176 @@ API Function:
 Get the current network state: State, Mode, isDhcp , IP, SSID. 
 
 Data segment at reception: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x05</td>
-    <td> / </td>
-  </tr>
-</table>
 
-- Data is equal to null. 
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "GET_NETWORK_STATE",
+    "id": 5
+}
+```
+
+
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x05</td>
-    <td>Result\n</td>
-    <td>State\nMode\nisDhcp\nIP\nSSID\n</td>
-  </tr>
-</table>
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure. 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "state": x,
+        "mode": "x",
+        "isdhcp": "x",
+        "ip": "x",
+        "ssid": "x"
+    },
+    "id": 5
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 5
+}
+```
 
-- State: indicates the status of the connection (MQTT server connection), character '0' means connected, character '1' means disconnected, occupies one byte. 
+**Note:**
 
-- Mode: indicates the connection mode, character '0' indicates connection via Wi-Fi, character '1' indicates connection via Ethernet cable, occupies one byte. 
 
-- isDhcp: character '0' means it is automatically assigned, character '1' means it is not automatically assigned, occupies one byte. 
+- state: indicates the status of the connection (MQTT server connection), 0 means connected, 1 means disconnected, occupies one byte. 
+- mode: indicates the connection mode, character '0' indicates connection via Wi-Fi, character '1' indicates connection via Ethernet cable, occupies one byte. 
+- isdhcp: character '0' means it is automatically assigned, character '1' means it is not automatically assigned, occupies one byte. 
+- ip: local IP address, xxx is a number between 0-255, format XXX.XXX.XXX.XXX. 
+- ssid: SSID of the connected router, length 1-32 characters. 
+- error: It is an object that will contain error codes and messages.
 
-- IP: local IP address, xxx is a number between 0-255, format XXX.XXX.XXX.XXX. 
 
-- SSID: SSID of the connected router, length 1-32 characters. 
 
-#### WiFi_CPNNECT_OR_DISCONNECT
+#### SET_MQTT_PARAMS
 
 API function: 
 
-Trigger Wi-Fi connection or disconnects. 
+Set MQTT Safety、Host、Port、Username、Password.
 
 Data segment at reception: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x06</td>
-  </tr>
-  <tr>
-    <td>0x00\n</td>
-  </tr>
-  <tr>
-    <td>0x01\n</td>
-  </tr>
-</table>
 
-- When data[0] is equal to 0x00, it triggers the device to connect to Wi-Fi.  
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "SET_MQTT_PARAMS",
+    "params": {
+        "safety": x,
+        "host": "x",
+        "port": x,
+        "username": "x",
+        "password": "x"
+    },
+    "id": 7
+}
+```
 
-- When data[0] is equal to 0x01, it triggers the device to disconnect Wi-Fi. 
+**Note:**
 
-Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x06</td>
-    <td>Result\n</td>
-  </tr>
-</table>
+- safety: Indicates whether mqtt is connected through TSL/SSL, 0 means no, 1 means yes.
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure. 
-
-#### SET_MQTT_URL
-
-API function: 
-
-Set MQTT_URL. 
-
-Data segment at reception: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x07</td>
-    <td>MQTT_URL\n</td>
-  </tr>
-</table>
-
-MQTT_URL field: 
-
-- Data field format: mqtt(s)://username:password@host:port 
-- mqtt : TCP connection
-- mqtts : TSL/SSL connection
-- username : Username, length 0-32 characters
-- password : User password, length 0-64 characters
 - host : Host name, length 7-128 characters
-- port ：Host port, range 0-65535, length 1-5 characters
+
+- port ：Host port, range 0-65535
+
+- username : Username, length 0-32 characters
+
+- password : User password, length 0-64 characters
+
+  
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x07</td>
-    <td>Result\n</td>
-  </tr>
-</table>
 
-- Result: 0x00 Execution success; 0x01 Execution failure. 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": 0,
+    "id": 7
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 7
+}
+```
 
-#### GET_MQTT_URL 
+**Note:** 
+
+- result: 0x00 represent execution success; 0x01 represent execution fail.
+- error: It is an object that will contain error codes and messages.
+
+
+
+#### GET_MQTT_PARAMS
 
 API Function: 
 
-Get MQTT_URL. 
+Get MQTT Safety、Host、Port、Username、Password.
 
 Data segment at reception:
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x08</td>
-    <td> / </td>
-  </tr>
-</table>
 
-- Data is equal to null. 
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "GET_MQTT_PARAMS",
+    "id": 8
+}
+```
+
+
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x08</td>
-    <td>Result\n </td>
-    <td>MQTT_URL\n</td>
-  </tr>
-</table>
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure. 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "safety": x,
+        "host": "x",
+        "port": x,
+        "username": "x",
+        "password": "x"
+    },
+    "id": 8
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 8
+}
+```
 
-MQTT_URL field: 
+**Note:**
 
-- Data field format: mqtt(s)://username:password@host:port 
-- mqtt : TCP connection
-- mqtts : TSL/SSL connection
+- safety: Indicates whether mqtt is connected through TSL/SSL, 0 means no, 1 means yes.
+- host : Host name, length 7-128 characters
+- port ：Host port, range 0-65535
 - username : Username, length 0-32 characters
 - password : User password, length 0-64 characters
-- host : Host name, length 7-128 characters
-- port ：Host port, range 0-65535, length 1-5 characters
+- error: It is an object that will contain error codes and messages.
 
-#### MQTT_CONNECT_OR_DISCONNECT
 
-API function: 
-
-Activate trigger to connect to the MQTT server. 
-
-Data segment at reception: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x09</td>
-  </tr>
-  <tr>
-    <td>0x00\n</td>
-  </tr>
-  <tr>
-    <td>0x01\n</td>
-  </tr>
-</table>
-
-- When data[0] shows 0x00, it triggers the device to connect to the MQTT server. 
-
-- When data[0] shows 0x01, it triggers the device to disconnect with the MQTT server. 
-
-Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x09</td>
-    <td>Result\n </td>
-  </tr>
-</table>
-
-- Result: 0x00 represents execution success; 0x01 represents execution failure. 
 
 #### SET_MQTT_TOPIC
 
@@ -1014,36 +1042,57 @@ API function:
 Configure comTopic, dataTopic and rspTopic topics. 
 
 Data segment on reception. 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0A</td>
-    <td>comTopic\ndataTopic\nrspTopic\n </td>
-  </tr>
-</table>
 
-- comTopic: command for subscribing a topic, does not support Chinese, length 1-128 characters. 
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "SET_MQTT_TOPIC",
+    "params": {
+        "comtopic": "x",
+        "datatopic": "x",
+        "rsptopic": "x"
+    },
+    "id": 10
+}
+```
 
-- dataTopic: publishing a topic, does not support Chinese, maximum length of 1-128 characters. 
+**Note:**
 
-- rspTopic: Unsuback a topic, does not support Chinese, maximum length of 1-128 characters. 
+
+- comtopic: command for subscribing a topic, does not support Chinese, length 1-128 characters. 
+- datatopic: publishing a topic, does not support Chinese, maximum length of 1-128 characters. 
+- rsptopic: Unsuback a topic, does not support Chinese, maximum length of 1-128 characters. 
+
+
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0A</td>
-    <td>Result\n </td>
-  </tr>
-</table>
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure.
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": 0,
+    "id": 8
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 8
+}
+```
+
+**Note:**
+
+
+- result: 0x00 represent execution success; 0x01 represent execution fail.
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### GET_MQTT_TOPIC
 
@@ -1052,39 +1101,51 @@ API Function:
 Get comTopic, dataTopic and rspTopic topics. 
 
 Data segment at reception: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0B</td>
-    <td> / </td>
-  </tr>
-</table>
 
-- data equals to null. 
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "GET_MQTT_TOPIC",
+    "id": 11
+}
+```
+
+
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0B</td>
-    <td>Result\n </td>
-    <td>comTopic\ndataTopic\nrspTopic\n</td>
-  </tr>
-</table>
 
-- Result：0x00 represents execution success; 0x01 represents execution failure. 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "comtopic": "x",
+        "datatopic": "x",
+        "rsptopic": "x"
+    },
+    "id": 11
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 11
+}
+```
 
-- comTopic: command for subscribing a topic, does not support Chinese, length 1-128 characters 
+**Note:**
 
-- dataTopic: publishing a topic, does not support Chinese, maximum length of 1-128 characters 
 
-- rspTopic: Unsuback a topic, does not support Chinese, maximum length of 1-128 characters
+- comtopic: command for subscribing a topic, does not support Chinese, length 1-128 characters 
+- datatopic: publishing a topic, does not support Chinese, maximum length of 1-128 characters 
+- rsptopic: Unsuback a topic, does not support Chinese, maximum length of 1-128 characters
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### SET_MQTT_TI
 
@@ -1093,32 +1154,53 @@ API Function:
 Set the MQTT data upload time interval. 
 
 Data segment at reception:
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0C</td>
-    <td> IntervalTime\n  </td>
-  </tr>
-</table>
 
-- IntervalTime: MQTT data reporting time interval, 100ms - 4294967294ms, length 3-10. 
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "SET_MQTT_TI",
+    "params": {
+        "intervaltime": x
+    },
+    "id": 12
+}
+```
+
+**Note:**
+
+
+- intervaltime: MQTT data reporting time interval, 1s - 2147483647s.
+
+
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0C</td>
-    <td>Result\n </td>
-  </tr>
-</table>
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure. 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": 0,
+    "id": 12
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 12
+}
+```
+
+**Note:**
+
+
+- result: 0x00 represent execution success; 0x01 represent execution fail.
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### GET_MQTT_TI
 
@@ -1127,36 +1209,47 @@ API Function:
 Get the MQTT data upload interval. 
 
 Data segment at reception:
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0D</td>
-    <td> / </td>
-  </tr>
-</table>
 
-- data is equal to null. 
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "GET_MQTT_TI",
+    "id": 13
+}
+```
+
+
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0D</td>
-    <td>Result\n</td>
-    <td>IntervalTime\n </td>
-  </tr>
-</table>
-
-- Result: 0x00 represents execution success; 0x01 represents execution failure. 
-
-- IntervalTime: MQTT data reporting time interval, 100ms - 4294967294ms, length 3-10. 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "intervaltime": "x"
+    },
+    "id": 13
+}
  
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 13
+}
+```
+
+**Note:**
+
+
+- intervaltime: MQTT data reporting time interval, 1s –2147483647s.
+- error: It is an object that will contain error codes and messages.
+
+
+
 #### SET_SNTP_TZ
 
 API function: 
@@ -1164,32 +1257,53 @@ API function:
 Set the device time zone. 
 
 Data segment at reception: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0E</td>
-    <td>Timezone\n</td>
-  </tr>
-</table>
 
-- Timezone: Time zone format, UTC+X or UTC-X (X range 0-12), default Timezone = UTC+8. 
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "SET_SNTP_TZ",
+    "params": {
+        "timezone": "x"
+    },
+    "id": 14
+}
+```
+
+**Note:**
+
+
+- timezone: Time zone format, UTC+X or UTC-X (X range 0-12), default Timezone = UTC+8. 
+
+
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0E</td>
-    <td>Result\n </td>
-  </tr>
-</table>
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure. 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": 0,
+    "id": 14
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 14
+}
+```
+
+**Note:**
+
+
+- result: 0x00 represent execution success; 0x01 represent execution fail.
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### GET_SNTP_TZ
 
@@ -1198,35 +1312,47 @@ API Function:
 Get the device time zone. 
 
 Data segment at reception: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0F</td>
-    <td> / </td>
-  </tr>
-</table>
 
-- Data is equal to null.
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "GET_SNTP_TZ",
+    "id": 15
+}
+```
+
+
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0F</td>
-    <td>Result\n</td>
-    <td>Timezone\n</td>
-  </tr>
-</table>
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure. 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "timezone": "x"
+    },
+    "id": 15
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 15
+}
+```
 
-- Timezone: Time zone format, UTC+X or UTC-X (X range 0-12), default Timezone = UTC-8.
+**Note:**
+
+
+- timezone: Time zone format, UTC+X or UTC-X (X range 0-12), default Timezone = UTC-8.
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### SET_SNTP_SERVER
 
@@ -1235,32 +1361,53 @@ API function:
 Set the SNTP server address. 
 
 Data segment at reception:
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x10</td>
-    <td> ServerURL\n  </td>
-  </tr>
-</table>
 
-- ServerURL: SNTP server URL setting, maximum length of 1-128 characters. 
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "SET_SNTP_SERVER",
+    "params": {
+        "serverurl": "x"
+    },
+    "id": 16
+}
+```
+
+**Note:**
+
+
+- serverurl: SNTP server URL setting, maximum length of 1-128 characters. 
+
+
 
 Data segment at response:
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x10</td>
-    <td> Result\n  </td>
-  </tr>
-</table>
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure. 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": 0,
+    "id": 16
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 16
+}
+```
+
+**Note:**
+
+
+- result: 0x00 represent execution success; 0x01 represent execution fail.
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### GET_SNTP_SERVER
 
@@ -1269,35 +1416,47 @@ API Function:
 Get the SNTP server address. 
 
 Data segment at reception:
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x11</td>
-    <td> /  </td>
-  </tr>
-</table>
 
-- Data is equal to null 
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "GET_SNTP_SERVER",
+    "id": 17
+}
+```
+
+
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x11</td>
-    <td>Result\n</td>
-    <td>ServerURL\n </td>
-  </tr>
-</table>
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure. 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "serverurl": "x"
+    },
+    "id": 17
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 17
+}
+```
 
-- ServerURL: SNTP server URL setting, maximum length of 1-128 characters.
+**Note:**
+
+
+- serverurl: SNTP server URL setting, maximum length of 1-128 characters.
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### SET_AUTO_REBOOT
 
@@ -1306,34 +1465,55 @@ API Function:
 Set the auto restart time and switch status. 
 
 Data segment at reception:
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x12</td>
-    <td> RstState\nRstTime\n </td>
-  </tr>
-</table>
 
-- RstState: indicates whether to turn on the daily restart, character '0' means turn on, character '1' means turn off, occupies one byte. 
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "SET_AUTO_REBOOT",
+    "params": {
+        "rststate": x,
+        "rsttime": "x"
+    },
+    "id": 18
+}
+```
 
-- RstTime: daily restart time, format XX:XX 24 hours, range 00:00 - 23:59, occupies five bytes. 
+**Note:**
+
+
+- rststate: indicates whether to turn on the daily restart, 0 means turn on, 1 means turn off, occupies one byte. 
+- rsttime: daily restart time, format XX:XX 24 hours, range 00:00 - 23:59, occupies five bytes. 
+
+
 
 Data segment at response:
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x12</td>
-    <td>Result\n</td>
-  </tr>
-</table>
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure.
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": 0,
+    "id": 18
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 18
+}
+```
+
+**Note:**
+
+
+- result: 0x00 represent execution success; 0x01 represent execution fail.
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### GET_AUTO_REBOOT
 
@@ -1342,37 +1522,54 @@ API Function:
 Get the auto restart time and switch status. 
 
 Data segment at reception:
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x13</td>
-    <td> / </td>
-  </tr>
-</table>
+
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "GET_AUTO_REBOOT",
+    "id": 19
+}
+```
+
+**Note:**
+
 
 - Data is equal to null. 
 
+
+
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x13</td>
-    <td> Result\n </td>
-    <td> RstState\nRstTime\n </td>
-  </tr>
-</table>
 
-- Result：0x00 represents execution success; 0x01 represents execution failure. 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "rststate": x,
+        "rsttime": "x"
+    },
+    "id": 19
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 19
+}
+```
 
-- RstState: indicates whether to turn on the daily restart, character '0' means turn on, character '1' means not turn on, takes up one byte. 
+**Note:**
 
-- RstTime: daily restart time, format XX:XX 24 hours, range 00:00 - 23:59, occupies five bytes.
+
+- rststate: indicates whether to turn on the daily restart, 0 means turn on, 1 means not turn on, takes up one byte. 
+- rsttime: daily restart time, format XX:XX 24 hours, range 00:00 - 23:59, occupies five bytes.
+- error: It is an object that will contain error codes and messages.
+
+
 
 ####  SET_MAC_FILTER
 
@@ -1381,34 +1578,55 @@ API Function:
 Add or remove MAC filter table entries. 
 
 Data segment on reception.
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x14</td>
-    <td> MODE\nMAC\n </td>
-  </tr>
-</table>
 
-- MODE : 0x00 is Add mode, which adds the MAC field to the MAC table of the device; 0x01 is Delete mode, which removes the MAC field from the MAC table. 
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "SET_MAC_FILTER",
+    "params": {
+        "mode": x,
+        "mac": "x"
+    },
+    "id": 20
+}
+```
 
-- MAC: Format XX:XX:XX:XX:XX:XX, XX range [0-9a-fA-F].
+**Note:**
+
+
+- mode: 0x00 is Add mode, which adds the MAC field to the MAC table of the device; 0x01 is Delete mode, which removes the MAC field from the MAC table. 
+- mac: Format XX:XX:XX:XX:XX:XX, XX range [0-9a-fA-F].
+
+
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x14</td>
-    <td> Result\n </td>
-  </tr>
-</table>
 
-- Result：0x00 represents execution success; 0x01 represents execution failure. 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": 0,
+    "id": 20
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 20
+}
+```
+
+**Note:**
+
+
+- result: 0x00 represent execution success; 0x01 represent execution fail.
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### GET_MAC_FILTER
 
@@ -1417,35 +1635,54 @@ API Function:
 Get MAC filter table entries. 
 
 Data segment at reception: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x15</td>
-    <td> / </td>
-  </tr>
-</table>
+
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "GET_MAC_FILTER",
+    "id": 21
+}
+```
+
+**Note:**
+
 
 - Data is equal to null. 
 
+
+
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x15</td>
-    <td> Result\n </td>
-    <td> AddMAC0\nAddMAC1\n…\n </td>
-  </tr>
-</table>
 
-- Result：0x00 represents execution success; 0x01 represents execution failure. 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": [
+        "x",
+        "x",
+        ......
+    ],
+    "id": 21
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 21
+}
+```
 
-- AddMAC: AddMAC0, AddMAC1 are single MAC, it will send all the data in the MAC filter table in a batch according to the format shown above, single format XX:XX:XX:XX:XX:XX, XX range [0-9a-fA-F].
+**Note:**
+
+
+- result:  It is a array, it will get all the mac in the MAC filter table, single format XX:XX:XX:XX:XX:XX, XX range [0-9a-fA-F].
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### SET_CLN_FILTER
 
@@ -1454,34 +1691,55 @@ API Function:
 Adds or removes a BLE device name filter table entry. 
 
 Data segment at reception: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x16</td>
-    <td> MODE\nAddCLN\n </td>
-  </tr>
-</table>
 
-- MODE : 0x00 is Add mode, which adds the AddCLN field to the device's BLE device name table; 0x01 is Delete mode, which removes the AddCLN field from the BLE device name table. 
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "SET_CLN_FILTER",
+    "params": {
+        "mode": x,
+        "cln": "x"
+    },
+    "id": 22
+}
+```
 
-- AddCLN: Single device name, length 1-32 characters. 
+**Note:**
+
+
+- mode: 0x00 is Add mode, which adds the AddCLN field to the device's BLE device name table; 0x01 is Delete mode, which removes the AddCLN field from the BLE device name table. 
+- cln: Single device name, length 1-32 characters. 
+
+
 
 Data segment at response:
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x16</td>
-    <td> Result\n </td>
-  </tr>
-</table>
 
-- Result：0x00 represents execution success; 0x01 represents execution failure. 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": 0,
+    "id": 22
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 22
+}
+```
+
+**Note:**
+
+
+- result: 0x00 represent execution success; 
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### GET_CLN_FILTER
 
@@ -1490,37 +1748,54 @@ API Function:
 Get the BLE device name filter table entry. 
 
 Data segment at reception: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x17</td>
-    <td> / </td>
-  </tr>
-</table>
+
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "GET_CLN_FILTER",
+    "id": 23
+}
+```
+
+**Note:**
+
 
 - Data is equal to null
 
+
+
 Data segment at response:
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x17</td>
-    <td> Result\n </td>
-    <td> AddCLN0\n AddCLN1\n…\n </td>
-  </tr>
-</table>
 
-- Result：0x00 represents execution success; 0x01 represents execution failure. 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": [
+        "x",
+        "x",
+        ......
+    ],
+    "id": 23
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 23
+}
+```
 
-- AddCLN: AddCLN0, AddCLN1 are single CLN, which will send all the data in the CLN filter table together. 
+**Note:**
 
-- CLN: BLE Complete Local Name.
+
+- result:  It is a array, it will get all the Complete Local Name in the CLN filter table.
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### SET_MSD_FILTER
 
@@ -1529,34 +1804,55 @@ API Function:
 Add or remove BLE vendor custom data filter table entries. 
 
 Data segment on reception.
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x18</td>
-    <td> MODE\nAddMSD\n  </td>
-  </tr>
-</table>
 
-- MODE : 0x00 is Add mode which adds the AddMSD field to the device's BLE vendor custom data table; 0x01 is Delete mode which removes the AddMSD field from the BLE vendor custom data table. 
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "SET_MSD_FILTER",
+    "params": {
+        "mode": x,
+        "msd": "x",
+    },
+    "id": 24
+}
+```
 
-- AddMSD: single BLE vendor-defined data, length 2-64 characters, and length must be a multiple of 2, character range [0-9a-fA-F].
+**Note:**
+
+
+- mode: 0x00 is Add mode which adds the AddMSD field to the device's BLE vendor custom data table; 0x01 is Delete mode which removes the AddMSD field from the BLE vendor custom data table. 
+- msd: single BLE vendor-defined data, length 2-64 characters, and length must be a multiple of 2, character range [0-9a-fA-F].
+
+
 
 Data segment at response:
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x18</td>
-    <td> Result\n </td>
-  </tr>
-</table>
 
-- Result：0x00 represents execution success; 0x01 represents execution failure.
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": 0,
+    "id": 24
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 24
+}
+```
+
+**Note:**
+
+
+- result: 0x00 represent execution success; 0x01 represent execution fail.
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### GET_MSD_FILTER
 
@@ -1565,37 +1861,54 @@ API Function:
 Get BLE vendor custom data filter table entries. 
 
 Data segment on reception.
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x19</td>
-    <td> / </td>
-  </tr>
-</table>
+
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "GET_MSD_FILTER",
+    "id": 25
+}
+```
+
+**Note:**
+
 
 - Data is equal to null
 
+
+
 Data segment at response:
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x19</td>
-    <td> Result\n </td>
-    <td> AddMSD0\n AddMSD1\n…\n  </td>
-  </tr>
-</table>
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure. 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "addmsd0": "x",
+        "addmsd1": "x",
+   		......
+    },
+    "id": 25
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 25
+}
+```
 
-- AddMSD: AddMSD0, AddMSD1 are single MSD, which will send all the data in the MSD filter table together. 
+**Note:**
 
-- MSD: Manufacturer Specific Data.
+
+- result: It is a object, and addmsd0, addmsd1 is single MSD, all data in the MSD filtering table will be packaged and sent together.
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### UPDATE_MQTT_CERT
 
@@ -1604,36 +1917,58 @@ API functionality:
 Update MQTT encryption certificate. 
 
 Data segment at reception:
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x1A</td>
-    <td> MODE\nMqttCertURL\n  </td>
-  </tr>
-</table>
 
-- MODE: 0x00 updates certificate immediately, 0x01 only saves certificate URL, and does not update certificate immediately. Occupies 1 character. 
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "UPDATE_MQTT_CERT",
+    "params": {
+        "mode": x,
+        "mqttcerturl": "x"
+    },
+    "id": 26
+}
+```
 
-- MQTT encrypted certificate URL address, length 1-500 characters. 
+**Note:**
+
+
+- mode: 0x00 updates certificate immediately, 0x01 only saves certificate URL, and does not update certificate immediately. 
+
+- mqttcerturl: MQTT encrypted certificate URL address, length 1-512characters. 
 
 **Note:** If the Data segment is null, the MqttCertURL will be restored to the default configuration, and the certificate will be updated. 
 
-Data segment at response:
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x1A</td>
-    <td> Result\n </td>
-  </tr>
-</table>
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure.
+
+Data segment at response:
+
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": 0,
+    "id": 26
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 26
+}
+```
+
+**Note:**
+
+
+- result: 0x00 represent execution success; 0x01 represent execution fail.
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### UPDATE_WPA2_CERT
 
@@ -1642,36 +1977,58 @@ API function:
 Update Wi-Fi WPA2 encryption certificate. 
 
 Data segment at reception: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x1B</td>
-    <td> MODE\nWpa2CertURL\n  </td>
-  </tr>
-</table>
 
-- MODE: 0x00 updates certificate immediately, 0x01 only saves certificate URL, and does not update certificate immediately. Occupies 1 character. 
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "UPDATE_WPA2_CERT",
+    "params": {
+       	"mode": x,
+        "wpa2certurl": "x"
+    },
+    "id": 27
+}
+```
 
-- Wpa2CertURL: WPA2 encryption certificate URL address, length 1-500 characters. 
+**Note:**
+
+
+- mode: 0x00 updates certificate immediately, 0x01 only saves certificate URL, and does not update certificate immediately. Occupies 1 character. 
+
+- wpa2certurl: WPA2 encryption certificate URL address, length 1-512characters. 
 
 **Note:** If the Data segment is null, the Wpa2CertURL will be restored to the default configuration, and the certificate will be updated. 
 
-Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x1B</td>
-    <td> Result\n  </td>
-  </tr>
-</table>
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure.
+
+Data segment at response: 
+
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": 0,
+    "id": 27
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 27
+}
+```
+
+**Note:**
+
+
+- result: 0x00 represent execution success; 0x01 represent execution fail.
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### UPDATE_HTTPS_CERT
 
@@ -1680,36 +2037,58 @@ API functions:
 Update HTTPS encryption certificate. 
 
 Data segment at reception:
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x1C</td>
-    <td> MODE\nHttpsCertURL\n </td>
-  </tr>
-</table>
 
-- MODE: 0x00 updates certificate immediately, 0x01 only saves certificate URL, and does not update certificate immediately. Occupies 1 character. 
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "UPDATE_HTTPS_CERT",
+    "params": {
+        "mode": x,
+        "httpscerturl": "x"
+    },
+    "id": 28
+}
+```
 
-- HttpsCertURL: HTTPS encrypted certificate URL address, length 1-500 characters. 
+**Note:**
+
+
+- mode: 0x00 updates certificate immediately, 0x01 only saves certificate URL, and does not update certificate immediately. Occupies 1 character. 
+
+- httpscerturl: HTTPS encrypted certificate URL address, length 1-512 characters. 
 
 **Note:** If the Data segment is null, the HttpsCertURL will be restored to the default configuration, and the certificate will be updated.
 
-Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x1C</td>
-    <td> Result\n </td>
-  </tr>
-</table>
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure. 
+
+Data segment at response: 
+
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": 0,
+    "id": 28
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 28
+}
+```
+
+**Note:**
+
+
+- result: 0x00 represent execution success; 0x01 represent execution fail.
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### SET_OTA_URL
 
@@ -1718,36 +2097,56 @@ API function:
 Set the OTA URL. 
 
 Data segment at reception:
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x1D</td>
-    <td> updateNow\nOtaURL\n  </td>
-  </tr>
-</table>
 
-- updateNow: whether to upgrade OTA immediately, occupies 1 byte, character '0' will save the URL and upgrade immediately, character '1' will only save the url without upgrading. 
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "SET_OTA_URL",
+    "params": {
+        "updatenow": x,
+        "otaurl": "x"
+    },
+    "id": 29
+}
+```
 
-- OtaURL: the server link for OTA upgrade, length 1-512 characters. 
+**Note:**
 
-**Note:** If the Data segment is null, OtaURL will be restored to the default configuration, but will not trigger OTA. 
+
+- updatenow: whether to upgrade OTA immediately, occupies 1 byte, 0 will save the URL and upgrade immediately, 1 will only save the url without upgrading. 
+- otaurl: the server link for OTA upgrade, length 1-512 characters. 
+- If the Data segment is null, OtaURL will be restored to the default configuration, but will not trigger OTA. 
+
+
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x1D</td>
-    <td> Result\n </td>
-  </tr>
-</table>
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure.
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": 0,
+    "id": 29
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 29
+}
+```
+
+**Note:**
+
+
+- result: 0x00 represent execution success; 0x01 represent execution fail.
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### GET_OTA_URL
 
@@ -1756,35 +2155,47 @@ API Function:
 Get the OTA URL. 
 
 Data segment at reception: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x1E</td>
-    <td> / </td>
-  </tr>
-</table>
 
-- Data is equal to null. 
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "GET_OTA_URL",
+    "id": 30
+}
+```
+
+
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x1E</td>
-    <td> Result\n </td>
-    <td> OtaURL\n  </td>
-  </tr>
-</table>
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure. 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "otaurl": "x"
+    },
+    "id": 30
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 30
+}
+```
 
-- OtaURL: the server link of OTA upgrade, length 1-512 characters.
+**Note:**
+
+
+- otaurl: the server link of OTA upgrade, length 1-512 characters.
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### OTA_STATUS
 
@@ -1793,19 +2204,21 @@ API function:
 Reply result after OTA completion, initiated by the device after OTA completion. 
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x1F</td>
-    <td> Result\n </td>
-    <td> / </td>
-  </tr>
-</table>
 
-- Result：0x00 represents execution success; 0x01 represents execution failure.
+```json
+{
+    "jsonrpc": "2.0",
+    "result": 0,
+    "id": 31
+}
+```
+
+**Note:**
+
+
+- result: 0x00 represent execution success; 0x01 represent execution fail.
+
+
 
 #### GET_DEV_STATUS
 
@@ -1814,41 +2227,53 @@ API Function:
 Get device Wi-Fi RSSI, networking status, server connection status. 
 
 Data segment at reception:
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x20</td>
-    <td> / </td>
-  </tr>
-</table>
 
-- Data is equal to null
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "GET_DEV_STATUS",
+    "id": 32
+}
+```
+
+
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x20</td>
-    <td> Result\n </td>
-    <td> WiFi_RSSI\nIS_CONNECT_NETWORK\nIS_CONNECT_SERVER\nWiFi_MODE\n </td>
-  </tr>
-</table>
 
-- Result：0x00 represents execution success; 0x01 represents execution failure. 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "wifirssi": x,
+        "isconnectnetwork": x,
+        "isconnectserver": x,
+        "wifimode": x
+    },
+    "id": 32
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 32
+}
+```
 
-- WiFi_RSSI: RSSI of the connected router, range -96 ~ 0, occupies 1 byte, signed character. 
+**Note:**
 
-- IS_CONNECT_NETWORK: network connection status 0x00 means not connected; 0x01 means connected. 
 
-- IS_CONNECT_SERVER: MQTT server connection status 0x00 means not connected; 0x01 means connected. 
+- wifirssi: RSSI of the connected router, range -96 ~ 0.
+- isconnectnetwork: network connection status 0x00 means not connected; 0x01 means connected. 
+- isconnectserver: MQTT server connection status 0x00 means not connected; 0x01 means connected. 
+- wifimode: Wi-Fi connection mode [0x00 -> no password] [0x01 -> wpa2 personal encryption] [0x02 -> wpa2 enterprise encryption]
+- error: It is an object that will contain error codes and messages.
 
-- WiFi_MODE: Wi-Fi connection mode [0x00 -> no password] [0x01 -> wpa2 personal encryption] [0x02 -> wpa2 enterprise encryption]
+
 
 #### GET_DEV_MESSAGE 
 
@@ -1857,43 +2282,57 @@ API Function:
 Get device Wi-Fi MAC, BLE MAC, SN, Device ID, firmware version number. 
 
 Data segment at reception: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x21</td>
-    <td> / </td>
-  </tr>
-</table>
 
-- Data is equal to null
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "GET_DEV_MESSAGE ",
+    "id": 33
+}
+```
+
+
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x21</td>
-    <td> Result\n </td>
-    <td> BLE_MAC\nWiFi_MAC\nSN\nDevice_ID\nFirmwareVersion\n  </td>
-  </tr>
-</table>
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure. 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "wifimac": "x",
+        "blemac": "x",
+        "sn": "x",
+        "deviceid": "x",
+        "firmwareversion": "x",
+        "firmwaretype": x
+    },
+    "id": 33
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 33
+}
+```
 
-- WiFi_MAC: Format XX:XX:XX:XX:XX:XX, XX range [0-9a-fA-F]. 
+**Note:**
 
-- BLE_MAC: Format XX:XX:XX:XX:XX:XX:XX , XX range [0-9a-fA-F]. 
 
-- SN: Device SN code, length 16 characters. 
+- wifimac: Format XX:XX:XX:XX:XX:XX, XX range [0-9a-fA-F]. 
+- blemac: Format XX:XX:XX:XX:XX:XX:XX , XX range [0-9a-fA-F]. 
+- sn: Device SN code, length 16 characters. 
+- deviceid: device ID code, length 7 characters. 
+- firmwareversion: firmware version number, length 0-32 characters.
+- firmwaretype:  0 mean standard firmware，1 mean aws firmware.
+- error: It is an object that will contain error codes and messages.
 
-- Device_ID: device ID code, length 7 characters. 
 
-- FirmwareVersion: firmware version number, length 0-32 characters.
 
 #### RESTART_DEV
 
@@ -1902,32 +2341,50 @@ API function:
 Reboot the device. 
 
 Data segment at reception: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x22</td>
-    <td> / </td>
-  </tr>
-</table>
+
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "RESTART_DEV",
+    "id": 34
+}
+```
+
+**Note:**
+
 
 - Data is equal to null
 
-Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x22</td>
-    <td> Result\n </td>
-  </tr>
-</table>
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure.
+
+Data segment at response: 
+
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": 0,
+    "id": 34
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 34
+}
+```
+
+**Note:**
+
+
+- result: 0x00 represent execution success; 0x01 represent execution fail.
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### RESET_DEV
 
@@ -1936,32 +2393,45 @@ API function:
 Reset the device.
 
 Data segment at reception: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x23</td>
-    <td> / </td>
-  </tr>
-</table>
 
-- Data is equal to null
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "RESET_DEV",
+    "id": 35
+}
+```
+
+
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x23</td>
-    <td> Result\n </td>
-  </tr>
-</table>
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure.
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": 0,
+    "id": 35
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 35
+}
+```
+
+**Note:**
+
+
+- result: 0x00 represent execution success; 0x01 represent execution fail.
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### SET_BLE_RSSI_FILTER
 
@@ -1970,32 +2440,53 @@ API function:
 Set the BLE_RSSI filter threshold. 
 
 Data segment at reception:
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x24</td>
-    <td> BLERssiFilter\n  </td>
-  </tr>
-</table>
 
-- BLERssiFilter: char type Range -100 ~ 0. Default value: -100 
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "SET_BLE_RSSI_FILTER",
+    "params": {
+        "blerssifilter": x
+    },
+    "id": 36
+}
+```
+
+**Note:**
+
+
+- blerssifilter:  Range -100 ~ 0. Default value: -100 
+
+
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x24</td>
-    <td> Result\n </td>
-  </tr>
-</table>
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure.
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": 0,
+    "id": 36
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 36
+}
+```
+
+**Note:**
+
+
+- result: 0x00 represent execution success; 0x01 represent execution fail.
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### GET_BLE_RSSI_FILTER
 
@@ -2004,35 +2495,48 @@ API Function:
 Get the BLE_RSSI filter threshold. 
 
 Data segment at reception:
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x25</td>
-    <td> / </td>
-  </tr>
-</table>
+
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "GET_BLE_RSSI_FILTER",
+    "id": 37
+}
+```
+
+
+
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x25</td>
-    <td rowspan="3"> Result\n </td>
-  </tr>
-  <tr>
-    <td> BLERssiFilter\n  </td>
-  </tr>
-</table>
 
-- Result: 0x00 represents execution success; 0x01 represents execution failure. 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "blerssifilter": x
+    },
+    "id": 37
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 37
+}
+```
 
-- BLERssiFilter: char type Range -100 ~ 0.
+**Note:**
+
+
+- blerssifilter: Range -100 ~ 0.
+- error: It is an object that will contain error codes and messages.
+
+
 
 #### GET_WiFi_AP_LIST 
 
@@ -2041,108 +2545,281 @@ API Function:
 Get the list of surrounding Wi-Fi AP information. 
 
 Data segment at reception:
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x26</td>
-    <td> / </td>
-  </tr>
-</table>
+
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "GET_WiFi_AP_LIST ",
+    "id": 38
+}
+```
+
+
 
 Data segment at response: 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x26</td>
-    <td> Result\n  </td>
-    <td> { 
-"WiFi_AP_LIST": 
 
-[ 
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "WIFI_AP_LIST": [
+            {"SSID":"XXXX","RSSI":XXX,"authMode":X},
+            {"SSID":"XXXX","RSSI":XXX,"authMode":X},
+            {"SSID":"XXXX","RSSI":XXX,"authMode":X},
+            ......
+        ]
+    },
+    "id": 38
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 38
+}
+```
 
-{"SSID": "XXXX","RSSI":XXX,"authMode": X}, 
+**Note:**
 
-{"SSID": "XXXX","RSSI":XXX, "authMode":X}, 
-
-{"SSID": "XXXX","RSSI": XXX, "authMode": X}, 
-
-…… 
-
-] 
-
-}   </td>
-  </tr>
-</table>
-
-- Result: 0x00 represents execution success; 0x01 represents execution failure. 
+- error: It is an object that will contain error codes and messages.
 
 - SSID: router name, in string form, valid length 0-32 
 
 - RSSI: Routing signal strength, numeric type, valid range -96 ~ 0. 
 
-- AUTH_MODE: Routing encryption method, numeric type, valid range 0 ~ 7. See the following table for the meaning.
+- authMode: Routing encryption method, numeric type, valid range 0 ~ 7. See the following table for the meaning.
 
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="1">Data</th>
-  </tr>
-
-  <tr>
-    <td rowspan="1">0</td>
-    <td> authenticate mode : open </td>
-  </tr>
-
-  <tr>
-    <td rowspan="1">1</td>
-    <td> authenticate mode : WEP </td>
-  </tr>
-
-  <tr>
-    <td rowspan="1">2</td>
-    <td> authenticate mode : WPA_PSK </td>
-  </tr>
-
-  <tr>
-    <td rowspan="1">3</td>
-    <td> authenticate mode : WPA2_PSK </td>
-  </tr>
-
-  <tr>
-    <td rowspan="1">4</td>
-    <td> authenticate mode : WPA_WPA2_PSK </td>
-  </tr>
-
-  <tr>
-    <td rowspan="1">5</td>
-    <td> authenticate mode : WPA2_ENTERPRISE </td>
-  </tr>
-
-  <tr>
-    <td rowspan="1">5</td>
-    <td> authenticate mode : WPA2_ENTERPRISE </td>
-  </tr>
+| num  | authMode                            |
+| ---- | ----------------------------------- |
+| 0    | authenticate mode : open            |
+| 1    | authenticate mode : WEP             |
+| 2    | authenticate mode : WPA_PSK         |
+| 3    | authenticate mode : WPA2_PSK        |
+| 4    | authenticate mode : WPA_WPA2_PSK    |
+| 5    | authenticate mode : WPA2_ENTERPRISE |
+| 6    | authenticate mode : WPA3_PS         |
+| 7    | authenticate mode : WPA2_WPA3_PSK   |
+| -    | default                             |
 
 
-  <tr>
-    <td rowspan="1">6</td>
-    <td> authenticate mode : WPA3_PS </td>
-  </tr>
 
-  <tr>
-    <td rowspan="1">7</td>
-    <td> authenticate mode : WPA2_WPA3_PSK  </td>
-  </tr>
+#### SET_MQTT_CLIENT_ID
 
-  <tr>
-    <td rowspan="1"> - </td>
-    <td> default   </td>
-  </tr>
+API Function: 
 
-</table>
+Get the BLE_RSSI filter threshold. 
+
+Data segment at reception:
+
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "SET_MQTT_CLIENT_ID",
+    "params": {
+        "mqttclientid": "x"
+    }
+    "id": 39
+}
+```
+
+**Note:**
+
+- mqttclientid: device mqtt client id, effective length is 1-128 bytes.
+
+
+
+
+Data segment at response: 
+
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": 0,
+    "id": 39
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 39
+}
+```
+
+**Note:**
+
+
+- result: 0x00 represent execution success; 0x01 represent execution fail.
+- error: It is an object that will contain error codes and messages.
+
+
+
+#### GET_MQTT_CLIENT_ID
+
+API Function: 
+
+Get the BLE_RSSI filter threshold. 
+
+Data segment at reception:
+
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "GET_MQTT_CLIENT_ID",
+    "id": 40
+}
+```
+
+
+
+
+Data segment at response: 
+
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "mqttclientid": "x"
+    },
+    "id": 40
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 40
+}
+```
+
+**Note:**
+
+
+- mqttclientid: device mqtt client id, effective length is 1-128 bytes.
+- error: It is an object that will contain error codes and messages.
+
+
+
+#### SET_BLE_SCAN_PARAMS
+
+API Function: 
+
+Get the BLE_RSSI filter threshold. 
+
+Data segment at reception:
+
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "SET_BLE_SCAN_PARAMS",
+    "params": {
+        "scantype": x,
+        "scaninterval": x,
+        "scanwindow": x
+    }
+    "id": 41
+}
+```
+
+**Note:**
+
+- scantype: 0 mean passive scan type, 1 mean active scan type.
+- scaninterval: The scanning interval is defined as the time from when the controller starts the last LE scan until subsequent LE scans begin. Range: 4-16384, default value: 80 (50ms), time=N * 0.625 m, time range: 2.5 ms~10240ms.
+- scanwindow: Scan window, duration of LE scan. LE_ Scan_ Window should be less than or equal to LE_ Scan_ Interval. Range: 4-16384, default value: 48 (30ms), time=N * 0.625 ms, time range: 2.5 ms~10240ms.
+
+
+
+
+Data segment at response: 
+
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": 0,
+    "id": 41
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 41
+}
+```
+
+**Note:**
+
+
+- result: 0x00 represent execution success; 0x01 represent execution fail.
+- error: It is an object that will contain error codes and messages.
+
+
+
+#### GET_BLE_SCAN_PARAMS
+
+API Function: 
+
+Get the BLE_RSSI filter threshold. 
+
+Data segment at reception:
+
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "GET_BLE_SCAN_PARAMS",
+    "id": 42
+}
+```
+
+
+
+
+Data segment at response: 
+
+```json
+// success reply
+{
+    "jsonrpc": "2.0",
+    "result": {
+       	"scantype": x,
+        "scaninterval": x,
+        "scanwindow": x
+    },
+    "id": 42
+}
+ 
+// fail reply
+{
+    "jsonrpc": "2.0",
+    "error": {
+        "code": x,
+        "message": "x"
+    },
+    "id": 42
+}
+```
+
+**Note:**
+
+
+- scantype: 0 mean passive scan type, 1 mean active scan type.
+- scaninterval: The scanning interval is defined as the time from when the controller starts the last LE scan until subsequent LE scans begin. Range: 4-16384, default value: 80 (50ms), time=N * 0.625 m, time range: 2.5 ms~10240ms.
+- scanwindow: Scan window, duration of LE scan. LE_ Scan_ Window should be less than or equal to LE_ Scan_ Interval. Range: 4-16384, default value: 48 (30ms), time=N * 0.625 ms, time range: 2.5 ms~10240ms.
+- error: It is an object that will contain error codes and messages.
