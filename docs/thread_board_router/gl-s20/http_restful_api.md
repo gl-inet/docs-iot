@@ -1,4 +1,4 @@
-# GL-S20 Http Restful API
+# GL-S20 Http RESTful API
 
 ## Overview
 
@@ -72,7 +72,7 @@
 
 ### Login and Use Steps
 
-#### Step1: Get encryption parameters by challenge method
+#### Step 1: Get encryption parameters by challenge method
 
 Call the **/ui/challenge** method to login. This method respond data for encryption, including: salt and nonce.
 
@@ -89,11 +89,11 @@ Call the **/ui/challenge** method to login. This method respond data for encrypt
 
 **Note**: The string used for encrypted transmission, which is randomly generated and valid for only **2000ms**. This means that steps 2-3 must be completed within 2000ms, otherwise the process has to restart from step 1.
 
-#### Step2: Generate hash values for login
+#### Step 2: Generate hash values for login
 
 * Get the hash string for password using hmac-sha256 with salt
 * Combine the default user name, the hash string of password and the nonce. Format as : **$(USERNAME):$(HASH):$(NONCE)**
-  * The default user name is : **root**
+* The default user name is : **root**
 * Get the MD5 hash string of the combine string
 
 **Simply JavaScript code demo**
@@ -106,7 +106,7 @@ const hs256 = CryptoJS.HmacSHA256(password, salt)
      const md5 = CryptoJS.MD5(str).toString() c
 ```
 
-#### Step3: Get sid by login
+#### Step 3: Get sid by login
 
 Call the **/ui/login** method, passing the username as the username parameter and the hash value as the hash parameter.
 
@@ -241,9 +241,6 @@ This method responds with the sid used for authentication and other apis should 
   | model             | string  | Device model                                                 |
   | code              | number  | 0 means success                                              |
   | err_msg           | string  | Only exists on error                                         |
-
-
-
 
 
 ## /OTBR
