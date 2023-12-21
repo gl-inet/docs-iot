@@ -1,4 +1,4 @@
-# GL-S20 BLE network configuration API
+# GL-S20 BLE Network Configuration API
 
 The GL-S20 includes two GATT services.
 
@@ -54,9 +54,13 @@ It consists of seven parts: header, version number, package length, scrolling co
 
   The valid range is 0-255, with a rolling count. The count is reset to zero on the initial connection, and the count value of the subsequent packet is larger than the previous one. (Package index to prevent package stuffing)
 
+  **Note: **When the first packet is sent, the count field should be filled with 0x01. After that just rolling count.
+
 - CRC-16
 
   After completing the packaging of header, version number, package length, scrolling count, command ID, data segments, CRC calculation can be performed.
+
+  **Note:** Fill the CRC-16 field with 0x0000 before CRC-16 calculate. Then fill the calculated result back into the CRC-16 field.
 
 - CmdID
 
@@ -64,7 +68,7 @@ It consists of seven parts: header, version number, package length, scrolling co
 
 - Data
 
-  Data segment.
+  Data segment. If not parameter exist, this field can be NULL.
 
 **Note:** The field of CmdID and Data should be encrypted by AES-128.
 
@@ -74,7 +78,7 @@ The detailed configuration is as follows:
 
 <table>
 	<tr>
-        <td colspan="9"><strong>CRC-16 cpnfiguration parameter</td>
+        <td colspan="2"><strong>CRC-16 cpnfiguration parameter</td>
 	</tr>
     <tr>
 	    <td>Name</td>
@@ -107,23 +111,38 @@ The detailed configuration is as follows:
 </table>
 
 
+
 ## AES-128 encryption
 
 AES128 symmetric encryption uses the **CBC method**, which first divides the plaintext into several small segments, and then performs XOR operations on each segment with the initial block or the previous ciphertext segment before encrypting it with the key.
 
-- Key
+<table>
+	<tr>
+        <td colspan="2"><strong>AES-128 encryption parameter</td>
+	</tr>
+    <tr>
+	    <td>model</td>
+        <td>CBC</td>
+	</tr>
+    <tr>
+	    <td>Width</td>
+        <td>128 bit</td>
+	</tr>
+    <tr>
+	    <td>IV</td>
+        <td>"0000000000000000"</td>
+	</tr>
+    <tr>
+	    <td>Fill the way</td>
+        <td>PKCS7Padding</td>
+	</tr>
+    <tr>
+	    <td>Key</td>
+        <td>"goodlife--00XXXX"<br /><strong>Note:</strong><br / >BLE MAC in uppercase of devices without the ':' symbol calculate by CRC-16, and then the result transform to in uppercase HEX string is  [XXXX].</td>
+	</tr>
+</table>
 
-  "goodlife--00XXXX"
 
-  BLE MAC in uppercase of devices without the ':' symbol calculate by CRC-16, and then the result transform to in uppercase HEX string is  [XXXX].
-
-- IV
-
-  "000000000000"
-
-- Filling method
-
-  PKCS7 Padding
 
 ## BLE API
 
@@ -131,35 +150,69 @@ The data of the BLE API needs to be filled in the **CmdID and Data** segments of
 
 - For command
 
-  <table>
-  	<tr>
-          <th>CmdID</th>
-          <th>Data</th>
-  	</tr>
-      <tr>
-  	    <td rowspan="2">0x00</td>
-          <td>Input parameter</td>
-  	</tr>
-      <tr>
-  	    <td><strong>Note: Please add '\n' in the end if input parameter exist.</td>
-  	</tr>
-  </table>
-
-
+  - Input parameter does not exist
+  
+    <table>
+    	<tr>
+            <td></th>
+            <td><strong>CmdID</th>
+            <td><strong>Data</th>
+    	</tr>
+        <tr>
+            <td><strong>description</th>
+    	    <td>CmdID</td>
+            <td>NULL</td>
+    	</tr>
+        <tr>
+            <td><strong>example</th>
+            <td>0x01</td>
+            <td>NULL</td>
+    	</tr>
+    </table>
+  
+  - Input parameter exist
+  
+    <table>
+    	<tr>
+            <td></th>
+            <td><strong>CmdID</th>
+            <td colspan="2"><strong>Data</th>
+    	</tr>
+        <tr>
+            <td><strong>description</th>
+    	    <td>CmdID</td>
+            <td>Input paramete</td>
+            <td>\n</td>
+    	</tr>
+        <tr>
+            <td><strong>example</th>
+            <td>0x08</td>
+            <td>(Json format transform to hex)</td>
+            <td>0x0a</td>
+    	</tr>
+    </table>
+  
+    
 
 - For respond
 
   <table>
   	<tr>
-          <th>CmdID</th>
-          <th>Data</th>
+          <td></th>
+          <td><strong>CmdID</th>
+          <td colspan="2"><strong>Data</th>
   	</tr>
       <tr>
-  	    <td rowspan="2">0x00</td>
-          <td>Output parameter</td>
+          <td><strong>description</td>
+  	    <td>CmdID</td>
+          <td>\n</td>
+          <td>Output paramete</td>
   	</tr>
       <tr>
-  	    <td><strong>Note: It will add '\n' before output parameter</td>
+          <td><strong>example</td>
+  	    <td>0x01</td>
+          <td>0x0a</td>
+          <td>(Json format transform to hex)</td>
   	</tr>
   </table>
 
