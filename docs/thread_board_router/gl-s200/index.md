@@ -12,47 +12,46 @@ GL-S200 is a firmware based on routers. It has many functions similar to our oth
 
 For other functions that are the same as routers, please refer to the router documentation.
 
-* [First time Setup](https://docs.gl-inet.com/router/en/4/tutorials/first_time_setup/)
+* [First time Setup](https://docs.gl-inet.com/router/en/4/faq/first_time_setup/)
 
 * Internet
-    * [Internet](https://docs.gl-inet.com/router/en/4/tutorials/internet/)
-    * [Ethernet](https://docs.gl-inet.com/router/en/4/tutorials/internet_ethernet/)
-    * [Repeater](https://docs.gl-inet.com/router/en/4/tutorials/internet_repeater/)
-    * [Cellular](https://docs.gl-inet.com/router/en/4/tutorials/internet_cellular/)
-    * [Tethering](https://docs.gl-inet.com/router/en/4/tutorials/internet_tethering/)
+    * [Internet](https://docs.gl-inet.com/router/en/4/interface_guide/internet/)
+    * [Ethernet](https://docs.gl-inet.com/router/en/4/interface_guide/internet_ethernet/)
+    * [Repeater](https://docs.gl-inet.com/router/en/4/interface_guide/internet_repeater/)
+    * [Cellular](https://docs.gl-inet.com/router/en/4/interface_guide/internet_cellular/)
+    * [Tethering](https://docs.gl-inet.com/router/en/4/interface_guide/internet_tethering/)
 
-* [Wireless](https://docs.gl-inet.com/router/en/4/tutorials/wireless/)
+* [Wireless](https://docs.gl-inet.com/router/en/4/interface_guide/wireless/)
 
-* [Clients](https://docs.gl-inet.com/router/en/4/tutorials/clients/)
+* [Clients](https://docs.gl-inet.com/router/en/4/interface_guide/clients/)
 
 * VPN
-    * [VPN Dashboard](https://docs.gl-inet.com/router/en/4/tutorials/vpn_dashboard/)
-    * [OpenVPN Client](https://docs.gl-inet.com/router/en/4/tutorials/openvpn_client/)
-    * [OpenVPN Server](https://docs.gl-inet.com/router/en/4/tutorials/openvpn_server/)
-    * [WireGuard Client](https://docs.gl-inet.com/router/en/4/tutorials/wireguard_client/)
-    * [WireGuard Server](https://docs.gl-inet.com/router/en/4/tutorials/wireguard_server/)
+    * [VPN Dashboard](https://docs.gl-inet.com/router/en/4/interface_guide/vpn_dashboard/)
+    * [OpenVPN Client](https://docs.gl-inet.com/router/en/4/interface_guide/openvpn_client/)
+    * [OpenVPN Server](https://docs.gl-inet.com/router/en/4/interface_guide/openvpn_server/)
+    * [WireGuard Client](https://docs.gl-inet.com/router/en/4/interface_guide/wireguard_client/)
+    * [WireGuard Server](https://docs.gl-inet.com/router/en/4/interface_guide/wireguard_server/)
 
 * Applications
-    * [Plug-ins](https://docs.gl-inet.com/router/en/4/tutorials/plugins/)
-    * [Dynamic DNS](https://docs.gl-inet.com/router/en/4/tutorials/ddns/)
-    * [GoodCloud](https://docs.gl-inet.com/router/en/4/tutorials/cloud/)
+    * [Plug-ins](https://docs.gl-inet.com/router/en/4/interface_guide/plugins/)
+    * [Dynamic DNS](https://docs.gl-inet.com/router/en/4/interface_guide/ddns/)
+    * [GoodCloud](https://docs.gl-inet.com/router/en/4/interface_guide/cloud/)
 
 * Network
-    * [Firewall](https://docs.gl-inet.com/router/en/4/tutorials/firewall/)
-    * [Multi-WAN](https://docs.gl-inet.com/router/en/4/tutorials/multiwan/)
-    * [LAN](https://docs.gl-inet.com/router/en/4/tutorials/lan/)
-    * [DNS](https://docs.gl-inet.com/router/en/4/tutorials/dns/)
-    * [Network Mode](https://docs.gl-inet.com/router/en/4/tutorials/network_mode/)
-    * [Mac Clone](https://docs.gl-inet.com/router/en/4/tutorials/mac_clone/)
-    * [IGMP Snooping](https://docs.gl-inet.com/router/en/4/tutorials/igmp_snooping/)
+    * [Firewall](https://docs.gl-inet.com/router/en/4/interface_guide/firewall/)
+    * [LAN](https://docs.gl-inet.com/router/en/4/interface_guide/lan/)
+    * [DNS](https://docs.gl-inet.com/router/en/4/interface_guide/dns/)
+    * [Network Mode](https://docs.gl-inet.com/router/en/4/interface_guide/network_mode/)
+    * [Mac Clone](https://docs.gl-inet.com/router/en/4/interface_guide/mac_address/)
+    * [IGMP Snooping](https://docs.gl-inet.com/router/en/4/interface_guide/igmp_snooping/)
 
-* [System](https://docs.gl-inet.com/en/4/tutorials/system/)
-    * [Overview](https://docs.gl-inet.com/en/4/tutorials/system/overview/)
-    * [Upgrade](https://docs.gl-inet.com/en/4/tutorials/system/upgrade/)
-    * [Scheduled Tasks](https://docs.gl-inet.com/en/4/tutorials/system/scheduled_tasks/)
-    * [Admin Password](https://docs.gl-inet.com/en/4/tutorials/system/admin_password/)
-    * [Time Zone](https://docs.gl-inet.com/en/4/tutorials/system/time_zone/)
-    * [Toggle Button Settings](https://docs.gl-inet.com/en/4/tutorials/system/toggle_button_settings/)
-    * [Log](https://docs.gl-inet.com/en/4/tutorials/system/log/)
-    * [Reset Firmware](https://docs.gl-inet.com/en/4/tutorials/system/reset_firmware/)
-    * [Advanced Settings](https://docs.gl-inet.com/en/4/tutorials/system/advanced_settings/)
+* System
+    * [Overview](https://docs.gl-inet.com/router/en/4/interface_guide/system_overview/)
+    * [Upgrade](https://docs.gl-inet.com/router/en/4/interface_guide/firmware_upgrade/)
+    * [Scheduled Tasks](https://docs.gl-inet.com/router/en/4/interface_guide/scheduled_tasks/)
+    * [Admin Password](https://docs.gl-inet.com/router/en/4/interface_guide/admin_password/)
+    * [Time Zone](https://docs.gl-inet.com/router/en/4/interface_guide/time_zone/)
+    * [Toggle Button Settings](https://docs.gl-inet.com/router/en/4/interface_guide/toggle_button_settings/)
+    * [Log](https://docs.gl-inet.com/router/en/4/interface_guide/log/)
+    * [Reset Firmware](https://docs.gl-inet.com/router/en/4/interface_guide/reset_firmware/)
+    * [Advanced Settings](https://docs.gl-inet.com/router/en/4/interface_guide/advanced_settings/)
