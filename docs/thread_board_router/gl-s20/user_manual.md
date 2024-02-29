@@ -118,7 +118,7 @@ It supports 2 ways to connect to the Internet as listed below:
 
 ##### **Ethernet**
 
-To establish an Ethernet connection, use an Ethernet cable to connect the WAN portoftheGL-S20 to the LAN port of an up stream  device.
+To establish an Ethernet connection, use an Ethernet cable to connect the WAN port of the GL-S20 to the LAN port of an up stream  device.
 
 On the left side of the Web Admin Panel  →  INTERNET → Internet → Ethernet card.
 
