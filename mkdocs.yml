@@ -100,4 +100,4 @@ nav:
       - Software: thread_board_router/gl-s200/software.md
   - IoT Dev Board:
     - Overview: iot_dev_board/index.md
-    - Using TDB on GL-S20: iot_dev_board/using_tdb_on_gl-s20.md
+    - Thread Development Board for GL-S20: iot_dev_board/using_tdb_on_gl-s20.md
