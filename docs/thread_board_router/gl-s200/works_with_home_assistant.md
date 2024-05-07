@@ -1,4 +1,4 @@
-# GL.iNET OpenThread Border Rotuer Work with Home Assistant
+# Works with Home Assistant
 
 ## Requirement
 
@@ -16,7 +16,7 @@ Login to the GL-S200 and open THREAD MESH page, Click `Enable` button to start a
 
 ![image-20240507120243944](https://static.gl-inet.com/docs/iot/en/tutorials/home_assistant/image-20240507120243944.png){class="glboxshadow"}
 
-This test uses is [Scenario 2](https://docs.gl-inet.com/iot/en/thread_board_router/gl-s200/openthread_border_router_codelabs/#scenario-2-indirect-connection), so we set the Backbone Router Interface to `eth0`.
+This test uses [Scenario 2](https://docs.gl-inet.com/iot/en/thread_board_router/gl-s200/openthread_border_router_codelabs/#scenario-2-indirect-connection), so we set the Backbone Router Interface to `eth0`.
 
 ![image-20240507120528255](https://static.gl-inet.com/docs/iot/en/tutorials/home_assistant/image-20240507120528255.png){class="glboxshadow"}
 
