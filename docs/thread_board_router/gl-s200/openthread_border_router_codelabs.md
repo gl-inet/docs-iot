@@ -524,27 +524,6 @@ rtt min/avg/max/mdev = 69.331/69.331/69.331/0.000 ms
 
       After completing the above steps, you can use Matter Switch BTN1 to control the on/off state of Matter Light.
 
-## Connect to Home Assistant
-
-Test environment
-
-   - Raspberrypi 4B, Debian GNU/Linux 11 (bullseye)
-   - GL-S200
-
-Refer to the documentation [https://www.home-assistant.io/installation/raspberrypi](https://www.home-assistant.io/installation/raspberrypi){target="_blank"} to install Home Assistant on Raspberrypi.
-
-The GL-S200 needs to upgrade [snapshot firmware](https://dl.gl-inet.com/?model=s200&type=snapshot){target="_blank"}.
-
-***Noted**: Due to Thread certification reasons, we will not release this feature in stable firmware in the short term.*
-
-Open the Home Assistant admin panel, Settings -> Devices&Services -> Thread -> CONFIGURE -> ADD AN OPENTHREAD BORDER ROUTER, input the URL `http://<ip>:8081` and submit. As shown in the following figure,  `192.168.90.182` is the IP assigned by the superior router. If your Home Assistant is connected directly to GL OTBR via WiFi/Ethernet, you can use `192.168.8.1`.
-
-<img src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/homeassistant-add-an-openthread-border-router.png" width=512><img src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/homeassistant-add-an-openthread-border-router-2.png" width=512>
-
-Now, The GL.iNet OTBR is successfully added to the Preferred network.
-
-<img src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/homeassistant-add-an-openthread-border-router-3.png" width=512><img src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/homeassistant-add-an-openthread-border-router-4.png" width=512>
-
 ---
 
 Still have questions? Visit our [Community Forum](https://forum.gl-inet.com){target="_blank"}.
