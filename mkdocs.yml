@@ -99,6 +99,8 @@ nav:
       - OpenThread Border Router Codelabs: thread_board_router/gl-s200/openthread_border_router_codelabs.md
       - Software: thread_board_router/gl-s200/software.md
       - Works with Home Assistant: thread_board_router/gl-s200/works_with_home_assistant.md
+      - OTBR HTTP API: thread_board_router/gl-s200/otbr_http_api.md
+      - OTBR MGMT UBUS API: thread_board_router/gl-s200/otbr_mgmt_ubus_api.md
   - IoT Dev Board:
     - Overview: iot_dev_board/index.md
     - Thread Development Board for GL-S20: iot_dev_board/using_tdb_on_gl-s20.md
