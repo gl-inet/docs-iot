@@ -97,3 +97,7 @@ If you have connect the S10 UART to the PC, using command `make monitor`, it wil
 In the MQTT broker, You can get the messages published by S10 like that.
 
 ![messages published result](https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/messages_published_result.png){class="glboxshadow"}
+
+---
+
+Still have questions? Visit our [Community Forum](https://forum.gl-inet.com){target="_blank"}.
