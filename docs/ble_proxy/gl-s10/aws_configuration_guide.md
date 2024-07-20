@@ -2,38 +2,37 @@
 
 ## Introduction
 
-In order to better fit the actual use habits of our users, we have added a new access to AWS IoT on the basis of the standard version of the firmware function. Compared with the standard shipping firmware, the firmware only changes the reporting cloud platform, and other functions are unchanged.
+In addition to our standard firmware, we have released a dedicated firmware version for AWS IoT to meet the needs of our users. The AWS IoT firmware is built upon the standard firmware and only differs in the cloud platform used for reporting data; all other functions remain unchanged.
 
-## Prepare
+## Preparation
 
-### Determine the firmware type
+### Determining the Firmware Type
 
-According to the device information bar of the home page of the mobile APP configuration software supporting GL-S10, the device marked with the word AWS is AWS IoT sub-firmware.
+To identify if your GL-S10 is running the AWS IoT firmware, navigate to the Manage Device page of the [GL-S10 Tool App](https://www.gl-inet.com/app/#download-app-s10). If the model has **AWS** at the end, it indicates that the device is using the AWS IoT firmware.
 
 ![gl-s10 firmware type](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/firmware_type.png){class="glboxshadow"}
 
-### Device networking configuration
+### Device Network Configuration
 
-When the GL-S10 is configured with WiFi and a network cable inserted at the same time, the priority network cable is used by default. If you need to connect the network in wireless mode, remove the network cable first.
+When the GL-S10 is configured with both Wi-Fi and an Ethernet cable, it will prioritize the wired connection by default. If you need to connect wirelessly, remove the Ethernet cable first.
 
-*Ethernet networking*
+* Ethernet Networking
 
-Connect the device directly to the WAN port of the GL-S10 through a network cable. Wait until the network indicator is on, indicating that the device is connected to the network.
+    Connect the device directly to the WAN port of the GL-S10 using an Ethernet cable. Wait until the network indicator light is on, indicating that the device is connected to the network.
 
-![network led status](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/network_led_status.png){class="glboxshadow gl-50-desktop"}
+    ![network led status](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/network_led_status.png){class="glboxshadow gl-50-desktop"}
 
-*Wifi networking*
+* WiFi Networking
 
-Open the GL-S10 APP home page, find the WiFi option box, and click
+    Open the GL-S10 Tool App, locate the WiFi option, and click on it.
 
-![WiFi setting entrance](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/wifi_setting_entrance.png){class="glboxshadow"}
+    ![WiFi setting entrance](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/wifi_setting_entrance.png){class="glboxshadow"}
 
-Go to the Connect WiFi page and select the WiFi you want to connect from the list. If there is no WiFi in the list, click Scan WiFi and search the surrounding 
-WiFi again.
+    On the Connect Wi-Fi page, select the desired Wi-Fi network from the list. If no networks are listed, click "Scan Wi-Fi" to search for nearby networks again.
 
-![WiFi setting](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/wifi_setting.png){class="glboxshadow gl-50-desktop"}
+    ![WiFi setting](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/wifi_setting.png){class="glboxshadow gl-50-desktop"}
 
-After the configuration is complete, restart the GL-S10. If the network indicator blinks, the device is connected to the network.
+After configuring the network, restart the GL-S10. If the network indicator blinks, the device is successfully connected to the network.
 
 ## OTA to AWS IoT sub-firmware
 
