@@ -13,13 +13,13 @@ GL.iNet OTBR is factory-configured with Scenario 1 by default. Users need to con
 
 PC/mobile phone connects OTBR directly.
 
-![direct connection](https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/direct_connection.png){class="glboxshadow"}
+![direct connection](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s200/openthread_border_router_codelabs/direct_connection.png){class="glboxshadow"}
 
 ### Scenario 2, Indirect Connection
 
 PC/mobile phone and OTBR connect to the same upstream WiFi AP.
 
-![indirect connection](https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/indirect_connection.png){class="glboxshadow"}
+![indirect connection](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s200/openthread_border_router_codelabs/indirect_connection.png){class="glboxshadow"}
 
 ## Bi-directional IPv6 connectivity and DNS-based service discovery
 
@@ -29,7 +29,7 @@ This experiment uses the following topology diagram
 - NRF52840 USB dongle（[ot-nrf52840 - 2023-02-15-d88076e](https://github.com/openthread/ot-nrf528xx/commit/c00d1812d3494c6a2f4f074685341e6e30195e9d){target="_blank"}）
 - ot-br-posix - 2022-11-08-d910392
 
-![direct connection](https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/direct_connection.png){class="glboxshadow"}
+![direct connection](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s200/openthread_border_router_codelabs/direct_connection.png){class="glboxshadow"}
 
 ### Step 1: Create a Thread network
 
@@ -302,7 +302,7 @@ Done
 
 The topology of this experiment is shown in the following diagram, where the Matter Controller runs on a PC, and the Matter Light and Matter Light Switch both use the Silicon Labs EFR32MG24 Breakout Board REV 1.1 as the Matter device.
 
-![matter over thread](https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/matter_over_thread.png){class="glboxshadow"}
+![matter over thread](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s200/openthread_border_router_codelabs/matter_over_thread.png){class="glboxshadow"}
 
 ### Step 1: Create a Thread network.
 
