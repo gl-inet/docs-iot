@@ -6,13 +6,13 @@ In order to better fit the actual use habits of our users, we have added a new a
 
 ## Prepare
 
-### 1. Determine the firmware type
+### Determine the firmware type
 
 According to the device information bar of the home page of the mobile APP configuration software supporting GL-S10, the device marked with the word AWS is AWS IoT sub-firmware.
 
 ![gl-s10 firmware type](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/firmware_type.png){class="glboxshadow"}
 
-### 2. Device networking configuration
+### Device networking configuration
 
 When the GL-S10 is configured with WiFi and a network cable inserted at the same time, the priority network cable is used by default. If you need to connect the network in wireless mode, remove the network cable first.
 
@@ -35,7 +35,7 @@ WiFi again.
 
 After the configuration is complete, restart the GL-S10. If the network indicator blinks, the device is connected to the network.
 
-### 3. OTA to AWS IoT sub-firmware
+## OTA to AWS IoT sub-firmware
 
 If you find that your device is not AWS IoT firmware, then you need to upgrade the firmware to an AWS feature version.
 
@@ -55,41 +55,41 @@ After pressing Upgrade OTA, the APP will enter the waiting state and exit the pa
 
 ![upgrade loading](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/upgrade_loading.png){class="glboxshadow gl-60-desktop"}
 
-### 4. AWS IoT Core cloud platform configuration
+## AWS IoT Core cloud platform configuration
 
 Before configuring, make sure your account has **aws iot core** services, see AWS [Official document](https://docs.aws.amazon.com/iot/latest/developerguide/setting-up.html){target="_blank"}
 
 ***Create an item***
 
-#### 4.1 Log into the AWS administrative console and search for IoT Core
+### Log into the AWS administrative console and search for IoT Core
 
 ![iot core entrance](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/iot_core_entrance.png){class="glboxshadow"}
 
-#### 4.2 Manage->Things, click Create things
+### Manage->Things, click Create things
 
 ![create things](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/create_things.png){class="glboxshadow"}
 
-#### 4.3 Select Create Individual Item and click Next
+### Select Create Individual Item and click Next
 
 ![create single things](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/create_single_things.png){class="glboxshadow"}
 
-#### 4.4 Fill in an item name and click Next
+### Fill in an item name and click Next
 
 ![thing name setting](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/thing_name_setting.png){class="glboxshadow"}
 
-#### 4.5 Select Automatically generate a new certificate (you can use *my certificate* if you already have one) and click Next
+### Select Automatically generate a new certificate (you can use *my certificate* if you already have one) and click Next
 
 ![device certificate](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/device_certificate.png){class="glboxshadow"}
 
-#### 4.6 Click Create policy
+### Click Create policy
 
 ![create policy](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/create_policy.png){class="glboxshadow"}
 
-#### 4.7 Enter a policy name, Click JSON
+### Enter a policy name, Click JSON
 
 ![policy name](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/policy_name.png){class="glboxshadow"}
 
-#### 4.8 Add the following fields to the Policy document
+### Add the following fields to the Policy document
 
 ```json
 {
@@ -124,29 +124,33 @@ Before configuring, make sure your account has **aws iot core** services, see AW
 }
 ```
 
-***\*NOTE\****：**"arn:aws:iot:ap-southeast-1:886651388694:client/E8DB841E2B0E"**,after the **client/** client id field is the terminal equipment, Only mqtt clients configured with this client id can connect. **”123456789012“** replace with your aws client ID.
+!!! Note
 
-#### 4.9 Click Create
+    **"arn:aws:iot:ap-southeast-1:886651388694:client/E8DB841E2B0E"**, after the **client/** client ID field is the terminal equipment, only mqtt clients configured with this client ID can connect. **”123456789012“** replace with your aws client ID.
+
+### Click Create
 
 ![policy create apply](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/policy_create_apply.png){class="glboxshadow"}
 
-#### 4.10 Go back to the Attach policy to certificates page, check the policy you just created, and click Create thing
+### Go back to the Attach policy to certificates page, check the policy you just created, and click Create thing
 
 ![attach policy to certificate](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/attach_policy_to_certificate.png){class="glboxshadow"}
 
-#### 4.11 In the window that pops up, click Download Device Certificate, download public key file, download private key file, and download Root CA Certificate (RSA2048).
+### In the window that pops up, click Download Device Certificate, download public key file, download private key file, and download Root CA Certificate (RSA2048).
 
 ![download certificate](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/download_certificate.png){class="glboxshadow"}
 
 The relevant certificates must be properly stored and used by terminals when connecting to AWS.
 
-#### 4.12 You can see the information about the item you just created on the item page
+### You can see the information about the item you just created on the item page
 
 ![thing info show](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/thing_info_show.png){class="glboxshadow"}
 
 ## Update the security certificate to GL-S10
 
-(Note: Before starting, please ensure that the device is connected to the network. If it is not connected, please connect the device to the network according to the section on Device networking configuration.) 
+!!! Note
+
+    Before starting, please ensure that the device is connected to the network. If it is not connected, please connect the device to the network according to the section on Device networking configuration.
 
 Open the GL-S10 APP homepage to find the MQTT Server option box and click
 
@@ -156,8 +160,11 @@ Go to the MQTT Configuration page and click Update Certificare
 
 ![gl-s10 mqtt cetificate setting](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/gl-s10_mqtt_cetificate_setting.png){class="glboxshadow"}
 
-To Update the MQTT Configuration page, fill in the Url: http://134.175.4.252/s10/cert/mqtt_aws/, when the Url to determine good click Done after began to Update the certificate.
-(Note: This is the matching certificate of our demo demonstration, if you have your own certificate, please name the three files of the certificate: **ca.crt** **client.crt** **client.key**. They are root certificate, client certificate, client key, after rename, please use a folder to put on your http service, here I used a folder named mqtt_aws)
+To Update the MQTT Configuration page, fill in the Url: `http://134.175.4.252/s10/cert/mqtt_aws/`, when the Url to determine good click Done after began to Update the certificate.
+
+!!! Note
+
+    This is the matching certificate of our demo demonstration, if you have your own certificate, please name the three files of the certificate: **ca.crt**, **client.crt** and **client.key**. They are root certificate, client certificate, client key, after rename, please use a folder to put on your http service, here I used a folder named **mqtt_aws**.
 
 The update will return to the MQTT Configuration page.
 
@@ -177,7 +184,7 @@ First we use APP check about the theme of the report data, please remember this 
 
 ![gl-s10 report topic setting](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/gl-s10_report_topic_setting.png){class="glboxshadow"}
 
-In the AWS IoT page click test -> MQTT test client -> subscribe topics -> subscribe to **GL-IoT/dataTopic/E8DB841E2B0E** this topic
+In the AWS IoT page click Test -> MQTT test client -> subscribe topics -> subscribe to **GL-IoT/dataTopic/E8DB841E2B0E** this topic
 
 ![aws subscribe topic setting](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/gl-s10_aws_configuration/aws_subscribe_topic_setting.png){class="glboxshadow"}
 
