@@ -120,7 +120,7 @@ In your project folder, using command `idf.py build`. It will compile and build 
 
 GL-S10 using UART to flash the firmware, and also using this UART to output the system log. Connect the UART in S10 to the PC by a USB-TTL converter. The PC will find a new usb device like `/dev/ttyUSB0`. 
 
-![gl-s10 pcb](https://static.gl-inet.com/docs/router/en/3/specification/gl-s10/gl-s10-pinout.jpg){class="glboxshadow"}
+![gl-s10 pcb](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/hardware/gl-s10-pinout.jpg){class="glboxshadow"}
 
 After connect S10 UART to the PC, using command `make flash` or `make flash monitor` to flash the firmware. When shows like that, it means the PC is waiting S10 to get into "download mode".
 

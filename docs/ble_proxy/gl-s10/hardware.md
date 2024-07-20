@@ -47,4 +47,4 @@
 
 ## PCB Pinout
 
-![gl-s10 pinout](https://static.gl-inet.com/docs/router/en/3/specification/gl-s10/gl-s10-pinout.jpg){class="glboxshadow"}
+![gl-s10 pinout](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/hardware/gl-s10-pinout.jpg){class="glboxshadow"}
