@@ -65,7 +65,7 @@ The GL-S10 is ideally deployed in warehouses, shopping malls, airports, exhibiti
 ### Device installation
 
 Take out the product from its package and attach the external antenna as shown below. 
-<center><img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic1.png"></center>
+<center><img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic1.png"></center>
 <center>Figure 1</center>
 
 **Note:** 
@@ -95,7 +95,7 @@ BLE Beacon is an optional accessory. User can purchase gateway kit with beacon f
 
 After turning on the BLE switch at the bottom of the beacon, the beacon will broadcast BLE signals at an interval of 300ms. Select the filter function of GL-S10 and identify the devices by the BLE MAC address printed at the bottom of the beacon. 
 
-<center><img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic2.png"></center>
+<center><img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic2.png"></center>
 <center>Figure 2</center>
 
 ### APP installation
@@ -103,7 +103,7 @@ After turning on the BLE switch at the bottom of the beacon, the beacon will bro
 Download and install GL-S10 Tool App on your phone, turn on the Bluetooth function of your phone (For Android phone users, please turn on Bluetooth and GPS), and follow the instructions in this user manual to configure your GL-S10.
 
 <figure>
-  <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic3.png", width = 300>
+  <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic3.png", width = 300>
   <figcaption>Figure 3</figcaption>
 </figure>
 
@@ -120,13 +120,13 @@ Start the app and select the app language, you can choose between English and Si
 <div class="flex-container s10-user-manual">
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic4.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic4.png", width = 300>
       <figcaption>Figure 4</figcaption>
     </figure>
   </div>
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic5.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic5.png", width = 300>
       <figcaption>Figure 5</figcaption>
     </figure>
   </div>
@@ -141,13 +141,13 @@ Click the "scan" button in the upper right corner. The scanning result automatic
 <div class="flex-container s10-user-manual">
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic6.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic6.png", width = 300>
       <figcaption>Figure 6</figcaption>
     </figure>
   </div>
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic7.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic7.png", width = 300>
       <figcaption>Figure 7</figcaption>
     </figure>
   </div>
@@ -156,7 +156,7 @@ Click the "scan" button in the upper right corner. The scanning result automatic
 ### Home page
 
 Select a GL-S10 device and enter the "Manage Device" interface as shown below 
-<center><img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic8.png", width = 300></center>
+<center><img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic8.png", width = 300></center>
 <center>Figure 8</center>
 
 ### Device Info
@@ -166,13 +166,13 @@ You can click to view the details of the device as shown below
 <div class="flex-container s10-user-manual">
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic9.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic9.png", width = 300>
       <figcaption>Figure 9</figcaption>
     </figure>
   </div>
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic10.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic10.png", width = 300>
       <figcaption>Figure 10</figcaption>
     </figure>
   </div>
@@ -185,13 +185,13 @@ To setup uplink connection using a Protocal on the WAN port, click "Manage Devic
 <div class="flex-container s10-user-manual">
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic11.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic11.png", width = 300>
       <figcaption>Figure 11</figcaption>
     </figure>
   </div>
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic12.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic12.png", width = 300>
       <figcaption>Figure 12</figcaption>
     </figure>
   </div>
@@ -203,19 +203,19 @@ To connect to a primary gateway, click "Manage Device" > "WiFi" > "Connect WiFi"
 <div class="flex-container s10-user-manual">
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic13.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic13.png", width = 300>
       <figcaption>Figure 13</figcaption>
     </figure>
   </div>
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic14.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic14.png", width = 300>
       <figcaption>Figure 14</figcaption>
     </figure>
   </div>
 </div>
 
-<center><img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic15.png", width = 300></center>
+<center><img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic15.png", width = 300></center>
 <center>Figure 15</center>
 
 ### MQTT Configuration
@@ -225,13 +225,13 @@ To configure MQTT, click "Manage Device" > "MQTT Server". Enter the address of y
 <div class="flex-container s10-user-manual">
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic16.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic16.png", width = 300>
       <figcaption>Figure 16</figcaption>
     </figure>
   </div>
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic17.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic17.png", width = 300>
       <figcaption>Figure 17</figcaption>
     </figure>
   </div>
@@ -260,13 +260,13 @@ Click "Add New Rule" or "Remove" to edit the filter settings and click "Done" on
 <div class="flex-container s10-user-manual">
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic18.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic18.png", width = 300>
       <figcaption>Figure 18</figcaption>
     </figure>
   </div>
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic19.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic19.png", width = 300>
       <figcaption>Figure 19</figcaption>
     </figure>
   </div>
@@ -275,13 +275,13 @@ Click "Add New Rule" or "Remove" to edit the filter settings and click "Done" on
 <div class="flex-container s10-user-manual">
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic20.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic20.png", width = 300>
       <figcaption>Figure 20</figcaption>
     </figure>
   </div>
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic21.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic21.png", width = 300>
       <figcaption>Figure 21</figcaption>
     </figure>
   </div>
@@ -294,13 +294,13 @@ Click "Manage Device" > "Date & Time". Select your time zone, fill in the SNTP s
 <div class="flex-container s10-user-manual">
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic22.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic22.png", width = 300>
       <figcaption>Figure 22</figcaption>
     </figure>
   </div>
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic23.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic23.png", width = 300>
       <figcaption>Figure 23</figcaption>
     </figure>
   </div>
@@ -313,13 +313,13 @@ Click "Manage Device" > "Auto Reboot". You can schedule a time to reboot GL-S10 
 <div class="flex-container s10-user-manual">
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic24.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic24.png", width = 300>
       <figcaption>Figure 24</figcaption>
     </figure>
   </div>
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic25.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic25.png", width = 300>
       <figcaption>Figure 25</figcaption>
     </figure>
   </div>
@@ -334,13 +334,13 @@ Please keep your GL-S10 connected to the internet and do NOT turn off the power 
 <div class="flex-container s10-user-manual">
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic26.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic26.png", width = 300>
       <figcaption>Figure 26</figcaption>
     </figure>
   </div>
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic27.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic27.png", width = 300>
       <figcaption>Figure 27</figcaption>
     </figure>
   </div>
@@ -349,13 +349,13 @@ Please keep your GL-S10 connected to the internet and do NOT turn off the power 
 <div class="flex-container s10-user-manual">
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic28.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic28.png", width = 300>
       <figcaption>Figure 28</figcaption>
     </figure>
   </div>
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic29.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic29.png", width = 300>
       <figcaption>Figure 29</figcaption>
     </figure>
   </div>
@@ -365,14 +365,14 @@ Please keep your GL-S10 connected to the internet and do NOT turn off the power 
 
 Click "Manage Device" > "Reboot", and a pop-up window will ask for a reboot confirmation. The device will reboot after clicking "Sure". After rebooting, the device will automatically enter Scanning mode, and your app will not be able to search for GL-S10.
 
-<center><img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic30.png", width = 300></center>
+<center><img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic30.png", width = 300></center>
 <center>Figure 30</center>
 
 ### Reset device 
 
 Click "Manage Device" > "Reset". A pop-up window will ask for a reset confirmation. When you click "Sure", all device configurations will be restored to the factory default settings. After resetting the device, it will automatically enter Scanning mode, and your app will be able to search for GL-S10.
 
-<center><img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic31.png", width = 300></center>
+<center><img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic31.png", width = 300></center>
 <center>Figure 31</center>
 
 ## MQTT Configuration
@@ -396,13 +396,13 @@ Here we are using the test MQTT server: iot-s10-test.gl-inet.cn. And the Port is
 <div class="flex-container s10-user-manual">
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic32.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic32.png", width = 300>
       <figcaption>Figure 32</figcaption>
     </figure>
   </div>
   <div>
     <figure>
-      <img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic33.png", width = 300>
+      <img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic33.png", width = 300>
       <figcaption>Figure 33</figcaption>
     </figure>
   </div>
@@ -410,10 +410,10 @@ Here we are using the test MQTT server: iot-s10-test.gl-inet.cn. And the Port is
 
 On the windows version of the MQTT X client, start the MQTT X software and add a new connection. To configure the beta cloud platform, enter the URL address iot-s10-test.gl-inet.cn and port 1884. Click the upper right corner of the page to connect. A successful connection is shown below in Figure 33. 
 
-<center><img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic34.png", width = 800></center>
+<center><img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic34.png", width = 800></center>
 <center>Figure 34</center>
 <br>
-<center><img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic35.png", width = 800></center>
+<center><img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic35.png", width = 800></center>
 <center>Figure 35</center>
 
 ### MQTT Message Editing and Communicating with S10
@@ -428,7 +428,7 @@ Below is a demo of how to set data (SET_DEV_MESSAGE) and obtain data from GL-S10
 
 **Step 1:**
 Subscribe to the GL-IoT/rspTopic/E8DB841E2B1E topic using MQTT X.   
-<center><img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic36.png", width = 800></center>
+<center><img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic36.png", width = 800></center>
 <center>Figure 36</center>
 
 **Step 2:**
@@ -465,12 +465,12 @@ Here we use "Test" for the SSID  and "123456" for the user passward.
 - USERNAME: User name, length 0 - 32 characters.
 - USERPWD: User password, length 0 - 64 characters.
 
-<center><img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic37.png", width = 800></center>
+<center><img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic37.png", width = 800></center>
 <center>Figure 37</center>
 
 Set data successfully:
 
-<center><img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic38.png", width = 800></center>
+<center><img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic38.png", width = 800></center>
 <center>Figure 38</center>
 
 **Step 3:**
@@ -497,11 +497,11 @@ API Function: Get the SSID and PWD of WIFI or SSID, user name, user password of 
 - When type is equal to 0, get SSID, PASSWORD.
 - When type is equal to 1, get SSID, USERNAME, USERPASSWORD 
 
-<center><img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic39.png", width = 800></center>
+<center><img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic39.png", width = 800></center>
 <center>Figure 39</center>
 
 Get data successfully:
-<center><img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic40.png", width = 800></center>
+<center><img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic40.png", width = 800></center>
 <center>Figure 40</center>
 
 ## BLE Data Uploading
@@ -517,10 +517,10 @@ As shown above, the JSON fields have the following definitions
 - ts : receive timestamp
 
 If you purchased a gateway kit with a BLE Beacon and adds filtering rules for the beacon BLE MAC address according to section 3.9, the JSON information viewed here is the BLE information broadcast by the beacon. The beacons are placed at different distances from the GL-S10 gateway (distance up to the decimeter level), and the value of rssi (broadcast source signal strength) may fluctuate based on distance. 
-<center><img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic41.png", width = 800></center>
+<center><img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic41.png", width = 800></center>
 <center>Figure 41</center>
 
-<center><img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic42.png", width = 800></center>
+<center><img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/Pic42.png", width = 800></center>
 <center>Figure 42</center>
 
 ## GL-S10 Config API
