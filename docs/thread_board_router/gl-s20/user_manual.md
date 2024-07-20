@@ -149,7 +149,7 @@ You can change Wi-Fi settings on the left side of Web Admin Panel →  INTERNET 
 
 3. Enter the network passwords.
 
-    ![repeater join network](https://static.gl-inet.com/docs/router/en/4/tutorials/internet_repeater/repeater_join_network.png){class="glboxshadow"}
+    ![repeater join network](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/repeater_join_network.png){class="glboxshadow"}
 
 4. Click the **Apply** button.
 
@@ -161,7 +161,7 @@ You can change Wi-Fi settings on the left side of Web Admin Panel →  INTERNET 
 
 On the Wi-Fi Join Card, there are 2 additional settings you can use.
 
-![repeater join network advanced setting](https://static.gl-inet.com/docs/router/en/4/tutorials/internet_repeater/repeater_join_network_advanced_setting.png){class="glboxshadow"}
+![repeater join network advanced setting](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/repeater_join_network_advanced_setting.png){class="glboxshadow"}
 
 - **Lock BSSID**: If this option is enabled, the device will only connect to the Access Point (AP) corresponding to the BSSID you selected when switching to a network using this SSID.
 - **Manually set static IP**: If this option is enabled, you can configure the network information such as IP address, Gateway, Netmask manually.
@@ -195,7 +195,7 @@ If the SSID is not in the Available Networks list, or the network you want to co
 - None: Select it if the network doesn't require a password.
 - WPA/WPA2/WPA3: Select it if the network requires a password. Enter the password below.
 
-![join other network](https://static.gl-inet.com/docs/router/en/4/tutorials/internet_repeater/repeater_join_other_network.png){class="glboxshadow"}
+![join other network](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/repeater_join_other_network.png){class="glboxshadow"}
 
 Finally, Click **Apply**.
 
@@ -421,7 +421,7 @@ Https certificates can be passed in two ways: urls and files
 
 On the left side of the Web Admin Panel → SYSTEM → Admin Password
 
-![admin password](https://static.gl-inet.com/docs/router/en/4/tutorials/admin_password/admin_password.png){class="glboxshadow"}
+![admin password](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/admin_password.png){class="glboxshadow"}
 
 To change the password for loggining into the Web Admin Panel, you will need to enter your current password.
 
