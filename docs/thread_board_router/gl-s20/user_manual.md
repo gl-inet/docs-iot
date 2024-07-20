@@ -36,7 +36,7 @@ FreeRTOS, Thread 1.3 / BLE 5.3, PoE Powered, Wi-Fi / ETH failover
 
 ### **Package list**
 
-![s20doc](https://static.gl-inet.com/docs/iot/en/web/s20-doc.jpg){class="glboxshadow"}
+![s20doc](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/s20-doc.jpg){class="glboxshadow"}
 
 | Object                                 | Quantity |
 | -------------------------------------- | -------- |
@@ -51,7 +51,7 @@ FreeRTOS, Thread 1.3 / BLE 5.3, PoE Powered, Wi-Fi / ETH failover
 
 GL-S20 has two buttons, IoT and Reset.
 
-![s20btn](https://static.gl-inet.com/docs/iot/en/web/S20BTN.jpg){class="glboxshadow"}
+![s20btn](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/S20BTN.jpg){class="glboxshadow"}
 
 ### **IoT Button**
 
@@ -73,7 +73,7 @@ The IoT button allows you to perform these actions:
 
 ### **LED description**
 
-![S20led](https://static.gl-inet.com/docs/iot/en/web/S20LED.jpg){class="glboxshadow"}
+![S20led](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/S20LED.jpg){class="glboxshadow"}
 
 | Device Status              | Power LED            | IoT LED              | Network LED          |
 | -------------------------- | -------------------- | -------------------- | -------------------- |
@@ -122,7 +122,7 @@ To establish an Ethernet connection, use an Ethernet cable to connect the WAN po
 
 On the left side of the Web Admin Panel  →  INTERNET → Internet → Ethernet card.
 
-![leftlist](https://static.gl-inet.com/docs/iot/en/web/leftinternet.png){class="glboxshadow"}
+![leftlist](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/leftinternet.png){class="glboxshadow"}
 
 ##### **Protocol**
 
@@ -141,11 +141,11 @@ You can change Wi-Fi settings on the left side of Web Admin Panel →  INTERNET 
 
 1. Click **Connect**.
 
-    ![repeater](https://static.gl-inet.com/docs/iot/en/web/wifilist.png){class="glboxshadow"}
+    ![repeater](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/wifilist.png){class="glboxshadow"}
 
 2. Select a Network you want to connect from the pop-up window. (If the desired network is not listed, click [Join Other Network ](#join-other-network)at the top.)
 
-    ![repeater join wlan](https://static.gl-inet.com/docs/iot/en/web/wifi.png){class="glboxshadow"}
+    ![repeater join wlan](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/wifi.png){class="glboxshadow"}
 
 3. Enter the network passwords.
 
@@ -155,7 +155,7 @@ You can change Wi-Fi settings on the left side of Web Admin Panel →  INTERNET 
 
 5. Wait for a moment, if you have successfully connected to the network, you will see the screen below:
 
-    ![repeater](https://static.gl-inet.com/docs/iot/en/web/repeater_connected.png){class="glboxshadow"}
+    ![repeater](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/repeater_connected.png){class="glboxshadow"}
 
 ##### **Wi-Fi Advanced Settings**
 
@@ -170,11 +170,11 @@ On the Wi-Fi Join Card, there are 2 additional settings you can use.
 
 To manage known networks, click **Switch Network**.
 
-![repeater connected](https://static.gl-inet.com/docs/iot/en/web/repeater_connected.png){class="glboxshadow"}
+![repeater connected](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/repeater_connected.png){class="glboxshadow"}
 
 Or click **Connect**.
 
-![repeater](https://static.gl-inet.com/docs/iot/en/web/wifilist.png){class="glboxshadow"}
+![repeater](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/wifilist.png){class="glboxshadow"}
 
 On the **Known Network** section
 
@@ -182,13 +182,13 @@ On the **Known Network** section
 
 \-     To configure the network: Click the settings icon. 
 
-![repeater known network](https://static.gl-inet.com/docs/iot/en/web/repeater_known_networks.png){class="glboxshadow"}
+![repeater known network](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/repeater_known_networks.png){class="glboxshadow"}
 
 ##### **Join Other Network**
 
 If the SSID is not in the Available Networks list, or the network you want to connect is hidden, you can click **Join Other Network**.
 
-![join other network](https://static.gl-inet.com/docs/iot/en/web/join_other_network.png){class="glboxshadow gl-60-desktop"}
+![join other network](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/join_other_network.png){class="glboxshadow gl-60-desktop"}
 
 - SSID: Enter the network's SSID.
 - Security: Select one of these options.
@@ -203,7 +203,7 @@ Finally, Click **Apply**.
 
 In the following cases, the device will try to connect to Wi-Fi every once in a while. You can turn off the reconnection manually, and for SSID/password errors, please [delete it in Known Network](#Manage-known-networks). 
 
-![Reconnetction](https://static.gl-inet.com/docs/iot/en/web/Reconnection.png){class="glboxshadow"}
+![Reconnetction](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/Reconnection.png){class="glboxshadow"}
 
 1. The wrong SSID/password was entered during the process of Wi-Fi, after the first failed connection.
 2. After connecting to the Wi-Fi of the Primary router, the device moves out of the signal range of the Primary router.
@@ -213,7 +213,7 @@ In the following cases, the device will try to connect to Wi-Fi every once in a 
 
 On the left side of the, Web Admin Panel → INTERNET → Failover
 
-![Reconnetction](https://static.gl-inet.com/docs/iot/en/web/Failover.png){class="glboxshadow"}
+![Reconnetction](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/Failover.png){class="glboxshadow"}
 
 The GL-S20 can be connected to the Internet in multiple ways, such as  Ethernet and Wi-Fi.
 
@@ -230,7 +230,7 @@ The GL-S20 will use ping to track the connection to destination IP to a determin
 - IPV4 Track IP: Configure the IPV4 address you want to detect.
 - IPV6 Track IP: Configure the IPV6 address you want to detect
 
-![Reconnetction](https://static.gl-inet.com/docs/iot/en/web/FailoverSet.png){class="glboxshadow"}
+![Reconnetction](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/FailoverSet.png){class="glboxshadow"}
 
 ## **Thread Mesh**
 
@@ -345,7 +345,7 @@ On the left side of the Web Admin Panel → SYSTEM → Overview
 
 This page shows you the system memory usage, device Bluetooth MAC, Wi-Fi MAC, WAN MAC, Model and Serial Number.
 
-![Overview](https://static.gl-inet.com/docs/iot/en/web/Overview.png){class="glboxshadow"}
+![Overview](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/Overview.png){class="glboxshadow"}
 
 ### **Time Zone**
 
@@ -353,7 +353,7 @@ On the left side of Web Admin Panel → SYSTEM → Time Zone
 
 #### **NTP Server**
 
-![NTPServer](https://static.gl-inet.com/docs/iot/en/web/NTPServer.png){class="glboxshadow"}
+![NTPServer](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/NTPServer.png){class="glboxshadow"}
 
 In NTP Server card, you can customise the NTP server configuration.
 
@@ -363,7 +363,7 @@ In NTP Server card, you can customise the NTP server configuration.
 
 In this card, you can change the timezone of the device.
 
-![DeviceTime](https://static.gl-inet.com/docs/iot/en/web/DeviceTime.png){class="glboxshadow"}
+![DeviceTime](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/DeviceTime.png){class="glboxshadow"}
 
 ### **Upgrade**
 
@@ -377,7 +377,7 @@ You can check the current firmware version here. If your device is connected to 
 
 **Warning: During the upgrade, DO NOT turn off your device or refresh the page.**
 
-![local upgrade](https://static.gl-inet.com/docs/iot/en/web/OnlineUpgrade.png){class="glboxshadow"}
+![local upgrade](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/OnlineUpgrade.png){class="glboxshadow"}
 
 #### **Local Upgrade**
 
@@ -385,7 +385,7 @@ From this page, you can upgrade the device's firmware.
 
 You can download the firmware from our [download site](https://dl.gl-inet.com/).
 
-![local upgrade](https://static.gl-inet.com/docs/iot/en/web/Localupgrade.png){class="glboxshadow"}
+![local upgrade](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/Localupgrade.png){class="glboxshadow"}
 
 Device use a Radio Co-Processor (RCP) design, and RCP firmware is designed to be upgraded separately. Please select or drag and drop the firmware file to the appropriate location.
 
@@ -402,7 +402,7 @@ If you trunon Keep Settings, current settings will be retained.
 
 You can use the URL update the firmware. You must deploy the file by following the page prompts.
 
-![URL upgrade](https://static.gl-inet.com/docs/iot/en/web/URLUpgrade.png){class="glboxshadow"}
+![URL upgrade](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/URLUpgrade.png){class="glboxshadow"}
 
 - **We won’t verify the firmware due to maintaining flexibility in system upgrades,Make sure you upload the correct file to the URL you entered. If you upload the wrong firmware, it may cause a system error.**
 - **The URL you enter must point to a path that contains three files**.
@@ -413,7 +413,7 @@ If you enter a link with an encryption method, you will need to attach a certifi
 
 Https certificates can be passed in two ways: urls and files
 
-![CertificateUpgrade](https://static.gl-inet.com/docs/iot/en/web/CertificateUpdate.png){class="glboxshadow"}
+![CertificateUpgrade](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/CertificateUpdate.png){class="glboxshadow"}
 
 **Keep Setting:**  Please note that saving the configuration while using custom firmware may cause unexpected errors in the system, so please proceed with caution.
 
@@ -439,7 +439,7 @@ In case of malfunction, you can reset the device.
 
 **Warning:** All your current settings, applications and data will be lost. The process will take about 10 seconds. DO NOT power off the device during this process.
 
-![reset firmware](https://static.gl-inet.com/docs/iot/en/web/ResetFirmware.png){class="glboxshadow"}
+![reset firmware](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/ResetFirmware.png){class="glboxshadow"}
 
 If you can't access the Web Admin Panel, you can use the reset button as well, please press and hold the Reset button for 8 seconds. Release it when all 3 LEDs start flashing rapidly.
 
