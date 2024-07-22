@@ -58,8 +58,6 @@ After pressing "Upgrade OTA", the app will enter a waiting state and exit the pa
 
 Before configuring, ensure that your account has access to AWS IoT Core services. Refer to the [AWS Official Documentation](https://docs.aws.amazon.com/iot/latest/developerguide/setting-up.html){target="_blank"} for more information.
 
-***Create an item***
-
 1. Log into the AWS Management Console and search for IoT Core
 
     ![iot core entrance](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/aws_configuration_guide/iot_core_entrance.png){class="glboxshadow"}
