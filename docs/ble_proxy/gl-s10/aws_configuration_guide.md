@@ -24,7 +24,7 @@ When the GL-S10 is configured with both Wi-Fi and an Ethernet cable, it will pri
 
 * WiFi Networking
 
-    Open the GL-S10 Tool App, locate the WiFi option, and click on it.
+    Open the [GL-S10 Tool App](https://www.gl-inet.com/app/#download-app-s10), locate the WiFi option, and click on it.
 
     ![WiFi setting entrance](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/aws_configuration_guide/wifi_setting_entrance.png){class="glboxshadow"}
 
@@ -151,7 +151,7 @@ Before configuring, ensure that your account has access to AWS IoT Core services
 
     Before starting, ensure that the device is connected to the network. If not, please connect the device according to the "Device Network Configuration" section.
 
-Open the GL-S10 Tool App, locate the "MQTT Server" option, and click on it.
+Open the [GL-S10 Tool App](https://www.gl-inet.com/app/#download-app-s10), locate the "MQTT Server" option, and click on it.
 
 ![gl-s10 mqtt setting](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/aws_configuration_guide/gl-s10_mqtt_setting.png){class="glboxshadow gl-50-desktop"}
 
