@@ -2,9 +2,28 @@
 
 ## Specification
 
-[GL-s20 specification](https://www.gl-inet.com/products/gl-s20/#specs){target="_blank"}
+### Hardware Specification
 
-### GPIO list
+| Spec                         |                                      |
+| ---------------------------- | ------------------------------------ |
+| Main MCU Module              | ESP32-S3-WROOM-1                     |
+| CPU                          | Dual-core Xtensa® LX7 @ 240MHz       |
+| SRAM                         | 512KB                                |
+| PSRAM                        | 8MB                                  |
+| Flash                        | 16MB                                 |
+| ETH                          | 10 Base-T / 100 Base-TX              |
+| Wi-Fi                        | 802.11b/g/n (2.4GHz), 1x1            |
+| Thread/BLE Module            | ESP32-H2-MINI-1                      |
+| LED Indicators               | Power, IoT, Network                  |
+| Buttons                      | Reset, IoT                           |
+| Power Input                  | DC 5V1A (USB-C), IEEE 802.3 af (PoE) |
+| Power Consumption            | <3w (DC), <7w (PoE)                  |
+| Firmware burning             | USB-UART via USB-C                   |
+| Dimension                    | 76 x 76 x 25 mm                      |
+| Net Weight (Without package) | 63g                                  |
+[GL-S20 Specification](https://www.gl-inet.com/products/gl-s20/#specs){target="_blank"}
+
+### GPIO List
 
 | ESP32-S3-WROOM-1 GPIO Labeling | SIGNAL       | FUNCTION                                                     |
 | ------------------------------ | ------------ | ------------------------------------------------------------ |

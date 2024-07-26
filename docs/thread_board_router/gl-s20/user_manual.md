@@ -14,26 +14,6 @@ GL-S20 supports customization in hardware and software, which can significantly 
 
 FreeRTOS, Thread 1.3 / BLE 5.3, PoE Powered, Wi-Fi / ETH failover
 
-### **Technical specification**
-
-| Spec                         |                                      |
-| ---------------------------- | ------------------------------------ |
-| Main MCU Module              | ESP32-S3-WROOM-1                     |
-| CPU                          | Dual-core Xtensa® LX7 @ 240MHz       |
-| SRAM                         | 512KB                                |
-| PSRAM                        | 8MB                                  |
-| Flash                        | 16MB                                 |
-| ETH                          | 10 Base-T / 100 Base-TX              |
-| Wi-Fi                        | 802.11b/g/n (2.4GHz), 1x1            |
-| Thread/BLE Module            | ESP32-H2-MINI-1                      |
-| LED Indicators               | Power, IoT, Network                  |
-| Buttons                      | Reset, IoT                           |
-| Power Input                  | DC 5V1A (USB-C), IEEE 802.3 af (PoE) |
-| Power Consumption            | <3w (DC), <7w (PoE)                  |
-| Firmware burning             | USB-UART via USB-C                   |
-| Dimension                    | 76 x 76 x 25 mm                      |
-| Net Weight (Without package) | 63g                                  |
-
 ### **Package list**
 
 ![s20doc](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/s20-doc.jpg){class="glboxshadow"}
