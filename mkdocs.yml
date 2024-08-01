@@ -89,6 +89,7 @@ nav:
       - Overview: thread_board_router/gl-s20/index.md
       - Hardware: thread_board_router/gl-s20/hardware.md
       - User Manual: thread_board_router/gl-s20/user_manual.md
+      - GL-S20 Tool App: thread_board_router/gl-s20/gl-s20_tool_app.md
       - Software: 
         - Http RESTful API: thread_board_router/gl-s20/http_restful_api.md
         - BLE Network Configuration API: thread_board_router/gl-s20/ble_network_configuration_api.md
