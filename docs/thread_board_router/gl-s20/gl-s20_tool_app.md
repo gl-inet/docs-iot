@@ -73,7 +73,7 @@ Tap the **Advanced Settings** button. In the **Advanced Settings**, there are tw
 
 <img src="https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/wifi_advanced.jpeg" alt="home" style="zoom:67%;" />
 
-- **Lock BSSID**: View the BSSID of the same SSID in the currently scanned Wi-Fi, and connect to the corresponding Wi-Fi by selecting the specified BSSID.
+- **Lock BSSID**: If this option is enabled, the device will only connect to the Access Point (AP) corresponding to the BSSID you selected when switching to a network using this SSID.
 - **Manually Set a static IP**: Set a static IP address to enter the IP address, subnet mask, and gateway in the corresponding input fields.
 
 **Note:** The device supports saving up to three Wi-Fi configurations.
@@ -91,7 +91,7 @@ Select **Bluetooth** in the bottom navigation bar. Please make sure that the cur
 
 ## **Bluetooth configuration**
 
-Enable the Bluetooth function: Tap the scanning settings bar. Tap the **Enable Bluetooth** button in the pop-up window.
+Enable the Bluetooth function: Click the **Scan Configuration** bar. Click the **Enable Bluetooth** button in the pop-up window.
 
 <img src="https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/scan_config.jpeg" alt="home" style="zoom:67%;" />
 
@@ -114,7 +114,7 @@ To enable the Legacy Mode or Extended Mode, tap the corresponding mode and toggl
 
 <img src="https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/legacy_mode.jpeg" alt="home" style="zoom:67%;" />
 
-- **RSSI threshold:** If you set a threshold, the gateway will only report data from devices with signal strength greater than that value.
+- **RSSI threshold:** If the threshold is set, the gateway will only report data from devices with signal strength greater than the value that you set.
 - **MAC filter:** If this is enabled, the configuration in the MAC filter will be activated. If the function is turned off, the configuration in the filter will be disabled. A maximum of 20 rules can be added.
 - The MAC filter input rules are as follows:
   - Case-insensitive;
@@ -137,7 +137,7 @@ To enable the Legacy Mode or Extended Mode, tap the corresponding mode and toggl
 
 - **Skip parameter:** This parameter specifies the maximum number of consecutive periodic broadcast events that the receiver can skip after successfully receiving the periodic broadcast packet, in the range [0, 499];
 - **Timeout period:** This parameter specifies the maximum time allowed between successful receptions. If this time is exceeded, synchronization will be lost, range [10, 16384];
-- **Configuration list:** The parameter configuration list of the device to be synchronized, and up to 4 peer devices that are broadcast periodically can be synchronized. To synchronize, you can configure a device with up to 4 peer devices which are broadcasded periodically.Each synchronized device needs to provide three parameters: the device address type, address, and SID.
+- **Configuration list:** Up to 4 periodic broadcast devices can be synchronized on this list. Each synchronized device needs to provide three parameters: the device address type, address, and SID.
 - **Address type:** Public address and random address can be selected;
 - **Address:** The MAC address of the device to be synchronized, which is required to be filled in with a 12-character MAC without ":" format;
 - **SID:** Used to identify periodic broadcasts, range [0, 15];
@@ -304,7 +304,7 @@ In the bottom navigation bar, tap **System** > **Overview**.
 
 <img src="https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/overview.jpeg" alt="home" style="zoom:67%;" />
 
-On the summary page, you can display information about the device system, including the device model, firmware type, firmware version, memory usage, Wi-Fi MAC , Bluetooth MAC , and S/N.
+On the summary page, you will see information about the device system, including the device model, firmware type, firmware version, memory usage, Wi-Fi MAC , Bluetooth MAC , and S/N.
 
 ## **Administrator password**
 
@@ -370,13 +370,13 @@ The URL upgrade is used for a custom http server. Place the firmware to be upgra
 
 - To upgrade the GL-S20-BLE firmware type without web, make sure that there is no web.bin under the path.
   - Assume that the URL path of the HTTP server is http://gl-s20-ble/
-  - For app.bin firmware, store the firmware in the http://gl-s20-ble/app.bin;
+  - For app.bin firmware, store the firmware in the http://gl-s20-ble/app.bin
   - For rcp.bin firmware, store the firmware in the For rcp.bin firmware, store the firmware in the 
   - For upgrading the GL-S20-OTBR firmware type with web, make sure that there is a web.bin in the path.
   - Assuming that the HTTP server URL path is http://gl-s20-otbr/)
-  - For app.bin firmware, store the firmware to http://gl-s20-otbr/app.bin;
-  - For rcp.bin firmware, store the firmware to http://gl-s20-otbr/rcp.bin;
-  - For web.bin firmware, store the firmware to http://gl-s20-otbr/web.bin;
+  - For app.bin firmware, store the firmware to http://gl-s20-otbr/app.bin
+  - For rcp.bin firmware, store the firmware to http://gl-s20-otbr/rcp.bin
+  - For web.bin firmware, store the firmware to http://gl-s20-otbr/web.bin
 
 URL upgrades also support reserved configuration upgrades, but for upgrade toggles of different firmware types, select **Do not retain configuration upgrades**. You can use the firmware of your own design and writing by URL upgrade, but pay attention to the size of the firmware and the partition table division. If the designed firmware contains a web page, please store the firmware on the HTTP server as a web strip.
 
