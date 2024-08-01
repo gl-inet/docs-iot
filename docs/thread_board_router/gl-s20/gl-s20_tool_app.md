@@ -423,3 +423,7 @@ In the bottom navigation bar, tap **System** > **Reset Firmware**.
 <img src="https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/reset_firmware.jpeg" alt="home" style="zoom:67%;" />
 
 When you reset the firmware, all current configurations are deleted and restored to factory settings.
+
+---
+
+Still have questions? Visit our [Community Forum](https://forum.gl-inet.com){target="_blank"}.
