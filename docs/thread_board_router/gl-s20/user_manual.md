@@ -220,7 +220,7 @@ On the left side of the Web Admin Panel → THREAD MESH → Thread Network
 
 You can configure and manage Thread Network settings in **Thread Network** page.
 
-![Thread-Network](https://static.gl-inet.com/docs/iot/en/thread_web_guide/S20Thread.png){class="glboxshadow"}
+![Thread-Network](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/S20Thread.png){class="glboxshadow"}
 
 ### Parameter meaning
 
