@@ -1,92 +1,10 @@
-# **GL-S20 User Manual**
+# Access Web Admin Panel
 
-## **General Product Introduction**
+Make sure the current firmware type is Thread. You can access the GL-S20 Web Admin Panel by opening your web browser and navigating to either "http://gl-s20-otbr/" or the IP address assigned by the upper-layer device, as long as you are on the same network.
 
-### **Product introduction**
+# INTERNET
 
-GL-S20 is a cost-effective IoT gateway designed to provide an essential & streamlined connectivity solution for IoT devices. It boasts high energy efficiency, high-availability, and reliable IoT connectivity in a compact design.
-
-As the next-gen IoT gateway of the GL-S10, GL-S20 can provides Ethernet and Wi-Fi connectivity for BLE devices .It can also be utilized as a Thread Border Router/Thread Router.
-
-GL-S20 supports customization in hardware and software, which can significantly expedite the development of your IoT system.
-
-### **Product feature**
-
-FreeRTOS, Thread 1.3 / BLE 5.3, PoE Powered, Wi-Fi / ETH failover
-
-### **Package list**
-
-![s20doc](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/s20-doc.jpg){class="glboxshadow"}
-
-| Object                                 | Quantity |
-| -------------------------------------- | -------- |
-| User Manual & Warranty Card            | 1        |
-| GL-S20 Thread Border Router            | 1        |
-| Wall bracket                           | 1        |
-| Wall bracket screw package             | 1        |
-| Ethernet cable                         | 1        |
-| Power adapters (US, EU, UK & AU plugs) | 1        |
-
-### **Function of buttons**
-
-GL-S20 has two buttons, IoT and Reset.
-
-![s20btn](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/S20BTN.jpg){class="glboxshadow"}
-
-### **IoT Button**
-
-The IoT button allows you to perform these actions:
-
-| Function               | Instruction                                                  |
-| ---------------------- | ------------------------------------------------------------ |
-| Join Thread network    | When the device is not connected to a Thread network, press and hold the IoT button for 2 seconds. Release the button when the IoT LED starts flashing green slowly. |
-| Create Thread network  | When the device is not connected to a Thread network, press and hold the IoT button for 8 seconds. Release the button when the IoT LED starts flashing green slowly. |
-| Start Commissioning    | When your device is connected to a Thread Network, press and hold the IoT button for 2 seconds. Release it when the IoT LED starts flashing yellow slowly. |
-| Disable Thread network | When your device is connected to a Thread Network, press and hold the IoT button for 8 seconds. Release it when the IoT LED starts flashing yellow slowly. |
-
-### **Reset Button**
-
-| Reset button function                     | Instruction                                                  |
-| ----------------------------------------- | ------------------------------------------------------------ |
-| Reset Thread/Wi-Fi/Ethernet configuration | Press and hold the Reset button for 2 seconds. Release it when all 3 LEDs start flashing slowly. |
-| Restore factory settings                  | Press and hold the Reset button for 8 seconds. Release it when all 3 LEDs start flashing rapidly. |
-
-### **LED description**
-
-![S20led](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/S20LED.jpg){class="glboxshadow"}
-
-| Device Status              | Power LED            | IoT LED              | Network LED          |
-| -------------------------- | -------------------- | -------------------- | -------------------- |
-| System starting            | Green flashing       | -                    | -                    |
-| Device not initialized     | Solid Yellow         | -                    | -                    |
-| Firmware upgrading         | Fast Green flashing  | Fast Green flashing  | Fast Green flashing  |
-| Restoring factory settings | Fast Yellow flashing | Fast Yellow flashing | Fast Yellow flashing |
-| Repairing firmware         | Red flashing         | -                    | -                    |
-| Device abnormality         | Solid Red            | Solid Red            | Solid Red            |
-
-
-| Network Status                                     | Network LED  |
-| -------------------------------------------------- | ------------ |
-| Network connected                                  | Solid Green  |
-| Network disconnected                               | Solid Red    |
-| Network is connected but connectivity check failed | Solid Yellow |
-
-
-| Thread Network Status                       | IoT LED         |
-| ------------------------------------------- | --------------- |
-| Thread Uninitialized                        | OFF             |
-| Thread working normally                     | Solid Green     |
-| Joining Thread network (Thread Router)      | Flashing Green  |
-| Thread network disconnected (Thread Router) | Flashing Red    |
-| Thread Commissioning enabled                | Flashing Yellow |
-
-## Access Web Admin Panel
-
-Once you have finished setting up the Ethernet or Wi-Fi, you can access the GL-S20 Web Admin Panel by opening your web browser and navigating to either "http://gl-s20-otbr/" or the IP address assigned by the upper-layer device, as long as you are on the same network.
-
-## INTERNET
-
-### Internet
+## Internet
 
 Read the below instruction to learn how to connect the GL-S20 to the Internet. 
 
@@ -94,9 +12,9 @@ You can configure  and manage GL-S20's networking settings by clicking INTERNET 
 
 It supports 2 ways to connect to the Internet as listed below:
 
-#### Method 1: **Connect to the Internet via an Ethernet cable**
+### Method 1: **Connect to the Internet via an Ethernet cable**
 
-##### **Ethernet**
+#### **Ethernet**
 
 To establish an Ethernet connection, use an Ethernet cable to connect the WAN port of the GL-S20 to the LAN port of an up stream  device.
 
@@ -104,20 +22,20 @@ On the left side of the Web Admin Panel  →  INTERNET → Internet → Ethernet
 
 ![leftlist](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/leftinternet.png){class="glboxshadow"}
 
-##### **Protocol**
+#### **Protocol**
 
 There are 2 types of protocols: DHCP (Dynamic Host Configuration Protocol) and Static IP. Click Modify to change the settings.
 
 - DHCP: DHCP is the default and most common protocol. It is a network management protocol used on Internet Protocol (IP) networks for automatically assigning IP addresses and other communication parameters to devices connected to the network using a client-server architecture.
 - Static: Static is required if your need a fixed IP address to connect or you want to configure the network information such as IP address, Gateway, Netmask manually.
 
-#### Method 2: **Connect to the Internet via an existing Wi-Fi**
+### Method 2: **Connect to the Internet via an existing Wi-Fi**
 
 Using Wi-Fi means connecting the device to another existing wireless network.
 
 You can change Wi-Fi settings on the left side of Web Admin Panel →  INTERNET → Internet→ Wi-Fi card.
 
-##### **Basic steps**
+#### **Basic steps**
 
 1. Click **Connect**.
 
@@ -137,7 +55,7 @@ You can change Wi-Fi settings on the left side of Web Admin Panel →  INTERNET 
 
     ![repeater](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/repeater_connected.png){class="glboxshadow"}
 
-##### **Wi-Fi Advanced Settings**
+#### **Wi-Fi Advanced Settings**
 
 On the Wi-Fi Join Card, there are 2 additional settings you can use.
 
@@ -146,7 +64,7 @@ On the Wi-Fi Join Card, there are 2 additional settings you can use.
 - **Lock BSSID**: If this option is enabled, the device will only connect to the Access Point (AP) corresponding to the BSSID you selected when switching to a network using this SSID.
 - **Manually set static IP**: If this option is enabled, you can configure the network information such as IP address, Gateway, Netmask manually.
 
-##### **Manage Known Networks**
+#### **Manage Known Networks**
 
 To manage known networks, click **Switch Network**.
 
@@ -164,7 +82,7 @@ On the **Known Network** section
 
 ![repeater known network](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/repeater_known_networks.png){class="glboxshadow"}
 
-##### **Join Other Network**
+#### **Join Other Network**
 
 If the SSID is not in the Available Networks list, or the network you want to connect is hidden, you can click **Join Other Network**.
 
@@ -179,7 +97,7 @@ If the SSID is not in the Available Networks list, or the network you want to co
 
 Finally, Click **Apply**.
 
-##### **Reconnection**
+#### **Reconnection**
 
 In the following cases, the device will try to connect to Wi-Fi every once in a while. You can turn off the reconnection manually, and for SSID/password errors, please [delete it in Known Network](#Manage-known-networks). 
 
@@ -189,7 +107,7 @@ In the following cases, the device will try to connect to Wi-Fi every once in a 
 2. After connecting to the Wi-Fi of the Primary router, the device moves out of the signal range of the Primary router.
 3. After connecting to the Wi-Fi of the Primary router, the upstream router changed the SSID/password, or restricted the connection.
 
-### Failover
+## Failover
 
 On the left side of the, Web Admin Panel → INTERNET → Failover
 
@@ -201,7 +119,7 @@ When one type of Internet access is not available, it can automatically switch t
 
 The GL-S20 will use ping to track the connection to destination IP to a determine if the interface is available.
 
-#### **The setting of Interface Status Tracking Method**
+### **The setting of Interface Status Tracking Method**
 
 - **Enable Interface Status Track**: You can disable the interface status tracking, and the router will use the physical status of the interface (such as whether the network cable is plugged in or not).
 - Track Interval: Check every five minutes.
@@ -212,17 +130,17 @@ The GL-S20 will use ping to track the connection to destination IP to a determin
 
 ![Reconnetction](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/FailoverSet.png){class="glboxshadow"}
 
-## **Thread Mesh**
+# **Thread Mesh**
 
-### **Thread Network**
+## **Thread Network**
 
 On the left side of the Web Admin Panel → THREAD MESH → Thread Network
 
 You can configure and manage Thread Network settings in **Thread Network** page.
 
-![Thread-Network](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/S20Thread.png){class="glboxshadow"}
+![Thread-Network](https://static.gl-inet.com/docs/iot/en/thread_web_guide/S20Thread.png){class="glboxshadow"}
 
-### Parameter meaning
+## Parameter meaning
 
 - **EUI-64**: Unique device identifier, hexadecimal number of 8 bytes in length.
 - **Ext Mac**: The device extension address, a unique identifier in the Thread network, is a hexadecimal number of 8 bytes in length. The extended address is randomly generated and will be re-randomized when the system is restored to factory settings.
@@ -236,44 +154,44 @@ You can configure and manage Thread Network settings in **Thread Network** page.
 
 Network Name is generated based on the MAC address of the device, PAN ID/ Extended PAN ID/ Network Key is generated randomly.
 
-### **Create a new Thread network**
+## **Create a new Thread network**
 
 You can create a new network directly by using the default configuration and clicking **Enable**. After a new network is created, the status of the GL-S20 will be changed from **Detached** to **Leader**.
 
-![create-new-network](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/S20Thread-enable.png){class="glboxshadow"}
+![create-new-network](https://static.gl-inet.com/docs/iot/en/thread_web_guide/S20Thread-enable.png){class="glboxshadow"}
 
 **Note**: If your Thread network has the same configuration as other Thread networks,  the GL-S20 will automatically join that network.
 
-### Manual Setup
+## Manual Setup
 
 If you want to set some parameters manually, you can configure them by clicking on the **Manual** Setup.You can modify the contents in the popup window.
 
-![Manual-Setup](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/S20NetworkSetting.png){class="glboxshadow"}
+![Manual-Setup](https://static.gl-inet.com/docs/iot/en/thread_web_guide/S20NetworkSetting.png){class="glboxshadow"}
 
-### How to join a Thread Network
+## How to join a Thread Network
 
 There are two methods for connecting the GL-S20 to an existing network.
 
-#### Method 1:  **Join the network by using Network Key**
+### Method 1:  **Join the network by using Network Key**
 
 Click **Join Network**. The GL-S20 will start scanning the available Thread networks nearby.
 
-![using-Network-Key](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/using-network-key.png){class="glboxshadow"}
+![using-Network-Key](https://static.gl-inet.com/docs/iot/en/thread_web_guide/using-network-key.png){class="glboxshadow"}
 
 In the pop-up window, select the Thread network you want to join. Enter its Network Key and click **Apply**.
 
-![using-Network-Key2](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/using-network-key2.png){class="glboxshadow"}
+![using-Network-Key2](https://static.gl-inet.com/docs/iot/en/thread_web_guide/using-network-key2.png){class="glboxshadow"}
 
-#### Method 2:  **Join the network by using the Commissioner**
+### Method 2:  **Join the network by using the Commissioner**
 
 1. Use another GL-S20 as the Commissioner (please refer to the **Thread Commissioning** page guide), enter the Joiner EUI64 and Joiner Credential of the GL-S20 to be connected to the network.
 2. Click on the "**Join Network**" on the GL-S20 to be connected to the network, select "**Join With Commissioner**" in the pop-up window, enter the Joiner Credential and apply it.
 
-### **Thread Commissioning**
+## **Thread Commissioning**
 
 On this screen, you can add new devices to the network. GL-S20 supports adding a large number of devices.
 
-![thread commissioning](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/S20Commissioning.png){class="glboxshadow"}
+![thread commissioning](https://static.gl-inet.com/docs/iot/en/thread_web_guide/S20Commissioning.png){class="glboxshadow"}
 
 - The **Joiners** card: The list shows Joiners that are ready to be added to the network.
 
@@ -281,45 +199,45 @@ On this screen, you can add new devices to the network. GL-S20 supports adding a
 
   - For Joined/Timeout devices, click the three-dot icon **→ Rejoin**. The selected device will be added back to the Joiners list, waiting for next Commissioning.
 
-    ![rejion](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/rejoin.png){class="glboxshadow"}
+    ![rejion](https://static.gl-inet.com/docs/iot/en/thread_web_guide/rejoin.png){class="glboxshadow"}
 
   - For all the devices with the Join Fail status, you can click **Rejoin All** to move then back to Joiners list altogether.
 
-    ![rejoin all](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/rejoin-all.png){class="glboxshadow"}
+    ![rejoin all](https://static.gl-inet.com/docs/iot/en/thread_web_guide/rejoin-all.png){class="glboxshadow"}
 
-#### **Add a single device**
+### **Add a single device**
 
 Click the **Add** button and a pop-up window will appear to add.
 
-![add a single device](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/Addseparately.png){class="glboxshadow"}
+![add a single device](https://static.gl-inet.com/docs/iot/en/thread_web_guide/Addseparately.png){class="glboxshadow"}
 
 - **Joiner EUI-64**: Joiner's EUI-64 or type *****  to match all Joiners.
 - **Joiner Credential**: The device credentials to be added must be a string containing all uppercase letters and numbers and must not contain the letters I, O, Q and Z, between 6 and 32 characters in length.
 - **Joiner Timeout**: Joiner access timeout, during which a Joiner can access the network using valid credentials.
 
-#### **Add devices in batches**
+### **Add devices in batches**
 
 If your device's service provider has set different Joiner credentials for each Thread device, you will need this feature when deploying. Clicking **Export** to download the template or export the saved Joiner list, fill in or add the Joiner EUI64 and Joiner Credential, then click **Add → Batch Add** to import.
 
 Please note that the number of joiners added cannot exceed 50
 
-![add devices in batches](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/BatchAdd.png){class="glboxshadow"}
+![add devices in batches](https://static.gl-inet.com/docs/iot/en/thread_web_guide/BatchAdd.png){class="glboxshadow"}
 
-### **Advanced Thread network settings**
+## **Advanced Thread network settings**
 
 You can use different advanced configurations related to Thread networking.
 
-#### **Backbone Routers**
+### **Backbone Routers**
 
 The Backbone Router (BBR) function is primarily used to receive multicast inbound/outbound requests. Refer to  [(Thread Boder Router-THread 1.2 Multicast) ](https://openthread.google.cn/codelabs/openthread-border-router-ipv6-multicast?hl=zh-cn#4)for experimentation.
 
-![Backbone Routers](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/BackboneRouters.png){class="glboxshadow"}
+![Backbone Routers](https://static.gl-inet.com/docs/iot/en/thread_web_guide/BackboneRouters.png){class="glboxshadow"}
 
 ------
 
-## **System**
+# **System**
 
-### Overview
+## Overview
 
 On the left side of the Web Admin Panel → SYSTEM → Overview
 
@@ -327,11 +245,11 @@ This page shows you the system memory usage, device Bluetooth MAC, Wi-Fi MAC, WA
 
 ![Overview](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/Overview.png){class="glboxshadow"}
 
-### **Time Zone**
+## **Time Zone**
 
 On the left side of Web Admin Panel → SYSTEM → Time Zone
 
-#### **NTP Server**
+### **NTP Server**
 
 ![NTPServer](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/NTPServer.png){class="glboxshadow"}
 
@@ -339,19 +257,19 @@ In NTP Server card, you can customise the NTP server configuration.
 
 - The device has two built-in NTP servers. If the user-defined server is not accessible, the built-in NTP server will be used automatically.
 
-#### **Device Time**
+### **Device Time**
 
 In this card, you can change the timezone of the device.
 
 ![DeviceTime](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/DeviceTime.png){class="glboxshadow"}
 
-### **Upgrade**
+## **Upgrade**
 
 On the left side of the Web Admin Panel → SYSTEM → Upgrade
 
 We offer three ways to upgrade the firmware.
 
-#### **Online Upgrade**
+### **Online Upgrade**
 
 You can check the current firmware version here. If your device is connected to the Internet, it will check for the newer firmware version available for download.
 
@@ -359,7 +277,7 @@ You can check the current firmware version here. If your device is connected to 
 
 ![local upgrade](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/OnlineUpgrade.png){class="glboxshadow"}
 
-#### **Local Upgrade**
+### **Local Upgrade**
 
 From this page, you can upgrade the device's firmware.
 
@@ -378,7 +296,7 @@ Device use a Radio Co-Processor (RCP) design, and RCP firmware is designed to be
 
 If you trunon Keep Settings, current settings will be retained.
 
-#### **Custom URL upgrade**
+### **Custom URL upgrade**
 
 You can use the URL update the firmware. You must deploy the file by following the page prompts.
 
@@ -397,7 +315,7 @@ Https certificates can be passed in two ways: urls and files
 
 **Keep Setting:**  Please note that saving the configuration while using custom firmware may cause unexpected errors in the system, so please proceed with caution.
 
-### **Administrator password**
+## **Administrator password**
 
 On the left side of the Web Admin Panel → SYSTEM → Admin Password
 
@@ -411,7 +329,7 @@ The rules for the new password are as follows:
 - Only Letters (case sensitive), numbers and symbols `! @ # $ % ^ & * ( ) _ + - = , . > < | ? / \\ { } : ; " ' ` ~` are allowed.
 - At least two of uppercase letters, lowercase letters, numbers, and symbols are required.
 
-### **Reset Firmware**
+## **Reset Firmware**
 
 On the left side of the Web Admin Panel → SYSTEM → Reset Firmware
 

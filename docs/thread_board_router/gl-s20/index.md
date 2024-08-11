@@ -1,3 +1,28 @@
-# Introduction
+# **General Product Introduction**
 
-GL-S20 is a compact and cost efficient Thread Border Router designed for fast and simple IoT deployment. It supports Thread 1.3 as well as 2.4 GHz Wi-Fi (150Mbps) and ethernet for building a Thread Network and connecting to the Internet. The GL-S20 is equipped with the high-performance ESP32 chipset and is fully compatible with FreeRTOS. It supports Wi-Fi to Ethernet Failover, ensuring optimal performance and reliability. Additionally, the GL-S20 features PoE functionality, making it a versatile solution for various IoT.
+## **Product introduction**
+
+GL-S20 is a cost-effective IoT gateway designed to provide an essential & streamlined connectivity solution for IoT devices. It boasts high energy efficiency, high-availability, and reliable IoT connectivity in a compact design.
+
+As the next-gen IoT gateway of the GL-S10, GL-S20 can provides Ethernet and Wi-Fi connectivity for BLE devices. It can also be utilized as a Thread Border Router/Thread Router.
+
+GL-S20 supports customization in hardware and software, which can significantly expedite the development of your IoT system.
+
+## **Product feature**
+
+FreeRTOS, Thread 1.3 / BLE 5.3, PoE Powered, Wi-Fi / ETH failover
+
+Thread firmware supports web and APP access, Bluetooth firmware supports web access.
+
+## **Package list**
+
+![s20doc](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/s20-doc.jpg){class="glboxshadow"}
+
+| Object                                 | Quantity |
+| -------------------------------------- | -------- |
+| User Manual & Warranty Card            | 1        |
+| GL-S20 Thread Border Router            | 1        |
+| Wall bracket                           | 1        |
+| Wall bracket screw package             | 1        |
+| Ethernet cable                         | 1        |
+| Power adapters (US, EU, UK & AU plugs) | 1        |

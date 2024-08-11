@@ -1,4 +1,4 @@
-## **Downloading and using the app**
+# **Downloading and using the app**
 
 Please download the app via [here](https://www.gl-inet.com/app/#download-app-s20). 
 
@@ -10,7 +10,7 @@ Tap the **Scan** button (upper-right corner) to scan the device in the current m
 
 <img src="https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/home.jpeg" alt="home" style="zoom:67%;" />
 
-## **Initialize a device**
+# **Initialize a device**
 
 In the Bluetooth scanning device list, select the device you want to initialize to enter the network configuration page. The GL-S20 supports both wired and wireless network configurations. For details about network configuration, see the Internet chapter. 
 
@@ -18,7 +18,7 @@ After the network configuration is completed, tap the button at the bottom of th
 
 Password requirements: Uppercase letters, lowercase letters, numbers, and symbols. You can enter letters (case-sensitive), numbers, and symbols (!@#$%^&*()_+-=,.><|? /[]{}:;”’ `~). Please submit it when you have set it up. Please adjust your phone to your device's current LAN, tap the scan button in the upper-right corner, find and selectyour device from the list.
 
-### **Sign in to the device**
+## **Sign in to the device**
 
 Select the device you need from the list of LAN devices. Enter the administrator password that you just set, then tap **Login**.
 
@@ -26,7 +26,7 @@ Select the device you need from the list of LAN devices. Enter the administrator
 
 
 
-## **Internet**
+# **Internet**
 
 In the bottom navigation bar, tap **Network**. 
 
@@ -34,7 +34,7 @@ After you log in successfully, you can configure network-related settings here.
 
 <img src="https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/network.jpeg" alt="home" style="zoom:67%;" />
 
-## **Failover**
+# **Failover**
 
 Failover is designed to monitor the network situation. It checksthe connection status of the destination IP address to determine whether the network is available. 
 
@@ -46,7 +46,7 @@ By default, the system gives ethernet the highest priority. If ethernet connecti
 
 <img src="https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/failover.jpeg" alt="home" style="zoom: 33%;" />
 
-### Ethernet
+## Ethernet
 
 The Ethernet section displays information about the current network status. You can tap the Modify button to modify the relevant network configuration. DHCP and static IP configurations are supported. If you want to modify the configuration, tap **Modify**. 
 
@@ -55,7 +55,7 @@ The Ethernet section displays information about the current network status. You 
 - **DHCP:** DHCP is the default and most common protocol. It is a network management protocol used on Internet Protocol (IP) networks to automatically assign IP addresses and other communication parameters to devices connected to the network using a client-server architecture.
 - **Static:** If you need a fixed IP address for connection, or if you want to manually configure network information (such as IP address, gateway, netmask), you need a static IP configuration.
 
-## **Wi-Fi**
+# **Wi-Fi**
 
 Wi-Fi allows you to connect your device to an existing wireless network.
 
@@ -83,7 +83,7 @@ When you save Wi-Fi networks with the same SSID and the same encryption method i
 If you have three saved Wi-Fi configurations, adding a new one will replace the oldest one in the list.
 
 
-## Bluetooth
+# Bluetooth
 
 Select **Bluetooth** in the bottom navigation bar. Please make sure that the current device firmware type is BLE version. (To check the firmware version, tap **System** > **Overview**). 
 
@@ -102,13 +102,13 @@ Enable the Bluetooth function: Click the **Scan Configuration** bar. Click the *
 
 Tap the **Submit** button to complete the setup of the Bluetooth scan.
 
-### **Bluetooth scan mode**
+## **Bluetooth scan mode**
 
 The S20 offers three scan modes: Legacy Mode, Extended Mode, and Synchronize Mode. You can configure to filter the scanned Bluetooth data.
 
 If you change these configurations, please resubmit the configurationto apply your changes.
 
-#### **Legacy Mode and Extended Mode**
+### **Legacy Mode and Extended Mode**
 
 To enable the Legacy Mode or Extended Mode, tap the corresponding mode and toggle on the switch. Configure the corresponding parameters as needed in the pop-up window and tap **Submit** in the upper-right corner.
 
@@ -131,7 +131,7 @@ To enable the Legacy Mode or Extended Mode, tap the corresponding mode and toggl
 
 **Note:** In extended mode, the size of a single packet is limited to 256 bytes.
 
-## Synchronize **Mode**
+### Synchronize **Mode**
 
 <img src="https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/synchronize_mode.jpeg" alt="home" style="zoom:67%;" />
 
@@ -169,7 +169,7 @@ Parameter description:
 
 We offer two ways to communicate with the server: MQTT and HTTP. In addition to being used as a channel for Bluetooth data reporting, the MQTT service also provides MQTT commands for configuration delivery.
 
-## **MQTT Configuration**
+### **MQTT Configuration**
 
 <img src="https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/mqtt_config.jpeg" alt="home" style="zoom:67%;" />
 
@@ -196,7 +196,7 @@ After the configuration is complete, the connection status of the device to the 
 
 
 
-#### HTTP configuration
+### HTTP configuration
 
 <img src="https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/http_config.jpeg" alt="home" style="zoom: 33%;" /><img src="https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/http_config2.jpeg" alt="home" style="zoom: 33%;" />
 
@@ -208,7 +208,7 @@ Parameter description:
 - **Username:** The user ID used for basic authentication;
 - **Password:** The user password used for basic authentication;
 
-## Thread
+# Thread
 
 Thread (in the bottom navigation bar)
 
@@ -231,7 +231,7 @@ You can configure and manage your Thread network from this page.
 
 The network name/PAN ID/extended PAN ID/network key is generated based on the MAC address of the device.
 
-### How to connect to a Thread network
+## How to connect to a Thread network
 
 ### **Create a new network**
 
@@ -290,7 +290,7 @@ The Backbone Router (BBR) feature is primarily used to receive multicast inbound
 
 For related content, see **Thread Border Router - Thread 1.2 Multicast**
 
-## **System**
+# **System**
 
 In the bottom navigation bar, tap **System**. 
 
