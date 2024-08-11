@@ -94,6 +94,7 @@ nav:
         - Web Admin Panel Guide: thread_board_router/gl-s20/user_manual/web_admin_panel_guide.md
         - App Guide: thread_board_router/gl-s20/user_manual/app_guide.md
         - APIs:
+          - Overview: thread_board_router/gl-s20/user_manual/apis/index.md
           - Http RESTful API: thread_board_router/gl-s20/user_manual/apis/http_restful_api.md
           - BLE Network Configuration API: thread_board_router/gl-s20/user_manual/apis/ble_network_configuration_api.md
     - GL-S200:
