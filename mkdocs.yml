@@ -89,12 +89,13 @@ nav:
       - General Product Introduction: thread_board_router/gl-s20/index.md
       - Hardware: thread_board_router/gl-s20/hardware.md
       - User Manual:
-        - Buttons & LEDs: thread_board_router/gl-s20/buttons_and_leds.md
-        - Web Admin Panel Guide: thread_board_router/gl-s20/web_admin_panel_guide.md
-        - App Guide: thread_board_router/gl-s20/app_guide.md
+        - Overview: thread_board_router/gl-s20/user_manual/index.md
+        - Buttons & LEDs: thread_board_router/gl-s20/user_manual/buttons_and_leds.md
+        - Web Admin Panel Guide: thread_board_router/gl-s20/user_manual/web_admin_panel_guide.md
+        - App Guide: thread_board_router/gl-s20/user_manual/app_guide.md
         - APIs:
-          - Http RESTful API: thread_board_router/gl-s20/http_restful_api.md
-          - BLE Network Configuration API: thread_board_router/gl-s20/ble_network_configuration_api.md
+          - Http RESTful API: thread_board_router/gl-s20/user_manual/apis/http_restful_api.md
+          - BLE Network Configuration API: thread_board_router/gl-s20/user_manual/apis/ble_network_configuration_api.md
     - GL-S200:
       - Overview: thread_board_router/gl-s200/index.md
       - Hardware: thread_board_router/gl-s200/hardware.md
