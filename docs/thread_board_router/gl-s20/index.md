@@ -12,7 +12,7 @@ GL-S20 supports customization in hardware and software, which can significantly 
 
 FreeRTOS, Thread 1.3 / BLE 5.3, PoE Powered, Wi-Fi / ETH failover
 
-Thread firmware supports web and APP access, Bluetooth firmware supports web access.
+Thread firmware supports web and APP access, Bluetooth firmware supports APP access.
 
 ## **Package list**
 
