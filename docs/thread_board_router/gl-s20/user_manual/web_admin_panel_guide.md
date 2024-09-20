@@ -138,7 +138,7 @@ On the left side of the Web Admin Panel → THREAD MESH → Thread Network
 
 You can configure and manage Thread Network settings in **Thread Network** page.
 
-![Thread-Network](https://static.gl-inet.com/docs/iot/en/thread_web_guide/S20Thread.png){class="glboxshadow"}
+![Thread-Network](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/S20Thread.png){class="glboxshadow"}
 
 ## Parameter meaning
 
@@ -158,7 +158,7 @@ Network Name is generated based on the MAC address of the device, PAN ID/ Extend
 
 You can create a new network directly by using the default configuration and clicking **Enable**. After a new network is created, the status of the GL-S20 will be changed from **Detached** to **Leader**.
 
-![create-new-network](https://static.gl-inet.com/docs/iot/en/thread_web_guide/S20Thread-enable.png){class="glboxshadow"}
+![create-new-network](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/S20Thread-enable.png){class="glboxshadow"}
 
 **Note**: If your Thread network has the same configuration as other Thread networks,  the GL-S20 will automatically join that network.
 
@@ -166,7 +166,7 @@ You can create a new network directly by using the default configuration and cli
 
 If you want to set some parameters manually, you can configure them by clicking on the **Manual** Setup.You can modify the contents in the popup window.
 
-![Manual-Setup](https://static.gl-inet.com/docs/iot/en/thread_web_guide/S20NetworkSetting.png){class="glboxshadow"}
+![Manual-Setup](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/S20NetworkSetting.png){class="glboxshadow"}
 
 ## How to join a Thread Network
 
@@ -176,11 +176,11 @@ There are two methods for connecting the GL-S20 to an existing network.
 
 Click **Join Network**. The GL-S20 will start scanning the available Thread networks nearby.
 
-![using-Network-Key](https://static.gl-inet.com/docs/iot/en/thread_web_guide/using-network-key.png){class="glboxshadow"}
+![using-Network-Key](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/using-network-key.png){class="glboxshadow"}
 
 In the pop-up window, select the Thread network you want to join. Enter its Network Key and click **Apply**.
 
-![using-Network-Key2](https://static.gl-inet.com/docs/iot/en/thread_web_guide/using-network-key2.png){class="glboxshadow"}
+![using-Network-Key2](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/using-network-key2.png){class="glboxshadow"}
 
 ### Method 2:  **Join the network by using the Commissioner**
 
@@ -191,7 +191,7 @@ In the pop-up window, select the Thread network you want to join. Enter its Netw
 
 On this screen, you can add new devices to the network. GL-S20 supports adding a large number of devices.
 
-![thread commissioning](https://static.gl-inet.com/docs/iot/en/thread_web_guide/S20Commissioning.png){class="glboxshadow"}
+![thread commissioning](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/S20Commissioning.png){class="glboxshadow"}
 
 - The **Joiners** card: The list shows Joiners that are ready to be added to the network.
 
@@ -199,17 +199,17 @@ On this screen, you can add new devices to the network. GL-S20 supports adding a
 
   - For Joined/Timeout devices, click the three-dot icon **→ Rejoin**. The selected device will be added back to the Joiners list, waiting for next Commissioning.
 
-    ![rejion](https://static.gl-inet.com/docs/iot/en/thread_web_guide/rejoin.png){class="glboxshadow"}
+    ![rejion](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/rejoin.png){class="glboxshadow"}
 
   - For all the devices with the Join Fail status, you can click **Rejoin All** to move then back to Joiners list altogether.
 
-    ![rejoin all](https://static.gl-inet.com/docs/iot/en/thread_web_guide/rejoin-all.png){class="glboxshadow"}
+    ![rejoin all](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/rejoin-all.png){class="glboxshadow"}
 
 ### **Add a single device**
 
 Click the **Add** button and a pop-up window will appear to add.
 
-![add a single device](https://static.gl-inet.com/docs/iot/en/thread_web_guide/Addseparately.png){class="glboxshadow"}
+![add a single device](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/Addseparately.png){class="glboxshadow"}
 
 - **Joiner EUI-64**: Joiner's EUI-64 or type *****  to match all Joiners.
 - **Joiner Credential**: The device credentials to be added must be a string containing all uppercase letters and numbers and must not contain the letters I, O, Q and Z, between 6 and 32 characters in length.
@@ -221,7 +221,7 @@ If your device's service provider has set different Joiner credentials for each 
 
 Please note that the number of joiners added cannot exceed 50
 
-![add devices in batches](https://static.gl-inet.com/docs/iot/en/thread_web_guide/BatchAdd.png){class="glboxshadow"}
+![add devices in batches](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/BatchAdd.png){class="glboxshadow"}
 
 ## **Advanced Thread network settings**
 
@@ -231,7 +231,7 @@ You can use different advanced configurations related to Thread networking.
 
 The Backbone Router (BBR) function is primarily used to receive multicast inbound/outbound requests. Refer to  [(Thread Boder Router-THread 1.2 Multicast) ](https://openthread.google.cn/codelabs/openthread-border-router-ipv6-multicast?hl=zh-cn#4)for experimentation.
 
-![Backbone Routers](https://static.gl-inet.com/docs/iot/en/thread_web_guide/BackboneRouters.png){class="glboxshadow"}
+![Backbone Routers](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/BackboneRouters.png){class="glboxshadow"}
 
 ------
 
