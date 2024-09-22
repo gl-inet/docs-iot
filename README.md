@@ -30,7 +30,7 @@ If the size of image is too big, please use the PhotoSwipe, check out [here](#ab
 
 ### Image size
 
-Use `gl-50-desktop`, `gl-60-desktop`, `gl-70-desktop`,`gl-80-desktop`, `gl-90-desktop` to set the percentage of the image width on desktop browser.
+Use `gl-40-desktop`, `gl-50-desktop`, `gl-60-desktop`, `gl-70-desktop`,`gl-80-desktop`, `gl-90-desktop` to set the percentage of the image width on desktop browser.
 
 Example:
 
