@@ -21,6 +21,7 @@
 | Firmware burning             | USB-UART via USB-C                   |
 | Dimension                    | 76 x 76 x 25 mm                      |
 | Net Weight (Without package) | 63g                                  |
+
 [GL-S20 Specification](https://www.gl-inet.com/products/gl-s20/#specs){target="_blank"}
 
 ### GPIO List
