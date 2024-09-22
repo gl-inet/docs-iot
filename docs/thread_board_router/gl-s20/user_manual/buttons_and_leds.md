@@ -1,10 +1,10 @@
-# **Buttons & LEDs**
+# Buttons & LEDs
 
 GL-S20 has two buttons, IoT and Reset.
 
-![s20btn](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/S20BTN.jpg){class="glboxshadow"}
+![gl-s20 button](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/buttons_and_leds/gl-s20_button.jpg){class="glboxshadow"}
 
-## **IoT Button**
+## IoT Button
 
 The IoT button allows you to perform these actions:
 
@@ -15,16 +15,16 @@ The IoT button allows you to perform these actions:
 | Start Commissioning    | When your device is connected to a Thread Network, press and hold the IoT button for 2 seconds. Release it when the IoT LED starts flashing yellow slowly. |
 | Disable Thread network | When your device is connected to a Thread Network, press and hold the IoT button for 8 seconds. Release it when the IoT LED starts flashing yellow slowly. |
 
-## **Reset Button**
+## Reset Button
 
 | Reset button function                     | Instruction                                                  |
 | ----------------------------------------- | ------------------------------------------------------------ |
 | Reset Thread/Wi-Fi/Ethernet configuration | Press and hold the Reset button for 2 seconds. Release it when all 3 LEDs start flashing slowly. |
 | Restore factory settings                  | Press and hold the Reset button for 8 seconds. Release it when all 3 LEDs start flashing rapidly. |
 
-## **LED description**
+## LED description
 
-![S20led](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/S20LED.jpg){class="glboxshadow"}
+![gl-s20 led](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/buttons_and_leds/gl-s20_led.jpg){class="glboxshadow"}
 
 | Device Status              | Power LED            | IoT LED              | Network LED          |
 | -------------------------- | -------------------- | -------------------- | -------------------- |
