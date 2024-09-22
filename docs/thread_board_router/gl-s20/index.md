@@ -1,6 +1,6 @@
-# **General Product Introduction**
+# General Product Introduction
 
-## **Product introduction**
+## Product introduction
 
 GL-S20 is a cost-effective IoT gateway designed to provide an essential & streamlined connectivity solution for IoT devices. It boasts high energy efficiency, high-availability, and reliable IoT connectivity in a compact design.
 
@@ -8,15 +8,15 @@ As the next-gen IoT gateway of the GL-S10, GL-S20 can provides Ethernet and Wi-F
 
 GL-S20 supports customization in hardware and software, which can significantly expedite the development of your IoT system.
 
-## **Product feature**
+## Product feature
 
 FreeRTOS, Thread 1.3 / BLE 5.3, PoE Powered, Wi-Fi / ETH failover
 
 Thread firmware supports web and APP access, Bluetooth firmware supports APP access.
 
-## **Package list**
+## Package list
 
-![s20doc](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/s20-doc.jpg){class="glboxshadow"}
+![gl-s20 package list](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/gl-s20_package_list.jpg){class="glboxshadow"}
 
 | Object                                 | Quantity |
 | -------------------------------------- | -------- |
