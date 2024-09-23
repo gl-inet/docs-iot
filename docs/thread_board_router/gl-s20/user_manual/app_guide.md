@@ -10,7 +10,7 @@ Customize the app's language by accessing  **Settings** (upper-left corner) and 
 
 Tap the **Scan** button (upper-right corner) to scan the device in the current mobile network environment. Devices that have not been initialized will be displayed in the Bluetooth scan list. Initialized devices will be displayed in the LAN scan list (the current mobile phone and the device must be in the unified LAN).
 
-![homepage](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/home.jpeg){class="gl-50-desktop glboxshadow"}
+![homepage](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/home.jpeg){class="gl-50-desktop glboxshadow"}
 
 ## Initialize a device
 
@@ -24,7 +24,7 @@ Password requirements: Uppercase letters, lowercase letters, numbers, and symbol
 
 Select the device you need from the list of LAN devices. Enter the administrator password that you just set, then tap **Login**.
 
-![login](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/login.jpeg){class="gl-50-desktop glboxshadow"}
+![login](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/login.jpeg){class="gl-50-desktop glboxshadow"}
 
 ## Internet
 
@@ -32,7 +32,7 @@ In the bottom navigation bar, tap **Network**.
 
 After you log in successfully, you can configure network-related settings here.
 
-![internet](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/network.jpeg){class="gl-50-desktop glboxshadow"}
+![internet](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/network.jpeg){class="gl-50-desktop glboxshadow"}
 
 ### Failover
 
@@ -44,13 +44,13 @@ By default, the system gives ethernet the highest priority. If ethernet connecti
 
 **Note:** To ensure system stability, when Wi-Fi is in use, the device will not automatically switch back to ethernet even after it is restored. 
 
-![failover](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/failover.jpeg){class="gl-50-desktop glboxshadow"}
+![failover](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/failover.jpeg){class="gl-50-desktop glboxshadow"}
 
 ### Ethernet
 
 The Ethernet section displays information about the current network status. You can tap the Modify button to modify the relevant network configuration. DHCP and static IP configurations are supported. If you want to modify the configuration, tap **Modify**. 
 
-![ethernet setting](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/ethernet_setting.jpeg){class="gl-50-desktop glboxshadow"}
+![ethernet setting](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/ethernet_setting.jpeg){class="gl-50-desktop glboxshadow"}
 
 - **DHCP:** DHCP is the default and most common protocol. It is a network management protocol used on Internet Protocol (IP) networks to automatically assign IP addresses and other communication parameters to devices connected to the network using a client-server architecture.
 
@@ -60,19 +60,19 @@ The Ethernet section displays information about the current network status. You 
 
 Wi-Fi allows you to connect your device to an existing wireless network.
 
-![wifi](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/network.jpeg){class="gl-50-desktop glboxshadow"}
+![wifi](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/network.jpeg){class="gl-50-desktop glboxshadow"}
 
 To enable Wi-Fi, toggle **Enable** to on. The device will automatically search for nearby available Wi-Fi networks. Tap **Scan Wi-Fi** in the upper-right corner to search again for nearby available Wi-Fi networks. 
 
-![join wifi](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/join_wifi.jpeg){class="gl-50-desktop glboxshadow"}
+![join wifi](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/join_wifi.jpeg){class="gl-50-desktop glboxshadow"}
 
 Tap the Wi-Fi you want to connect to and configure it.Enter the corresponding information in the pop-up window. (If the network you want to connect to isn't listed, or if the network you want to join is hidden, tap **Other** at the bottom). 
 
-![wifi setting](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/wifi_set.jpeg){class="gl-50-desktop glboxshadow"}
+![wifi setting](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/wifi_set.jpeg){class="gl-50-desktop glboxshadow"}
 
 Tap the **Advanced Settings** button. In the **Advanced Settings**, there are two functions: **Lock BSSID** and **Manually Set static IP.**
 
-![wifi advanced](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/wifi_advanced.jpeg){class="gl-50-desktop glboxshadow"}
+![wifi advanced](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/wifi_advanced.jpeg){class="gl-50-desktop glboxshadow"}
 
 - **Lock BSSID**: If this option is enabled, the device will only connect to the Access Point (AP) corresponding to the BSSID you selected when switching to a network using this SSID.
 
@@ -84,13 +84,13 @@ Tap the **Advanced Settings** button. In the **Advanced Settings**, there are tw
 
 Select **Bluetooth** in the bottom navigation bar. Please make sure that the current device firmware type is BLE version. (To check the firmware version, tap **System** > **Overview**). 
 
-![bluetooth](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/bluetooth.jpeg){class="gl-50-desktop glboxshadow"}
+![bluetooth](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/bluetooth.jpeg){class="gl-50-desktop glboxshadow"}
 
 ### Bluetooth configuration
 
 Enable the Bluetooth function: Click the **Scan Configuration** bar. Click the **Enable Bluetooth** button in the pop-up window.
 
-![scan configuration](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/scan_config.jpeg){class="gl-50-desktop glboxshadow"}
+![scan configuration](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/scan_config.jpeg){class="gl-50-desktop glboxshadow"}
 
 - Scan Type: Toggle between active or passive scanning.
 - Scan interval: The interval between the start time of two successive scan windows, parameter range [4,65535].
@@ -109,7 +109,7 @@ If you change these configurations, please resubmit the configurationto apply yo
 
 To enable the Legacy Mode or Extended Mode, tap the corresponding mode and toggle on the switch. Configure the corresponding parameters as needed in the pop-up window and tap **Submit** in the upper-right corner.
 
-![legacy mode](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/legacy_mode.jpeg){class="gl-50-desktop glboxshadow"}
+![legacy mode](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/legacy_mode.jpeg){class="gl-50-desktop glboxshadow"}
 
 - RSSI threshold: If the threshold is set, the gateway will only report data from devices with signal strength greater than the value that you set.
 
@@ -132,7 +132,7 @@ To enable the Legacy Mode or Extended Mode, tap the corresponding mode and toggl
 
 #### Synchronize Mode
 
-![synchronize mode](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/synchronize_mode.jpeg){class="gl-50-desktop glboxshadow"}
+![synchronize mode](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/synchronize_mode.jpeg){class="gl-50-desktop glboxshadow"}
 
 - **Skip parameter:** This parameter specifies the maximum number of consecutive periodic broadcast events that the receiver can skip after successfully receiving the periodic broadcast packet, in the range [0, 499];
 
@@ -148,9 +148,9 @@ To enable the Legacy Mode or Extended Mode, tap the corresponding mode and toggl
 
 After completing the configuration and ensuring that the Bluetooth scanning functions are enabled, tap the refresh button at the bottom-right corner to obtain the broadcast packet. The broadcast packet is sorted according to the signal strength. Tap a single broadcast data to view the detailed data of the broadcast packet in the pop-up window.
 
-![legency mode scan](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/legacy_mode_scan.jpeg){class="gl-50-desktop glboxshadow"}
+![legency mode scan](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/legacy_mode_scan.jpeg){class="gl-50-desktop glboxshadow"}
 
-![bluetooth package detail](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/ble_package_detail.jpeg){class="gl-50-desktop glboxshadow"}
+![bluetooth package detail](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/ble_package_detail.jpeg){class="gl-50-desktop glboxshadow"}
 
 ## Bluetooth data reporting
 
@@ -158,7 +158,7 @@ This section provides the configuration function of reporting the data scanned b
 
 Tap the **Report Configuration** column, configure the corresponding parameters in the pop-up window. Tap **Submit** in the upper-right corner.
 
-![report config](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/report_config.jpeg){class="gl-50-desktop glboxshadow"}
+![report config](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/report_config.jpeg){class="gl-50-desktop glboxshadow"}
 
 Parameter description:
 
@@ -175,7 +175,7 @@ We offer two ways to communicate with the server: MQTT and HTTP. In addition to 
 
 ### MQTT Configuration
 
-![mqtt config](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/mqtt_config.jpeg){class="gl-50-desktop glboxshadow"}
+![mqtt config](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/mqtt_config.jpeg){class="gl-50-desktop glboxshadow"}
 
 - **Host:** Server address, which can be a domain name or IP address;
 - **Port:** Server port number;
@@ -186,9 +186,9 @@ We offer two ways to communicate with the server: MQTT and HTTP. In addition to 
 
 If you need to enable TLS configuration, click the "Enable TLS" button and configure the TLS configuration. There are one-way encryption and two-way encryption.
 
-![tls1](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/tls1.jpeg){class="gl-50-desktop glboxshadow"}
+![tls1](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/tls1.jpeg){class="gl-50-desktop glboxshadow"}
 
-![tls2](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/tls2.jpeg){class="gl-50-desktop glboxshadow"}
+![tls2](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/tls2.jpeg){class="gl-50-desktop glboxshadow"}
 
 
 - **Root certificate:** After TLS encryption is enabled, a CA root certificate file must be uploaded.
@@ -203,7 +203,7 @@ After the configuration is complete, the connection status of the device to the 
 
 ### HTTP configuration
 
-<img src="https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/http_config.jpeg" alt="home" style="zoom: 33%;" /><img src="https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/http_config2.jpeg" alt="home" style="zoom: 33%;" />
+<img src="https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/http_config.jpeg" alt="home" style="zoom: 33%;" /><img src="https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/http_config2.jpeg" alt="home" style="zoom: 33%;" />
 
 Parameter description:
 
@@ -223,7 +223,7 @@ Thread (in the bottom navigation bar)
 
 Please make sure that the current device firmware type is Thread version. (In the bottom navigation bar, tap **System** > **Summary**.)
 
-![thread](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/Thread.jpeg){class="gl-50-desktop glboxshadow"}
+![thread](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/Thread.jpeg){class="gl-50-desktop glboxshadow"}
 
 You can configure and manage your Thread network from this page.
 
@@ -246,7 +246,7 @@ The network name/PAN ID/extended PAN ID/network key is generated based on the MA
 
 You can turn on or off Thread networking by clicking the button in the Thread network bar. When turned on, the status of the GL-S20 will change from Detached to Leader. This means the new network has been successfully created.
 
-![thread leader](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/Thread_leader.jpeg){class="gl-50-desktop glboxshadow"}
+![thread leader](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/Thread_leader.jpeg){class="gl-50-desktop glboxshadow"}
 
 **Note:** If your network settings are the same as an existing Thread network in your current environment, the GL-S20 will automatically join that network and the GL-S20 role may change.
 
@@ -256,9 +256,9 @@ Join the network with a network key
 
 If you want to connect to a different Thread network, after turning off the Thread network, click the **Join Network** button to connect to a different Thread network. GL-S20 will scan for available Thread networks.Selects the Thread network you want to join in the pop-up window, enters its network key, and applies it.
 
-![join network](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/join_network.jpeg){class="gl-50-desktop glboxshadow"}
+![join network](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/join_network.jpeg){class="gl-50-desktop glboxshadow"}
 
-![join network](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/join_network2.jpeg){class="gl-50-desktop glboxshadow"}
+![join network](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/join_network2.jpeg){class="gl-50-desktop glboxshadow"}
 
 #### Join the network by using the Commissioner
 
@@ -272,17 +272,17 @@ If you want to connect to a different Thread network, after turning off the Thre
 
 In the bottom navigation bar, tap **Thread** > Thread **Commissioning**. 
 
-![commissioning](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/Commissioning.jpeg){class="gl-50-desktop glboxshadow"}
+![commissioning](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/Commissioning.jpeg){class="gl-50-desktop glboxshadow"}
 
 This tab lets you add new devices to your network in bulk import.
 
 Once on the **Commissioning** page, enable the **Commissioner** feature. The **JOINERS** card displays a list of joiners to add to the network. The **COMMISSION** record displays the network connection records of the joiner.
 
-![commissioning](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/Commissioning.jpeg){class="gl-50-desktop glboxshadow"}
+![commissioning](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/Commissioning.jpeg){class="gl-50-desktop glboxshadow"}
 
-![add joiner](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/add_joiner.jpeg){class="gl-50-desktop glboxshadow"}
+![add joiner](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/add_joiner.jpeg){class="gl-50-desktop glboxshadow"}
 
-![add joiner batch](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/add_joiner_batch.jpeg){class="gl-50-desktop glboxshadow"}
+![add joiner batch](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/add_joiner_batch.jpeg){class="gl-50-desktop glboxshadow"}
 
 To add a single device, tap the **Add** column and enter the relevant parameters.
 
@@ -298,15 +298,15 @@ Once the device is added, the designated device can be added to the network thro
 
 Tap the bottom button **Add** to see that new data has been added to the **JOINERS** list. You can tap this piece of data to see information about it.
 
-![commission joining](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/Commission_joining.jpeg){class="gl-50-desktop glboxshadow"}
+![commission joining](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/Commission_joining.jpeg){class="gl-50-desktop glboxshadow"}
 
-![joiner detail](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/joiner_detail.jpeg){class="gl-50-desktop glboxshadow"}
+![joiner detail](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/joiner_detail.jpeg){class="gl-50-desktop glboxshadow"}
 
 ## Backbone routing service
 
 The Backbone Router (BBR) feature is primarily used to receive multicast inbound/outbound requests. The function can be turned on or off via the toggle.
 
-![thread advance](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/Thread_advance.jpeg){class="gl-50-desktop glboxshadow"}
+![thread advance](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/Thread_advance.jpeg){class="gl-50-desktop glboxshadow"}
 
 For related content, see **Thread Border Router - Thread 1.2 Multicast**
 
@@ -314,7 +314,7 @@ For related content, see **Thread Border Router - Thread 1.2 Multicast**
 
 In the bottom navigation bar, tap **System**. 
 
-![system](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/system.jpeg){class="gl-50-desktop glboxshadow"}
+![system](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/system.jpeg){class="gl-50-desktop glboxshadow"}
 
 This section shows the functions of the current device system module.
 
@@ -322,7 +322,7 @@ This section shows the functions of the current device system module.
 
 In the bottom navigation bar, tap **System** -> **Overview**. 
 
-![overview](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/overview.jpeg){class="gl-50-desktop glboxshadow"}
+![overview](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/overview.jpeg){class="gl-50-desktop glboxshadow"}
 
 On the summary page, you will see information about the device system, including the device model, firmware type, firmware version, memory usage, Wi-Fi MAC , Bluetooth MAC , and S/N.
 
@@ -330,7 +330,7 @@ On the summary page, you will see information about the device system, including
 
 In the bottom navigation bar, tap **System** -> **Administrator Password**. 
 
-![admin password](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/admin_password.jpeg){class="gl-50-desktop glboxshadow"}
+![admin password](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/admin_password.jpeg){class="gl-50-desktop glboxshadow"}
 
 You can reset the administrator password on this page by following the on-screen instructions in the app. Enter the original password, the new password, and confirm the new password twice. The password must be set with a minimum of 10 digits and a maximum of 31 digits. It is also required to contain two of uppercase letters, lowercase letters, numbers, and symbols. The administrator password can be entered with letters (case-sensitive), numbers, and symbols (!@#$%^&*()_+-=,.><|? /[]{}:;”’ `~）。
 
@@ -340,13 +340,13 @@ In the bottom navigation bar, tap **System** -> **Time zone**.
 
 On this page, you can set the NTP server of the device and the time zone in which the device is replaced.
 
-![time zone](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/time_zone.jpeg){class="gl-50-desktop glboxshadow"}
+![time zone](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/time_zone.jpeg){class="gl-50-desktop glboxshadow"}
 
 ## Lights
 
 In the bottom navigation bar, tap **System** -> **lights enabled**. 
 
-![led](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/led.jpeg){class="gl-50-desktop glboxshadow"}
+![led](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/led.jpeg){class="gl-50-desktop glboxshadow"}
 
 By tapping the button, the device's indicator light can be turned on or off. 
 
@@ -358,7 +358,7 @@ There are multiple upgrade methods supported in the app: Online upgrades, local 
 
 ### Online upgrade
 
-![online upgrade](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/upgrade.jpeg){class="gl-50-desktop glboxshadow"}
+![online upgrade](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/upgrade.jpeg){class="gl-50-desktop glboxshadow"}
 
 Online upgrade allows you to obtain and upgrade official standard firmware.
 
@@ -370,7 +370,7 @@ At the same time, the reserved system configuration can be upgraded by simply tu
 
 ### Local upgrade
 
-![local upgrade](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/upgrade2.jpeg){class="gl-50-desktop glboxshadow"}
+![local upgrade](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/upgrade2.jpeg){class="gl-50-desktop glboxshadow"}
 
 The local upgrade is based on HTTP, and you can manually select the firmware type you want to upgrade.
 
@@ -396,7 +396,7 @@ The URL upgrade is used for a custom http server. Place the firmware to be upgra
 
 URL upgrades also support reserved configuration upgrades, but for upgrade toggles of different firmware types, select **Do not retain configuration upgrades**. You can use the firmware of your own design and writing by URL upgrade, but pay attention to the size of the firmware and the partition table division. If the designed firmware contains a web page, please store the firmware on the HTTP server as a web strip.
 
-![upgrade](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/upgrade3.jpeg){class="gl-50-desktop glboxshadow"}
+![upgrade](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/upgrade3.jpeg){class="gl-50-desktop glboxshadow"}
 
 The URL upgrade supports HTTPS. When the URL prefix entered in the input box is HTTPS, the certificate update page will pop up.
 
@@ -408,7 +408,7 @@ After the certificate is uploaded, you can perform a firmware upgrade over HTTPS
 
 In the bottom navigation bar, tap **System** -> **Logs**. 
 
-![log](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/log.jpeg){class="gl-50-desktop glboxshadow"}
+![log](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/log.jpeg){class="gl-50-desktop glboxshadow"}
 
 This is used to obtain the log information of the device from the factory to the current runtime, and the system log level is WARNING.
 
@@ -420,7 +420,7 @@ The log is 2MB in total and is divided into 16 copies, so when the log is full, 
 
 In the bottom navigation bar, tap **System** -> **Backup & Restore**. 
 
-![backup & restore](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/backup.jpeg){class="gl-50-desktop glboxshadow"}
+![backup & restore](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/backup.jpeg){class="gl-50-desktop glboxshadow"}
 
 This is used for importing and exporting system-related configurations, which is convenient for users to quickly configure and deploy multiple devices.
 
@@ -430,7 +430,7 @@ Configuration files are imported and exported in JSON format. When you restore, 
 
 In the bottom navigation bar, tap **System** -> **Reset Firmware**. 
 
-![reset firmware](https://static.gl-inet.com/docs/iot/en/app_guide/app_eng_guide/reset_firmware.jpeg){class="gl-50-desktop glboxshadow"}
+![reset firmware](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/reset_firmware.jpeg){class="gl-50-desktop glboxshadow"}
 
 When you reset the firmware, all current configurations are deleted and restored to factory settings.
 
