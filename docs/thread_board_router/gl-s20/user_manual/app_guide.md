@@ -408,7 +408,7 @@ After the certificate is uploaded, you can perform a firmware upgrade over HTTPS
 
 In the bottom navigation bar, tap **System** -> **Logs**. 
 
-![log](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/log.jpeg){class="gl-50-desktop glboxshadow"}
+![log](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s20/user_manual/app_guide/app_eng_guide/log.jpg){class="gl-50-desktop glboxshadow"}
 
 This is used to obtain the log information of the device from the factory to the current runtime, and the system log level is WARNING.
 
