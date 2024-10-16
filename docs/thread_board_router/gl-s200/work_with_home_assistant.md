@@ -38,15 +38,15 @@ If you want to modify Thread Network configuration, you can follow [this instruc
 
 Then, based on your network topology, select the corresponding Backbone Router Interface at **GL-S200 Web Admin Panel > THREAD MESH > Advanced > Backbone Router > Backbone Interface**.
 
-*   If your Home Assistant Host is on GL-S200's **LAN** side(no matter wired or wireless), select "**br-lan**", click apply to take effect.
-    
+* If your Home Assistant Host is on GL-S200's **LAN** side(no matter wired or wireless), select "**br-lan**", click apply to take effect.
 
-![home_assistant_host_on_gl-s200_lan.png](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s200/enable_matter_over_thread_for_home_assistant/home_assistant_host_on_gl-s200_lan.png)
+    ![home_assistant_host_on_gl-s200_lan.png](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s200/enable_matter_over_thread_for_home_assistant/home_assistant_host_on_gl-s200_lan.png){class="glboxshadow"}
 
-*   If your Home Assistant Host is on GL-S200's **WAN** side, select "**eth0**"(using wired WAN) or "**wlan-sta0**"(using repeater mode), click apply to take effect.
-    
+* If your Home Assistant Host is on GL-S200's **WAN** side, select "**eth0**"(using wired WAN) or "**wlan-sta0**"(using repeater mode), click apply to take effect.
 
-![home_assistant_host_on_gl-s200_wan_wired.png](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s200/enable_matter_over_thread_for_home_assistant/home_assistant_host_on_gl-s200_wan_wired.png)![home_assistant_host_on_gl-s200_wan_wireless.png](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s200/enable_matter_over_thread_for_home_assistant/home_assistant_host_on_gl-s200_wan_wireless.png)
+    ![home_assistant_host_on_gl-s200_wan_wired.png](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s200/enable_matter_over_thread_for_home_assistant/home_assistant_host_on_gl-s200_wan_wired.png){class="glboxshadow"}
+
+    ![home_assistant_host_on_gl-s200_wan_wireless.png](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s200/enable_matter_over_thread_for_home_assistant/home_assistant_host_on_gl-s200_wan_wireless.png){class="glboxshadow"}
 
 If your Home Assistant Host is on the **WAN** side of GL-S200,  to enable Home Assistant access GL-S200. Navigate to **SYSTEM** > **Security** > **Open Ports On Router**, add port 8081, protocol TCP/UDP.
 
