@@ -105,3 +105,7 @@ After you turn the End Devices in Commission mode, scan the Matter QR code on th
 [https://www.home-assistant.io/integrations/thread/](https://www.home-assistant.io/integrations/thread/)
 
 [https://www.home-assistant.io/integrations/matter/](https://www.home-assistant.io/integrations/matter/)
+
+---
+
+Still have questions? Visit our [Community Forum](https://forum.gl-inet.com){target="_blank"}.
