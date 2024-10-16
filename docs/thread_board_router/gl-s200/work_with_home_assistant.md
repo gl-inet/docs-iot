@@ -100,11 +100,11 @@ After you turn the End Devices in Commission mode, scan the Matter QR code on th
 
 ### Reference
 
-[https://www.home-assistant.io/integrations/otbr/](https://www.home-assistant.io/integrations/otbr/)
+[https://www.home-assistant.io/integrations/otbr/](https://www.home-assistant.io/integrations/otbr/){target="_blank"}
 
-[https://www.home-assistant.io/integrations/thread/](https://www.home-assistant.io/integrations/thread/)
+[https://www.home-assistant.io/integrations/thread/](https://www.home-assistant.io/integrations/thread/){target="_blank"}
 
-[https://www.home-assistant.io/integrations/matter/](https://www.home-assistant.io/integrations/matter/)
+[https://www.home-assistant.io/integrations/matter/](https://www.home-assistant.io/integrations/matter/){target="_blank"}
 
 ---
 
