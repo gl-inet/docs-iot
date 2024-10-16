@@ -101,6 +101,8 @@ nav:
           - Overview: thread_board_router/gl-s20/user_manual/apis/index.md
           - Http RESTful API: thread_board_router/gl-s20/user_manual/apis/http_restful_api.md
           - BLE Network Configuration API: thread_board_router/gl-s20/user_manual/apis/ble_network_configuration_api.md
+      - Secondary Development Guide:
+        - Firmware Compilation Guide: thread_board_router/gl-s20/user_manual/gl-s20-tbr_firmware_compilation_guide.md
     - GL-S200:
       - Overview: thread_board_router/gl-s200/index.md
       - Hardware: thread_board_router/gl-s200/hardware.md
