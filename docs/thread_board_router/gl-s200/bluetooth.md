@@ -6,7 +6,7 @@ On the Bluetooth devices page you can turn the current Bluetooth function on/off
 
 ### Scan Settings
 
-![image-20240820183325978](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240820183325978.png)
+![ble-scan-settings](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s200/bluetooth/ble-scan-settings.png)
 
 - **Scan type**: switching between **active** or **passive** scanning.
 - **Scan Interval Time**: the interval between the start times of two consecutive scan windows.
@@ -19,7 +19,7 @@ Click on **Apply** to complete the setup of Bluetooth scanning.
 
 The S200 offers three scanning modes: Legacy Mode, Extended Mode and Synchronize Mode. In Legacy Mode and Extended Mode, you can custom configure filters to filter the scanned Bluetooth data. If you change one of these configurations, click on this button to make the current configuration take effect.
 
-![image-20240820183357947](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240820183357947.png)
+![ble-scan-mode](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s200/bluetooth/ble-scan-mode.png)
 
 RSSI Threshold：If you set the threshold, the gateway will only report data from devices whose signal strength is greater than the value.
 
@@ -48,13 +48,13 @@ Raw Data Filters :If you click on the settings icon, the configuration of the ra
 
 Synchronize up to 4 cycles of broadcasts simultaneously in Synchronize Mode
 
-![image-20240820183418228](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240820183418228.png)
+![Synchronize-mode-set](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s200/bluetooth/Synchronize-mode-set.png)
 
 - Skip ：Maximum number of periodic advertising packets that can be skipped after successful reception.
 - Sync Timeout：The maximum time allowed for successful reception, if this time is exceeded the sync will be lost.
 
 Click on **Add Configuration** for local configuration.
-![image-20240820183438242](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240820183438242.png)
+![synchronize-setting](https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s200/bluetooth/synchronize-setting.png)
 
 - Address Type: Address type of the device to be synchronized
 - Address:Address of the device to be synchronized
