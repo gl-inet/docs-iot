@@ -33,7 +33,7 @@ err_msg    `option`|string|Error message
 }
 ```
 ## export_thread_network
-Export the network configuration, the configuration file format is passphrase|datasetactive
+Export the network configuration, the configuration file format is `passphrase|datasetactive`
 
 ### Request sample:
 ```bash
@@ -70,7 +70,7 @@ err_msg    `option`|string|Error message
 }
 ```
 ## import_thread_network
-If there is no interface to pass parameters, use the configuration file to import the network configuration.
+If you use the method of importing configuration files, you need to call the upload interface to upload the file first, and the fixed path is/tmp/thread_network.conf.
 ### Request parameters:
 | Field | Type | Description |
 | ----- | ---- | ----------- |
@@ -1260,8 +1260,8 @@ err_msg    `option`|string|Error message
     }
 }
 ```
-## set_device_name
-Set device name, it will show in topology.
+## set_device_info
+Set device info, it will show in topology.
 ### Request parameters:
 | Field | Type | Description |
 | ----- | ---- | ----------- |
@@ -1278,10 +1278,11 @@ curl -k http://127.0.0.1/rpc -H 'glinet: 1' -d '
     "params": [
         "",
         "otbr",
-        "set_device_name",
+        "set_device_info",
         {
             "ExtAddress": "1241B519B4A43AA7",
-            "Name": "test"
+            "Name": "test",
+            "Location": "Bedroom"
         }
     ]
 }'
@@ -1316,6 +1317,210 @@ curl -k http://127.0.0.1/rpc -H 'glinet: 1' -d '
         "",
         "otbr",
         "force_to_leader",
+        {}
+    ]
+}'
+```
+### Response parameters:
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+err_code    `option`|number|Error code.
+err_msg    `option`|string|Error message
+
+### Response sample:
+```json
+{
+    "id": "0",
+    "jsonrpc": "2.0",
+    "result": {
+        "err_code": 0
+    }
+}
+```
+## set_keep_refresh
+Set keep refresh.
+### Request parameters:
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+Enable|string|Enable auto refresh.
+
+### Request sample:
+```bash
+curl -k http://127.0.0.1/rpc -H 'glinet: 1' -d '
+{
+    "jsonrpc": "2.0",
+    "id": "0",
+    "method": "call",
+    "params": [
+        "",
+        "otbr",
+        "keep_refresh",
+        {}
+    ]
+}'
+```
+### Response parameters:
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+err_code    `option`|number|Error code.
+err_msg    `option`|string|Error message
+
+### Response sample:
+```json
+{
+    "id": "0",
+    "jsonrpc": "2.0",
+    "result": {
+        "err_code": 0
+    }
+}
+```
+## get_keep_refresh_config
+Get keep refresh config.
+
+### Request sample:
+```bash
+curl -k http://127.0.0.1/rpc -H 'glinet: 1' -d '
+{
+    "jsonrpc": "2.0",
+    "id": "0",
+    "method": "call",
+    "params": [
+        "",
+        "otbr",
+        "get_keep_refresh_state",
+        {}
+    ]
+}'
+```
+### Response parameters:
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+Enable|string|Indicates the current automatic refresh status.
+err_code    `option`|number|Error code.
+err_msg    `option`|string|Error message
+
+### Response sample:
+```json
+{
+    "id": "0",
+    "jsonrpc": "2.0",
+    "result": {
+        "Enable": false
+    }
+}
+```
+## get_device_list
+Set keep refresh.
+
+### Request sample:
+```bash
+curl -k http://127.0.0.1/rpc -H 'glinet: 1' -d '
+{
+    "jsonrpc": "2.0",
+    "id": "0",
+    "method": "call",
+    "params": [
+        "",
+        "otbr",
+        "get_device_list",
+        {}
+    ]
+}'
+```
+### Response parameters:
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+AddTime|number|AddTime.
+EUI64|string|EUI64
+ExtAddress|string|IEEE 802.15.4 Extended Address
+IP6AddressList|object|IP6AddressList
+IsActiveNat64Translator|bool|IsActiveNat64Translator.
+IsActiveSrpServer|bool|IsActiveSrpServer.
+IsBorderRouter|bool|IsBorderRouter.
+IsChild|bool|IsChild.
+IsLeader|bool|IsLeader.
+IsOnline|bool|IsOnline.
+IsThisDevice|bool|IsThisDevice.
+LastUpdate|number|LastUpdate.
+Location|string|Location.
+Mode|object|Mode
+Name|string|The name of the user-defined Thread network node.
+ProductName|string|ProductName.
+Rloc16|number|The Thread RLOC16 value.
+Rloc16s|string|The Thread RLOC16 value in hex string.
+SrpService|object|SrpService
+VendorName|string|VendorName.
+Version|string|Thread version.
+err_code    `option`|number|Error code.
+err_msg    `option`|string|Error message
+
+### Response sample:
+```json
+{
+    "id": "0",
+    "jsonrpc": "2.0",
+    "result": {
+        "DeviceList": [
+            {
+                "IsBorderRouter": true,
+                "IsLeader": true,
+                "LastUpdate": 1731030619,
+                "IsActiveSrpServer": true,
+                "DeviceType": "",
+                "IsThisDevice": true,
+                "IP6AddressList": [
+                    "fd87:cda8:1a3a:c293:0:ff:fe00:fc11",
+                    "fd87:cda8:1a3a:c293:0:ff:fe00:fc10",
+                    "fd87:cda8:1a3a:c293:0:ff:fe00:fc38",
+                    "fd65:5f4c:3d3:1:ef79:4fcf:46b:a654",
+                    "fd87:cda8:1a3a:c293:0:ff:fe00:fc00",
+                    "fd87:cda8:1a3a:c293:0:ff:fe00:800",
+                    "fd87:cda8:1a3a:c293:b45a:1415:2518:520b",
+                    "fe80:0:0:0:80a9:a12b:d431:9816"
+                ],
+                "Mode": {
+                    "RxOnWhenIdle": 1,
+                    "NetworkData": 1,
+                    "DeviceType": 1
+                },
+                "Rloc16": 2048,
+                "VendorName": "GL.iNET Inc.",
+                "ProductName": "S200",
+                "AddTime": 1730970907,
+                "Version": "v1.3.0",
+                "IsActiveNat64Translator": true,
+                "Rloc16s": "0x0800",
+                "IsOnline": true,
+                "Name": "S200",
+                "SrpService": [],
+                "Location": "",
+                "ExtAddress": "82A9A12BD4319816",
+                "IsChild": false,
+                "EUI64": "DC8E95FFFE90C50A"
+            }
+        ]
+    }
+}
+```
+## remove_device_list
+Remove device list.
+### Request parameters:
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+device_list|object|The device_list value is an array of IEEE 802.15.4 Extended Address string.
+
+### Request sample:
+```bash
+curl -k http://127.0.0.1/rpc -H 'glinet: 1' -d '
+{
+    "jsonrpc": "2.0",
+    "id": "0",
+    "method": "call",
+    "params": [
+        "",
+        "otbr",
+        "remove_device_list",
         {}
     ]
 }'

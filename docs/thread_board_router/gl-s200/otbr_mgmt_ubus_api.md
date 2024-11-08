@@ -2,6 +2,48 @@
 
 ## ubus services
 
+Get for help.
+
+```
+~# ubus -v list otbr-mgmt|sort
+        "auto_resume_otbr_agent":{"enable":"Boolean"}
+        "commissioner_start":{"timeout":"Integer"}
+        "commissioner_state":{}
+        "commissioner_stop":{}
+        "force_to_leader":{}
+        "force_to_update_ot_status":{}
+        "generate":{}
+        "get_buffer_info":{}
+        "get_calc_pskc":{"extpanid":"String","networkname":"String","passphrase":"String"}
+        "get_child_table":{"rloc16":"Integer"}
+        "get_childip6":{"rloc16":"Integer"}
+        "get_device_list":{}
+        "get_ip6_by_extaddr":{"extaddr":"String"}
+        "get_joiner_list":{}
+        "get_keep_refresh_state":{}
+        "get_leader_data":{}
+        "get_network_data":{}
+        "get_network_name":{}
+        "get_operational_dataset":{}
+        "get_ot_service":{}
+        "get_ot_status":{}
+        "get_ot_txpower":{}
+        "get_rloc16":{}
+        "get_router_neighbor_table":{"rloc16":"Integer"}
+        "get_scan_list":{}
+        "get_srp_server_service":{}
+        "join":{"networkname":"String","networkkey":"String","extpanid":"String","panid":"String","channel":"String","pskd":"String"}
+        "remove_device_list":{"device_list":"Array"}
+        "set_device_info":{"extaddr":"String","name":"String","location":"String"}
+        "set_keep_refresh_state":{"enable":"Boolean"}
+        "set_log_level":{"level":"Integer"}
+        "set_ot_config":{"networkname":"String","networkkey":"String","extpanid":"String","panid":"String","channel":"Integer","passphrase":"String"}
+        "set_ot_dataset":{"dataset":"String","passphrase":"String"}
+        "set_ot_enable":{"enable":"Boolean"}
+        "set_ot_txpower":{"txpower":"String"}
+        "trigger_network_diagnostic":{}
+```
+
 ### auto_resume_otbr_agent
 
 Auto resume `otbr-agent ` program when it crash.
@@ -103,6 +145,48 @@ Force to update ot status cache.
 ```
 {
     "err_code": 0
+}
+```
+
+### generate
+
+Initialize a network with random values, include PAN ID, Extended PAN ID and Network Key.
+
+- Request parameters:
+
+- Request sample: `ubus call otbr-mgmt generate'`
+- Response sample:
+
+
+```
+{
+    "err_code": 0
+}
+```
+
+### get_buffer_info
+
+Get Buffer Info.
+
+- Request parameters:
+
+- Request sample: `ubus call otbr-mgmt get_buffer_info'`
+- Response sample:
+
+
+```
+{
+  "6loSendQueue": "0 0 0",
+  "Ip6Queue": "0 0 0",
+  "TotalBuffers": 65535,
+  "CoapSecureQueue": "0 0 0",
+  "6loReassemblyQueue": "0 0 0",
+  "ApplicationCoapQueue": "0 0 0",
+  "MplQueue": "0 0 0",
+  "MleQueue": "0 0 0",
+  "CoapQueue": "0 0 0",
+  "MaxUsedBuffers": 32,
+  "FreeBuffers": 65535
 }
 ```
 
@@ -263,6 +347,26 @@ Get joiner list. It must work with the HTTP API.
 }
 ```
 
+### get_leader_data
+
+Get Leader data.
+
+- Request parameters:
+
+- Request sample: `ubus call otbr-mgmt get_leader_data`
+- Response sample:
+
+
+```
+{
+  "Weighting": 64,
+  "PartitionId": 1496441175,
+  "DataVersion": 155,
+  "StableDataVersion": 148,
+  "LeaderRouterId": 2
+}
+```
+
 ### get_network_data
 
 Get network data.
@@ -334,6 +438,61 @@ Get network data.
                         ]
                 }
         ]
+}
+```
+
+### get_operational_dataset
+
+Get operational dataset.
+
+- Request parameters:
+
+- Request sample: `ubus call otbr-mgmt get_operational_dataset`
+- Response sample:
+
+
+```
+{
+  "operational_dataset": "0e080000000000010000000300001a35060004001fffe0020846c68403308eae8b0708fd87cda81a3ac2930510599eaa9bd01c5f87f67f2b2ec179d821030b474c2d533230302d6134340102396c04102d738e37564dd3ff2bdde031b6d6172d0c0402a0f7f8"
+}
+```
+
+### get_ot_service
+
+Get OT Services.
+
+- Request parameters:
+
+- Request sample: `ubus call otbr-mgmt get_ot_service`
+- Response sample:
+
+
+```
+{
+  "Services": [
+    {
+      "ServicesData": "01",
+      "Stable": true,
+      "ServerDataLength": 7,
+      "ServiceId": 0,
+      "EnterpriseNumber": 44970,
+      "ServiceDataLength": 1,
+      "Rloc16": 2048,
+      "ServicesName": "BBR",
+      "ServerData": "11000500000e10"
+    },
+    {
+      "ServicesData": "5d",
+      "Stable": true,
+      "ServerDataLength": 18,
+      "ServiceId": 1,
+      "EnterpriseNumber": 44970,
+      "ServiceDataLength": 1,
+      "Rloc16": 2048,
+      "ServicesName": "SRP server",
+      "ServerData": "fd87cda81a3ac293b45a14152518520bd120"
+    }
+  ]
 }
 ```
 
@@ -544,11 +703,11 @@ Perform an IEEE 802.15.4 Active Scan.
 }
 ```
 
-### get_srp_service
+### get_srp_server_service
 
 Get srp service list.
 
-- Request sample: `ubus call otbr-mgmt get_srp_service`
+- Request sample: `ubus call otbr-mgmt get_srp_server_service`
 - Response sample:
 
 
@@ -577,6 +736,31 @@ Get srp service list.
                         "Priority": 0
                 }
         }
+}
+```
+
+### join
+
+Set the log level.
+
+- Request parameters:
+
+| Name        | Type   | Description |
+| :---------- | ------ | ----------- |
+| networkname | String |             |
+| networkkey  | String |             |
+| extpanid    | String |             |
+| panid       | String |             |
+| channel     | String |             |
+| pskd        | String |             |
+
+- Request sample: `ubus call otbr-mgmt join'{"networkname":"String","networkkey":"String","extpanid":"String","panid":"String","channel":"String","pskd":"String"}'`
+- Response sample:
+
+
+```
+{
+    "err_code": 0
 }
 ```
 
