@@ -88,6 +88,7 @@ nav:
       - User Manual: ble_proxy/gl-s10/user_manual.md
       - Firmware Compilation Guide: ble_proxy/gl-s10/firmware_compilation_guide.md
       - AWS Configuration Guide: ble_proxy/gl-s10/aws_configuration_guide.md
+      - Flash Guide: ble_proxy/gl-s10/flash_guide.md
   - Thread Board Router:
     - GL-S20:
       - General Product Introduction: thread_board_router/gl-s20/index.md
@@ -101,6 +102,7 @@ nav:
           - Overview: thread_board_router/gl-s20/user_manual/apis/index.md
           - Http RESTful API: thread_board_router/gl-s20/user_manual/apis/http_restful_api.md
           - BLE Network Configuration API: thread_board_router/gl-s20/user_manual/apis/ble_network_configuration_api.md
+        - Flash Guide: thread_board_router/gl-s20/user_manual/flash_guide.md
       - Secondary Development Guide:
         - Firmware Compilation Guide: thread_board_router/gl-s20/user_manual/gl-s20-tbr_firmware_compilation_guide.md
     - GL-S200:
