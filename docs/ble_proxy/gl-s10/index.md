@@ -14,6 +14,8 @@ Please access to learn more.
 
 [Flash Guide](flash_guide.md)
 
+[HA HA Integration Guide](ha_integration_guide.md)
+
 This is a video setup guide for GL-S10.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nnOUt2xKDLI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
