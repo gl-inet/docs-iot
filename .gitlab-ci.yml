@@ -1,0 +1,66 @@
+image: python:latest
+ 
+stages:
+  - check
+  - build
+  - deploy
+ 
+build_docs:
+  stage: build
+  script:
+    - pip install mkdocs
+    - mkdocs build --clean
+  artifacts:
+    paths:
+      - site
+  only:
+    - merge_requests
+    - master
+    - /^test.*/
+    - /^release.*/
+    - /^feature.*/
+
+ 
+deploy_docs:
+  stage: deploy
+  dependencies:
+    - build_docs
+  script:
+    - 'which msmtp'
+    - 'echo $CI_SERVER_PROJECT_URL'
+    - 'echo $CI_ENVIRONMENT_NAME'
+    - 'echo $CI_COMMIT_TAG'
+    - 'echo $CI_REGISTRY_IMAGE'
+    - 'echo $CI_REGISTRY'
+    - 'echo $CI_PROJECT_PATH'
+    - 'echo $CI_PROJECT_NAMESPACE'
+    - 'echo $CI_PROJECT_NAME'
+    - 'mkdir -p /srv/mkdocs'
+    - 'cp -rf $CI_PROJECT_DIR/site/* /srv/mkdocs'
+    - 'chmod -R 777 /srv/mkdocs'
+  environment:
+    name: $CI_ENVIRONMENT_NAME
+    url: $CI_SERVER_PROJECT_URL
+  only:
+    - tags
+ 
+pages:
+  stage: deploy
+  script:
+    - 'mkdir -p $CI_PROJECT_DIR/public'
+    - 'cp -rf /srv/mkdocs/* $CI_PROJECT_DIR/public'
+  artifacts:
+    paths:
+      - public
+  only:
+    - tags
+
+include:
+  - project: 'gl.devops/cicd-template'
+    ref: master
+    file:
+      - '/common/verify-commit-email/.gitlab-ci.yml'
+      - '/common/commitlint/.gitlab-ci.yml'
+      - '/common/sonarqube/.gitlab-ci.yml'
+
+
