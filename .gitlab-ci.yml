@@ -3,7 +3,7 @@ image: python:latest
 stages:
   - check
   - build
-  - deploy
+#  - deploy
  
 build_docs:
   stage: build
@@ -23,32 +23,29 @@ build_docs:
 
  
 
-deploy_docs:
-  stage: deploy
-  dependencies:
-    - build_docs
-  script:
-    - 'mkdir -p /srv/mkdocs'
-    - 'cp -rf $CI_PROJECT_DIR/site/* /srv/mkdocs'
-    - 'chmod -R 777 /srv/mkdocs'
-  #environment:
-  #  name: $CI_ENVIRONMENT_NAME
-  #  url: $CI_SERVER_PROJECT_URL
+#deploy_docs:
+#  stage: deploy
+#  dependencies:
+#    - build_docs
+#  script:
+#    - 'mkdir -p /srv/mkdocs'
+#    - 'cp -rf $CI_PROJECT_DIR/site/* /srv/mkdocs'
+#    - 'chmod -R 777 /srv/mkdocs'
 
   rules:
     - if: $CI_COMMIT_TAG =~ /^V.*/
 
  
-pages:
-  stage: deploy
-  script:
-    - 'mkdir -p $CI_PROJECT_DIR/public'
-    - 'cp -rf /srv/mkdocs/* $CI_PROJECT_DIR/public'
-  artifacts:
-    paths:
-      - public
-  rules:
-    - if: $CI_COMMIT_TAG =~ /^V.*/
+#pages:
+#  stage: deploy
+#  script:
+#    - 'mkdir -p $CI_PROJECT_DIR/public'
+#    - 'cp -rf /srv/mkdocs/* $CI_PROJECT_DIR/public'
+#  artifacts:
+#    paths:
+#      - public
+#  rules:
+#    - if: $CI_COMMIT_TAG =~ /^V.*/
 
 include:
   - project: 'gl.devops/cicd-template'
