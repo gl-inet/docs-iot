@@ -44,11 +44,9 @@ The Open Thread Border Router integration allows Home Assistant to acess Open Th
 
 To install this integration, navigate to **Home Assistant > Settings > Devices & Services > Add Intergration** and search for **Open Thread Border Router**, submit the url like below.
 
-:::
-http://**YOUR\_GL-S20\_IP\_ADDRESS**:8081
-
-(replace "**YOUR\_GL-S20\_IP\_ADDRESS**" with GL-S20's IP address)
-:::
+> http://<**YOUR GL-S20 IP ADDRESS**>:8081
+>
+> (replace "**YOUR GL-S20 IP ADDRESS**" with GL-S20's IP address)
 
 Then click **Add Intergration** again, search for **Thread**, select it and click **FINISH**, enter **Thread** Intergrations, click **CONFIGURE** and make sure you have S20‘s Thread network under **Preferred network** line, and it contains an icon with **key+phone**. If not, do the following:
 
