@@ -28,15 +28,6 @@ deploy_docs:
   dependencies:
     - build_docs
   script:
-    - 'which msmtp'
-    - 'echo $CI_SERVER_PROJECT_URL'
-    - 'echo $CI_ENVIRONMENT_NAME'
-    - 'echo $CI_COMMIT_TAG'
-    - 'echo $CI_REGISTRY_IMAGE'
-    - 'echo $CI_REGISTRY'
-    - 'echo $CI_PROJECT_PATH'
-    - 'echo $CI_PROJECT_NAMESPACE'
-    - 'echo $CI_PROJECT_NAME'
     - 'mkdir -p /srv/mkdocs'
     - 'cp -rf $CI_PROJECT_DIR/site/* /srv/mkdocs'
     - 'chmod -R 777 /srv/mkdocs'
