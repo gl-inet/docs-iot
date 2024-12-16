@@ -22,7 +22,7 @@ Make sure your GL-S10 and Home Assistant are connected to the same Internet band
 
 After successfully installing and booting the Home Assistant operating system, you can access Home Assistant by going to [homeassistant.local:8123](http://homeassistant.local:8123/). If you are using an older version of Windows or have a more restrictive network setup, you may need to access it at [homeassistant:8123](http://homeassistant:8123/) or `http://X.X.X.X:8123` (replace X.X.X.X with your ’s IP address).
 
-For detailed onboarding instructions,  [click here](https://www.home-assistant.io/getting-started/onboarding/).
+For detailed onboarding instructions, [click here](https://www.home-assistant.io/getting-started/onboarding/).
 
 When you reach the step shown in the image, you will see the gl-s10-bt-proxy option and can proceed to configure it.
 
