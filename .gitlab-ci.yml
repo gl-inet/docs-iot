@@ -8,8 +8,8 @@ stages:
 build_docs:
   stage: build
   script:
-    - pip install mkdocs
-    - pip install mkdocs-material
+    - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple mkdocs
+    - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple mkdocs-material
     - mkdocs build --clean
   artifacts:
     paths:
@@ -43,8 +43,10 @@ deploy_docs:
   environment:
     name: $CI_ENVIRONMENT_NAME
     url: $CI_SERVER_PROJECT_URL
-  only:
-    - tags
+
+  rules:
+    - if: $CI_COMMIT_TAG =~ /^V.*/
+
  
 pages:
   stage: deploy
