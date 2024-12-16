@@ -16,11 +16,12 @@ build_docs:
   only:
     - merge_requests
     - master
-    - /^test.*/
+    - /^gitlab-create-pipeline/
     - /^release.*/
     - /^feature.*/
 
  
+
 deploy_docs:
   stage: deploy
   dependencies:
