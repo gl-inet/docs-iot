@@ -9,6 +9,7 @@ build_docs:
   stage: build
   script:
     - pip install mkdocs
+    - pip install mkdocs-material
     - mkdocs build --clean
   artifacts:
     paths:
