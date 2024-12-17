@@ -26,8 +26,9 @@ deploy_docs:
   script:
     - mkdir -p /srv/docs-build
     - cd /srv/docs-build
+    - echo "${GITHUB_URL}"
     - git clone "${GITHUB_URL}"
-#    - git config --global user.email "devops@gl-inet.com"
+    - git config --global user.email "${GITHUB_EMAIL}"
 #    - git config --global user.name "glzhitong"
 #    - git checkout master
 #    - cp -fr /root/docs-build/iot/en/* /srv/docs-build/
