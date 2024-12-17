@@ -53,5 +53,3 @@ include:
       - '/common/verify-commit-email/.gitlab-ci.yml'
       - '/common/commitlint/.gitlab-ci.yml'
       - '/common/sonarqube/.gitlab-ci.yml'
-
-
