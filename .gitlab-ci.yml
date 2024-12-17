@@ -30,6 +30,7 @@ deploy_docs:
     - git clone "${GITHUB_URL}"
     - git config --global user.email "${GITHUB_EMAIL}"
     - git config --global user.name "${GITHUB_USERNAME}"
+    - cd docs-build
     - git checkout master
 #    - cp -fr /root/docs-build/iot/en/* /srv/docs-build/
 #    - git add .
