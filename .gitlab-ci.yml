@@ -32,10 +32,10 @@ deploy_docs:
     - git config --global user.name "${GITHUB_USERNAME}"
     - cd docs-build
     - git checkout master
-    - cp -fr /root/docs-build/iot/en/* /srv/docs-build/
+    - cp -fr /root/docs-build/iot/en/* /srv/docs-build/docs-build/iot/en
     - git add .
-#    - git commit -m "feat: update iot docs"
-#    - git push origin HEAD:master
+    - git commit -m  "${COMMIT_MESSAGE}"
+    - git push origin HEAD:master
 
   dependencies:
     - build_docs
