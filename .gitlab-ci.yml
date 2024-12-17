@@ -1,4 +1,4 @@
-image: python:latest
+image: python:3.10.2
  
 stages:
   - check
@@ -38,7 +38,7 @@ deploy_docs:
     - git push origin HEAD:master
 
   tags:
-    - hk-server-docker
+    - hk-docker
 
   dependencies:
     - build_docs
