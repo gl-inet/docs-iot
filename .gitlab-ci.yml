@@ -1,0 +1,39 @@
+image: python:3.10.2
+
+ 
+stages:
+  - check
+  - deploy
+ 
+deploy_docs:
+  stage: deploy
+  script:
+    - pip install --no-cache-dir -r requirements.txt
+    - mkdocs build --clean
+    - mkdir -p /srv/docs-build
+    - cd /srv/docs-build
+    - echo "${GITHUB_URL}"
+    - git clone "${GITHUB_URL}"
+    - git config --global user.email "${GITHUB_EMAIL}"
+    - git config --global user.name "${GITHUB_USERNAME}"
+    - cd docs-build
+    - git checkout master
+    - cp -fr /root/docs-build/iot/en/* /srv/docs-build/docs-build/iot/en
+    - git add .
+    - git commit -m  "${COMMIT_MESSAGE}"
+    - git push origin HEAD:master
+  tags:
+    - hk-docker
+
+  only:
+    - merge_requests
+    - master
+
+
+include:
+  - project: 'gl.devops/cicd-template'
+    ref: master
+    file:
+      - '/common/verify-commit-email/.gitlab-ci.yml'
+      - '/common/commitlint/.gitlab-ci.yml'
+      - '/common/sonarqube/.gitlab-ci.yml'
