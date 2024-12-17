@@ -37,6 +37,9 @@ deploy_docs:
     - git commit -m  "${COMMIT_MESSAGE}"
     - git push origin HEAD:master
 
+  tags:
+    - gl.mom
+
   dependencies:
     - build_docs
 
