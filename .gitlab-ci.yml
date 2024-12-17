@@ -3,26 +3,8 @@ image: python:3.10.2
  
 stages:
   - check
-  - build
   - deploy
  
-build_docs:
-  stage: build
-  script:
-    - pip install --no-cache-dir -r requirements.txt
-    - mkdocs build --clean
-  artifacts:
-    paths:
-      - /root/docs-build/iot/en
-  only:
-    - merge_requests
-    - master
-    - /^gitlab-create-pipeline/
-    - /^release.*/
-    - /^feature.*/
-  tags:
-    - hk-docker
-
 deploy_docs:
   stage: deploy
   script:
