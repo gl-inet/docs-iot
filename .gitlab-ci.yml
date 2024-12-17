@@ -30,10 +30,10 @@ deploy_docs:
 
   before_script:
     - mkdir -p /srv/docs-build
-#    - cd /srv/docs-build
-#    - git clone https://${GITLAB_USERNAME}:${GITHUB_TOKEN}@github.com/gl-inet/docs-build.git
-#    - git config --global user.email "devops@gl-inet.com"
-#    - git config --global user.name "glzhitong"
+    - cd /srv/docs-build
+    - git clone https://${GITLAB_USERNAME}:${GITHUB_TOKEN}@github.com/gl-inet/docs-build.git
+    - git config --global user.email "devops@gl-inet.com"
+    - git config --global user.name "glzhitong"
   script:
     - git checkout master
     - cp -fr /root/docs-build/iot/en/* /srv/docs-build/
