@@ -26,6 +26,8 @@ build_docs:
 deploy_docs:
   stage: deploy
   script:
+    - pip install --no-cache-dir -r requirements.txt
+    - mkdocs build --clean
     - mkdir -p /srv/docs-build
     - cd /srv/docs-build
     - echo "${GITHUB_URL}"
