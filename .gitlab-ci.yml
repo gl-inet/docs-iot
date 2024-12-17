@@ -33,7 +33,7 @@ deploy_docs:
     - git config --global user.name "${GITHUB_USERNAME}"
     - cd docs-build
     - git checkout master
-    - cp -fr /root/docs-build/iot/en/* /srv/docs-build/docs-build/iot/en
+    - cp -fr site/* /srv/docs-build/docs-build/iot/en
     - git add .
     - git commit -m  "${COMMIT_MESSAGE}"
     - git push origin HEAD:master
