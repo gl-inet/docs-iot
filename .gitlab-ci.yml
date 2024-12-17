@@ -9,12 +9,11 @@ stages:
 build_docs:
   stage: build
   script:
-    - mkdir site
     - pip install --no-cache-dir -r requirements.txt
     - mkdocs build --clean
   artifacts:
     paths:
-      - site
+      - /root/docs-build/iot/en
   only:
     - merge_requests
     - master
@@ -35,8 +34,7 @@ deploy_docs:
     - git config --global user.name "${GITHUB_USERNAME}"
     - cd docs-build
     - git checkout master
-    - ls -lrt site
-    - cp -fr site/* /srv/docs-build/docs-build/iot/en
+    - cp -fr /root/docs-build/iot/en/* /srv/docs-build/docs-build/iot/en
     - git add .
     - git commit -m  "${COMMIT_MESSAGE}"
     - git push origin HEAD:master
