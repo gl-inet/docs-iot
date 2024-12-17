@@ -8,8 +8,7 @@ stages:
 build_docs:
   stage: build
   script:
-    - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple mkdocs
-    - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple mkdocs-material
+    - pip install --no-cache-dir -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
     - mkdocs build --clean
   artifacts:
     paths:
@@ -20,6 +19,8 @@ build_docs:
     - /^gitlab-create-pipeline/
     - /^release.*/
     - /^feature.*/
+  tags:
+    - hk-docker
 
 deploy_docs:
   stage: deploy
@@ -36,7 +37,6 @@ deploy_docs:
     - git add .
     - git commit -m  "${COMMIT_MESSAGE}"
     - git push origin HEAD:master
-
   tags:
     - hk-docker
 
