@@ -28,7 +28,6 @@ deploy_docs:
   only:
     - merge_requests
     - master
-    - /^gitlab-create-pipeline/
 
 
 include:
