@@ -9,6 +9,7 @@ stages:
 build_docs:
   stage: build
   script:
+    - mkdir site
     - pip install --no-cache-dir -r requirements.txt
     - mkdocs build --clean
   artifacts:
