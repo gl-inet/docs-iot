@@ -29,16 +29,16 @@ deploy_docs:
     - build_docs
 
   before_script:
-    - "mkdir -p /srv/docs-build"
-    - "cd /srv/docs-build"
-    - "git clone https://$GITHUB_USERNAME:$GITHUB_TOKEN@github.com/gl-inet/docs-build.git"
+    - mkdir -p /srv/docs-build
+    - cd /srv/docs-build
+    - git clone https://$GITHUB_USERNAME:$GITHUB_TOKEN@github.com/gl-inet/docs-build.git
     - git config --global user.email "devops@gl-inet.com"
     - git config --global user.name "glzhitong"
   script:
     - git checkout master
     - cp -fr /root/docs-build/iot/en/* /srv/docs-build/
     - git add .
-    - git commit -m "feat: update iot docs
+    - git commit -m "feat: update iot docs"
     - git push
 
   only:
