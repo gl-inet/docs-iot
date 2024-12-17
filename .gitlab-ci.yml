@@ -8,7 +8,7 @@ stages:
 build_docs:
   stage: build
   script:
-    - pip install --no-cache-dir -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+    - pip install --no-cache-dir -r requirements.txt
     - mkdocs build --clean
   artifacts:
     paths:
