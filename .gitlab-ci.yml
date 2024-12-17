@@ -25,9 +25,6 @@ deploy_docs:
   tags:
     - hk-docker
 
-  dependencies:
-    - build_docs
-
   only:
     - merge_requests
     - master
