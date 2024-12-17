@@ -31,7 +31,7 @@ deploy_docs:
   before_script:
     - mkdir -p /srv/docs-build
     - cd /srv/docs-build
-    - git clone "https://$GITHUB_USERNAME:$GITHUB_TOKEN@github.com/gl-inet/docs-build.git"
+    - git clone "https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/gl-inet/docs-build.git"
     - git config --global user.email "devops@gl-inet.com"
     - git config --global user.name "glzhitong"
   script:
