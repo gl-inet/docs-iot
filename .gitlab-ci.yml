@@ -34,11 +34,11 @@ deploy_docs:
 #    - git config --global user.name "glzhitong"
 
   script:
-    - git checkout master
-    - cp -fr /root/docs-build/iot/en/* /srv/docs-build/
-    - git add .
-    - git commit -m "feat: update iot docs"
-    - git push origin HEAD:master
+#    - git checkout master
+#    - cp -fr /root/docs-build/iot/en/* /srv/docs-build/
+#    - git add .
+#    - git commit -m "feat: update iot docs"
+#    - git push origin HEAD:master
 
   only:
     - merge_requests
