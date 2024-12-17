@@ -38,7 +38,7 @@ deploy_docs:
     - git push origin HEAD:master
 
   tags:
-    - gl.mom
+    - hk-server-docker
 
   dependencies:
     - build_docs
