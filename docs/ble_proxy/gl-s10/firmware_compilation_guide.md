@@ -100,11 +100,11 @@ Before compile the application, get into your project folder *(here is `ble_ibea
  In the configuration inteface, you just need to change three point as follow.
  Firstly, click `Serial flasher config`.
 
-![espressif iot development framework configuration](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/firmware_compilation_guide/Serial_flasher_config.png){class="glboxshadow"}
+![espressif iot development framework configuration](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/firmware_compilation_guide/serial_flasher_config.png){class="glboxshadow"}
 
 Then modify the three point marked by red line.
 
-![espressif iot development framework configuration serial flasher config](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/firmware_compilation_guide/Serial_flasher_mode.png){class="glboxshadow"}
+![espressif iot development framework configuration serial flasher config](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/firmware_compilation_guide/serial_flasher_mode.png){class="glboxshadow"}
 
 Set `Default serial port` to the port name show in your PC, typically is `/dev/ttyUSB0`.
 Set `Serial flasher config --->Flash SPI speed` to `80MHz`.
