@@ -113,7 +113,6 @@ nav:
       - Bluetooth: thread_board_router/gl-s200/bluetooth.md
       - Thread Mesh: thread_board_router/gl-s200/thread_mesh.md
       - OpenThread Border Router Codelabs: thread_board_router/gl-s200/openthread_border_router_codelabs.md
-      - Software: thread_board_router/gl-s200/software.md
       - Work with Home Assistant: thread_board_router/gl-s200/work_with_home_assistant.md
       - OTBR HTTP API: thread_board_router/gl-s200/otbr_http_api.md
       - OTBR MGMT UBUS API: thread_board_router/gl-s200/otbr_mgmt_ubus_api.md
