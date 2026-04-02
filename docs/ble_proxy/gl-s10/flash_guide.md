@@ -46,7 +46,9 @@ You can download the latest flash tool from the official website [here](https://
 
     - A. Multiple bin files
 
-        There are typically 5 types of bin, and each one has an appropriate flash start address. Click [here](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/s10_flash_image/S10-V3.selection.zip) to download.
+        There are typically four types of bin files, each with a corresponding flash start address. Click [here](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/s10_flash_image/S10-V3.selection.zip) to download the Bootloader, Partition, and OTA bin files.
+        
+        For device firmware, please download it from the [IoT Firmware Center](https://dl.gl-inet.com/iot){target="_blank"}.
 
         | Type                       | Bin file                  | Flash address |
         | -------------------------- | ------------------------- | ------------- |
@@ -63,4 +65,4 @@ You can download the latest flash tool from the official website [here](https://
 
         ![s10_flash_guide_combine_bin](https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/s10_flash_image/s10_flash_guide_combine_bin.png)
 
-    Finally, re-plug the power to make it work.
+4. Finally, re-plug the power to make it work.
