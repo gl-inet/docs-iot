@@ -1,0 +1,59 @@
+name: Build and Deploy Docs
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+concurrency:
+  group: docs-build-deploy
+  cancel-in-progress: false
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout docs-iot
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.10.2"
+
+      - name: Install dependencies
+        run: pip install --no-cache-dir -r requirements.txt
+
+      - name: Build docs
+        run: mkdocs build --clean --site-dir site
+
+      - name: Checkout docs-build
+        uses: actions/checkout@v6
+        with:
+          repository: gl-inet/docs-build
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
+          path: docs-build
+          clean: true
+          fetch-depth: 0
+
+      - name: Deploy built docs to docs-build
+        run: |
+          rm -rf docs-build/iot/en
+          mkdir -p docs-build/iot/en
+          cp -r site/. docs-build/iot/en/
+
+      - name: Commit and Push to docs-build
+        working-directory: ./docs-build
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if [ -n "$(git diff --cached --name-only)" ]; then
+            git commit -m "docs-iot build: $(git log -1 --format='%H')"
+            git pull --rebase origin master
+            git push
+            echo "✅ Deployed successfully"
+          else
+            echo "ℹ️ No changes to deploy"
+          fi
