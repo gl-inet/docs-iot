@@ -7,9 +7,9 @@ site_name: GL.iNet IoT Docs
 site_description: Documentation for GL.iNet IoT Productions
 site_author: GL.iNet
 site_url: https://docs.gl-inet.com/iot/en/
-copyright: Copyright &copy; 2024 GL Technologies & Microuter Technologies
+copyright: Copyright &copy; 2026 GL Technologies & Microuter Technologies
 
-theme: 
+theme:
   name: material
   logo: images/logo_white.svg
   custom_dir: overrides
@@ -81,7 +81,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - BLE Proxy:
-    - GL-S10: 
+    - GL-S10:
       - Overview: ble_proxy/gl-s10/index.md
       - Hardware: ble_proxy/gl-s10/hardware.md
       - User Manual: ble_proxy/gl-s10/user_manual.md
